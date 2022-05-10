@@ -4,8 +4,9 @@ import server from '../server'
 import { ReadMessage } from "../interface/IMessage";
 import Logger from '../utils/Logger'
 import StatusCode from '../utils/StatusCode'
-import { describe, test as it } from "mocha";
+import { describe, it as test } from "mocha";
 
+Chai.should()
 Chai.use(chaiHttp)
 const expect = Chai.expect
 
@@ -30,7 +31,7 @@ const createMessage = () => {
                 .send(newMessage)
                 .then((response) => {
                     expect(response).to.have.a.status(StatusCode.CREATED)
-                    expect(response.text).to.equal('Test')
+                    expect(response.body.message).to.equal('Test')
                     done()
                 })
         })
