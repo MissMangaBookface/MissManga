@@ -1,10 +1,10 @@
-import {useState} from 'react'
+import { useState } from 'react'
 
 const Main = () => {
-    const [text, setText] = useSatete('')
+    const [text, setText] = useState('')
 
     const postMessageFunc = () => {
-
+          
     }
 
   return (
