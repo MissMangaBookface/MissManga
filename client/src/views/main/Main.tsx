@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import MessageService from '../../components/api/service/MessageService'
 import Card from '../../components/card/Card'
 import { ReadMessage } from '../../components/interfaces/IMessage'
@@ -21,6 +21,7 @@ const Main = () => {
           .catch(error => console.log(error))
     }
 
+
     const getAllMesages = () => {
       MessageService.getAllMessages()
       .then(response => {
@@ -28,6 +29,10 @@ const Main = () => {
         console.log(messages)
       })
     }
+
+    useEffect(() => {
+      getAllMesages()
+    }, [])
 
   return (
     <div>
