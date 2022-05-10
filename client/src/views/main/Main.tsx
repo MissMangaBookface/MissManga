@@ -6,6 +6,7 @@ const Main = () => {
     const [message, setMessage] = useState('')
 
     const postMessageFunc = () => {
+          
           const newMessage = {
             "message": text
           }
@@ -13,6 +14,7 @@ const Main = () => {
           MessageService.createMessage(newMessage)
           .then(response => {
              setMessage(response.data.message)
+             setText('')
           })
           .catch(error => console.log(error))
     }
