@@ -38,7 +38,7 @@ const InlogPage: FC = () => {
               </div>
           </section>
           : <Register/>}
-          <Main/>
+     
     </>
   )
 }

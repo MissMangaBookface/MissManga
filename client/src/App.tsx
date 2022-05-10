@@ -1,13 +1,20 @@
 import React from 'react';
 import './App.css';
-import InlogPage from './components/loginPage/LoginPage';
+import LoginPage from './components/loginPage/LoginPage';
+import {Routes, Route} from 'react-router-dom'
+import Main from './views/main/Main';
 
 function App() {
   return (
+   
     <div className="App">
-           <h1 className='headline'>BookFace!</h1>
-           <InlogPage/>
+        <h1 className='headline'>BookFace!</h1>
+       <Routes>
+           <Route path="/" element={<LoginPage/>} />
+           <Route path='/main' element={<Main/>}/>
+       </Routes>    
     </div>
+   
   );
 }
 
