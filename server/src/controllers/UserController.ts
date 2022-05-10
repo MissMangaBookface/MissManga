@@ -3,17 +3,31 @@ import StatusCode from '../utils/StatusCode'
 import { Request, Response } from 'express'
 import { CreateUser, ReadUser } from '../interface/IUser'
 import UserModel from '../models/UserModel'
+import bcrypt from 'bcrypt'
 
+
+const saltRounds: number = 10;
+const encryptPassword = async (password: string) => {
+    let newPassword: string = '';
+    await bcrypt.hash(password, saltRounds).then(function (hash: any) {
+        newPassword = hash;
+    });
+    return newPassword;
+};
 
 const createNewUser = async (req: Request, res: Response) => {
+
+
+    
     try {
         Logger.info('createNewUser()')
         Logger.http(req.body)
-        const {username, password, email} = req.body
+        let {username, password, email}: CreateUser = req.body
+        password = await encryptPassword(password)
         if (username && password && email) {
             const newObject: CreateUser = {
-                username: username,
-                password: password,
+                username,
+                password,
                 email: email,
                 active: false,
             }
