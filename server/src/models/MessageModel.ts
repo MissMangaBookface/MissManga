@@ -1,16 +1,19 @@
-import dotenv from 'dotenv'
-import { model, Schema } from 'mongoose'
-import { CreateMessage } from "../interface/IMessage";
+import dotenv from 'dotenv';
+import { model, Schema } from 'mongoose';
+import { CreateMessage } from '../interface/IMessage';
 
-dotenv.config()
-    const dbCollection = process.env.MONGODB_COLLECTION_MESSAGE
+dotenv.config();
+const dbCollection = process.env.MONGODB_COLLECTION_MESSAGE || '';
 
-const MessageSchema = new Schema<CreateMessage>({
-    message: String
-}, {
-    timestamps: true
-})
+const MessageSchema = new Schema<CreateMessage>(
+  {
+    message: String,
+  },
+  {
+    timestamps: true,
+  }
+);
 
-const MessageModel = model<CreateMessage>(dbCollection, MessageSchema)
+const MessageModel = model<CreateMessage>('messages', MessageSchema);
 
-export default MessageModel
+export default MessageModel;
