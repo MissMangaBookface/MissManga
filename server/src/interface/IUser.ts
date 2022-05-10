@@ -3,8 +3,9 @@ export interface CreateUser {
     password:string;
     email:string;
     active:boolean;
-
 }
+
+
 
 export interface ReadUser{
     _id:string;
