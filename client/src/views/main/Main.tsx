@@ -1,22 +1,32 @@
 import { useState } from 'react'
 import MessageService from '../../components/api/service/MessageService'
+import Card from '../../components/card/Card'
+import { ReadMessage } from '../../components/interfaces/IMessage'
 
 const Main = () => {
     const [text, setText] = useState('')
-    const [message, setMessage] = useState('')
+    const [messages, setMessages] = useState<Array<ReadMessage>>([])
 
     const postMessageFunc = () => {
-          
+
           const newMessage = {
             "message": text
           }
 
           MessageService.createMessage(newMessage)
           .then(response => {
-             setMessage(response.data.message)
+             console.log(response.data)
              setText('')
           })
           .catch(error => console.log(error))
+    }
+
+    const getAllMesages = () => {
+      MessageService.getAllMessages()
+      .then(response => {
+        setMessages(response.data)
+        console.log(messages)
+      })
     }
 
   return (
@@ -28,7 +38,13 @@ const Main = () => {
           type="text"
         />
         <button onClick={() => postMessageFunc()}>POST</button>
-        <h1>{message}</h1>
+        <button onClick={() => getAllMesages()}>Get ALL</button>
+          {messages.map(msg => (
+                <Card message={msg.message} />
+          ))}
+              
+       
+       
     </div>
   )
 }
