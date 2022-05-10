@@ -3,6 +3,7 @@ import MessageService from '../../components/api/service/MessageService'
 
 const Main = () => {
     const [text, setText] = useState('')
+    const [message, setMessage] = useState('')
 
     const postMessageFunc = () => {
           const newMessage = {
@@ -11,7 +12,7 @@ const Main = () => {
 
           MessageService.createMessage(newMessage)
           .then(response => {
-            console.log(response.data)
+             setMessage(response.data.message)
           })
           .catch(error => console.log(error))
     }
@@ -25,7 +26,7 @@ const Main = () => {
           type="text"
         />
         <button onClick={() => postMessageFunc()}>POST</button>
-
+        <h1>{message}</h1>
     </div>
   )
 }
