@@ -1,6 +1,7 @@
 import {FC, useState} from 'react'
 import './loginPage.css'
 import Register from '../register/Register'
+import Main from '../../views/main/Main'
 
 const InlogPage: FC = () => {
 
@@ -37,6 +38,7 @@ const InlogPage: FC = () => {
               </div>
           </section>
           : <Register/>}
+          <Main/>
     </>
   )
 }
