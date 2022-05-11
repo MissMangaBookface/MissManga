@@ -123,7 +123,7 @@ const deleteMessageById = () => {
                 .delete(`/message/${global_id}`)
                 .end((error, response) => {
                     expect(response.status).to.equal(StatusCode.OK)
-                    expect(response.body.message).to.equal(`Message with id: '${global_id}' was deleted from database!`)
+                    expect(response.body.message).to.equal(`Message with id: ${global_id} was deleted from database!`)
 
                     done()
                 })
