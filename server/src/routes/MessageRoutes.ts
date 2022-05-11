@@ -4,7 +4,7 @@ import MessageController from "../controllers/MessageController";
 const MessageRoutes = (server: Express) => {
 
     server.get('/message', MessageController.getAllMessages)
-    server.get('message/:id', MessageController.getMessageById)
+    server.get('/message/:id', MessageController.getMessageById)
 
     server.post('/message', MessageController.createMessage)
 

@@ -121,7 +121,7 @@ const deleteMessageById = (req: Request, res: Response) => {
                 Logger.http('message' + message)
                 res.status(StatusCode.OK).json(
                     message ? {
-                            message: `Message with id '${ req.params.id }' was deleted from database!`
+                            message: `Message with id: '${ req.params.id }' was deleted from database!`
                         }
                         : {
                             message: `Message with id '${ req.params.id }' not found`
