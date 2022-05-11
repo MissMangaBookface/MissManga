@@ -56,9 +56,92 @@ const getAllMessages = (req: Request, res: Response) => {
     }
 }
 
+const getMessageById = (req: Request, res: Response) => {
+    try {
+        MessageModel.findById(req.params.id, '', (error: ErrorCallback, message: ReadMessage) => {
+            if (error) {
+                Logger.error('error' + error)
+                res.status(StatusCode.BAD_REQUEST).send({
+                    error: 'Error getting message'
+                })
+            } else {
+                Logger.http('message' + message)
+                res.status(StatusCode.OK).send(message ? message : {
+                    message: `Message with id '${ req.params.id }' not found`
+                })
+            }
+        })
+    } catch (error) {
+        Logger.error('error' + error)
+        res.status(StatusCode.BAD_REQUEST).send({
+            error: 'Error getting message by Id'
+        })
+    }
+}
+
+const updateMessageById = (req: Request, res: Response) => {
+    try {
+        Logger.debug('req.params.id' + req.params.id)
+        Logger.debug('req.body' + req.body)
+        const updatedMessage: CreateMessage = {
+            message: req.body.message
+        }
+        Logger.debug('updatedMessage' + updatedMessage)
+
+        MessageModel.findByIdAndUpdate(req.params.id, updatedMessage, {new : true }, (error, message: ReadMessage) => {
+            if (error) {
+                Logger.error('error' + error)
+                res.status(StatusCode.BAD_REQUEST).send({
+                    error: 'Error updating message'
+                })
+            } else {
+                Logger.http('message' + message)
+                res.status(StatusCode.OK).send(message ? message : {
+                    message: `Message with id '${ req.params.id }' not found`
+                })
+            }
+        })
+    } catch (error) {
+        Logger.error('error' + error)
+        res.status(StatusCode.BAD_REQUEST).send({
+            error: 'Error updating message'
+        })
+    }
+}
+
+const deleteMessageById = (req: Request, res: Response) => {
+    try {
+        MessageModel.findByIdAndRemove(req.params.id, (error: ErrorCallback, message: ReadMessage) => {
+            if (error) {
+                Logger.error('error' + error)
+                res.status(StatusCode.BAD_REQUEST).send({
+                    error: 'Error deleting message'
+                })
+            } else {
+                Logger.http('message' + message)
+                res.status(StatusCode.OK).json(
+                    message ? {
+                            message: `Message with id '${ req.params.id }' was deleted from database!`
+                        }
+                        : {
+                            message: `Message with id '${ req.params.id }' not found`
+                        })
+            }
+        })
+    } catch (error) {
+        Logger.error('error' + error)
+        res.status(StatusCode.BAD_REQUEST).send({
+            error: 'Error deleting message'
+        })
+    }
+}
+
 
 
 export default {
     createMessage,
-    getAllMessages
+    getAllMessages,
+    getMessageById,
+    updateMessageById,
+    deleteMessageById
 }

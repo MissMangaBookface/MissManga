@@ -5,6 +5,7 @@ import { ReadMessage } from "../interface/IMessage";
 import Logger from '../utils/Logger'
 import StatusCode from '../utils/StatusCode'
 import { describe, it as test } from "mocha";
+import exp from "constants";
 
 Chai.should()
 Chai.use(chaiHttp)
@@ -19,6 +20,8 @@ const newMessage = {
 
 let createdMessage: ReadMessage
 
+let global_id = ''
+
 const updatedMessage = {
     message: "Updated message"
 }
@@ -32,6 +35,63 @@ const createMessage = () => {
                 .then((response) => {
                     expect(response).to.have.a.status(StatusCode.CREATED)
                     expect(response.body.message).to.equal('Test')
+
+                    global_id = response.body._id
+
+                    done()
+                })
+        })
+    })
+}
+
+const getAllTests = () => {
+    describe('Testing to get an array of messages', () => {
+        test('Should get an array of messages', (done) => {
+            Chai.request(server)
+                .get('/message')
+                .end((error, response) => {
+                    expect(response).to.have.a.status(StatusCode.OK)
+
+                    const body = response.body
+                    expect(body).to.be.an('array')
+                    expect(body.length).to.equal(body.length)
+
+                    const message = body[0]
+                    expect(message).to.be.an('object')
+                    expect(message.message).to.equal('Test')
+
+                    done()
+                })
+        })
+    })
+}
+
+const checkThatMessageDoNotExist = () => {
+    describe('Check that message do not exist', () => {
+        test('Should return 404', (done) => {
+            Chai.request(server)
+                .get(`/${randomString}`)
+                .end((error, response) => {
+                    expect(response.status).to.equal(StatusCode.NOT_FOUND)
+
+                    done()
+                })
+        })
+    })
+}
+
+const getMessageWithId = () => {
+    describe('Testing to get an existing message using id', () => {
+        test('Should return an array of messages', (done) => {
+            Chai.request(server)
+                .get(`/message/627b76f49f750620f954c68a`)
+                .end((error, response) => {
+                    expect(response.status).to.equal(StatusCode.OK)
+
+                    const body = response.body
+                    expect(body).to.be.an('object')
+                    expect(body.message).to.equal('Test')
+
                     done()
                 })
         })
@@ -40,4 +100,7 @@ const createMessage = () => {
 
 describe('Testing message routes', () => {
     createMessage()
+    getAllTests()
+    checkThatMessageDoNotExist()
+    getMessageWithId()
 })

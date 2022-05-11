@@ -4,12 +4,13 @@ import MessageController from "../controllers/MessageController";
 const MessageRoutes = (server: Express) => {
 
     server.get('/message', MessageController.getAllMessages)
+    server.get('message/:id', MessageController.getMessageById)
 
     server.post('/message', MessageController.createMessage)
 
-//    server.put('/message', MessageController.updateMessage)
+    server.put('/message/:id', MessageController.updateMessageById)
 
-//    server.delete('/message', MessageController.deleteMessage)
+    server.delete('/message/:id', MessageController.deleteMessageById)
 }
 
 export default MessageRoutes
