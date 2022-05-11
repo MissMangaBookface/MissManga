@@ -8,14 +8,15 @@ const UserRoutes = (server: Express) => {
 
 //     //Read
     server.get('/user/active', UserController.getAllUsers)
+
 //     server.get('/user/name/:name', UserController.getUserByName)
-//     server.get('/user/:id', UserController.getUserById)
+    server.get('/user/:id', UserController.getUserById)
 //
     //Update
      server.put('/user/:id', UserController.updateUserById)
 //
-//     //Delete
-//     server.delete('/user/:id', UserController.deleteUserById)
+//     Delete
+    server.delete('/user/:id', UserController.deleteUserById)
 }
 
 export default UserRoutes
