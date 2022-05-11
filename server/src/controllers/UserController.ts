@@ -107,7 +107,31 @@ const getAllUsers = (req: Request, res: Response) => {
     }
 }
 
-const deleteUser = (req:Request, res: Response)=>{
+const getUserById = (req:Request, res:Response) => {
+  try{
+      UserModel.findById(req.params.id, (error: ErrorCallback, user: ReadUser) => {
+          if (error) {
+              Logger.error(error)
+              res.status(StatusCode.BAD_REQUEST).send({
+                  error: 'Error getting user'
+              })
+          } else {
+              Logger.info(user)
+              res.status(StatusCode.OK).send(user ? user : {
+                  message: `User with id '${ req.params.id }' not found`
+              })
+          }
+      })
+  } catch (error) {
+      Logger.error(error)
+      res.status(StatusCode.BAD_REQUEST).send({
+          error: 'Error getting user'
+      })
+  }
+}
+
+
+const deleteUserById = (req:Request, res: Response)=>{
 try{
     UserModel.findByIdAndRemove(req.params.id, (error: ErrorCallback, user: ReadUser )=>{
         if(error){
@@ -135,5 +159,6 @@ export default {
     createNewUser,
     updateUserById,
     getAllUsers,
-    deleteUser
+    getUserById,
+    deleteUserById
 }
