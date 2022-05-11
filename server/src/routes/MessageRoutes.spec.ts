@@ -84,7 +84,7 @@ const getMessageWithId = () => {
     describe('Testing to get an existing message using id', () => {
         test('Should return an array of messages', (done) => {
             Chai.request(server)
-                .get(`/message/627b76f49f750620f954c68a`)
+                .get(`/message/${global_id}`)
                 .end((error, response) => {
                     expect(response.status).to.equal(StatusCode.OK)
 
@@ -98,9 +98,44 @@ const getMessageWithId = () => {
     })
 }
 
+const updateMessageById = () => {
+    describe('Testing to update message using id', () => {
+        test('Should update message', (done) => {
+            Chai.request(server)
+                .put(`/message/${global_id}`)
+                .send(updatedMessage)
+                .end((error, response) => {
+                    expect(response.status).to.equal(StatusCode.OK)
+
+                    const body = response.body
+                    expect(body.message).to.equal('Updated message')
+
+                    done()
+                })
+        })
+    })
+}
+
+const deleteMessageById = () => {
+    describe('Testing to delete a message using id', () => {
+        test('Should delete the message', (done) => {
+            Chai.request(server)
+                .delete(`/message/${global_id}`)
+                .end((error, response) => {
+                    expect(response.status).to.equal(StatusCode.OK)
+                    expect(response.body.message).to.equal(`Message with id: '${global_id}' was deleted from database!`)
+
+                    done()
+                })
+        })
+    })
+}
+
 describe('Testing message routes', () => {
     createMessage()
     getAllTests()
     checkThatMessageDoNotExist()
     getMessageWithId()
+    updateMessageById()
+    deleteMessageById()
 })
