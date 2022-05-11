@@ -4,6 +4,7 @@ import { Request, Response } from 'express'
 import { CreateUser, ReadUser } from '../interface/IUser'
 import UserModel from '../models/UserModel'
 import bcrypt from 'bcrypt'
+import {use} from "chai";
 
 
 const saltRounds: number = 10;
@@ -16,7 +17,6 @@ const encryptPassword = async (password: string) => {
 };
 
 const createNewUser = async (req: Request, res: Response) => {
-
 
     
     try {
@@ -106,8 +106,34 @@ const getAllUsers = (req: Request, res: Response) => {
         })
     }
 }
+
+const deleteUser = (req:Request, res: Response)=>{
+try{
+    UserModel.findByIdAndRemove(req.params.id, (error: ErrorCallback, user: ReadUser )=>{
+        if(error){
+            Logger.error(error)
+            res.status(StatusCode.BAD_REQUEST).send({
+                error: 'Error deleting user'
+            })
+        }else {
+            Logger.info(user)
+            res.status(StatusCode.OK).send(
+                user ?{message: `user with id '${ req.params.id}' was deleted from database!`}
+                :{message: `user with id '${req.params.ic}' not found`})
+        }
+    })
+}catch (error){
+    Logger.error(error)
+    res.status(StatusCode.BAD_REQUEST).send({
+        error: 'Error deleting user'
+    })
+}
+}
+
+
 export default {
     createNewUser,
     updateUserById,
-    getAllUsers
+    getAllUsers,
+    deleteUser
 }
