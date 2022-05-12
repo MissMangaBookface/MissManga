@@ -8,7 +8,7 @@ function App() {
   return (
    
     <div className="App">
-        <h1 className='headline'>BookFace!</h1>
+        <h1 className='headline'>Miss <span className='manga'>Manga</span>Bookface</h1>
        <Routes>
            <Route path="/" element={<LoginPage/>} />
            <Route path='/main' element={<Main/>}/>
