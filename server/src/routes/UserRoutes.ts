@@ -3,7 +3,7 @@ import UserController from '../controllers/UserController'
 
 
 const UserRoutes = (server: Express) => {
-   //Create
+    //Create
     server.post('/user/', UserController.createNewUser)
 
 //     //Read
@@ -13,7 +13,7 @@ const UserRoutes = (server: Express) => {
     server.get('/user/:id', UserController.getUserById)
 //
     //Update
-     server.put('/user/:id', UserController.updateUserById)
+    server.put('/user/:id', UserController.updateUserById)
 //
 //     Delete
     server.delete('/user/:id', UserController.deleteUserById)
