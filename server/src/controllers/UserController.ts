@@ -140,8 +140,8 @@ const deleteUserById = (req: Request, res: Response) => {
             } else {
                 Logger.info(user)
                 res.status(StatusCode.OK).send(
-                    user ? {message: `user with id '${req.params.id}' was deleted from database!`}
-                        : {message: `user with id '${req.params.ic}' not found`})
+                    user ? {message: `User with id: ${req.params.id} was deleted from database!`}
+                        : {message: `User with id ${req.params.ic} not found`})
             }
         })
     } catch (error) {
