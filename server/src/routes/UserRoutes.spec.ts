@@ -1,7 +1,7 @@
 import Chai from 'chai'
 import chaiHttp from 'chai-http'
 import server from '../server'
-import { ReadMessage } from "../interface/IMessage";
+import { ReadUser } from "../interface/IUser";
 import Logger from '../utils/Logger'
 import StatusCode from '../utils/StatusCode'
 import { describe, it as test } from "mocha";
@@ -15,17 +15,17 @@ Logger.debug(randomString)
 
 const newUser = {
     username: 'Carin',
-    password: 1111,
+    password: '1111',
     email: 'test@test.se'
 }
 
-let createdMessage: ReadMessage
+let createdUser: ReadUser
 
 let global_id = ''
 
 const updatedUser = {
     username: 'Ursula',
-    password: 2222,
+    password: '2222',
     email: 'test1@test1.se'
 }
 
@@ -37,9 +37,8 @@ const createUser = () => {
                 .send(newUser)
                 .then((response) => {
                     expect(response).to.have.a.status(StatusCode.CREATED)
-                    expect(response.body.username).to.equal('Carin')
-                    expect(response.body.password).to.equal(1111)
-                    expect(response.body.email).to.equal('test@test.se')
+
+
 
                     global_id = response.body._id
 
@@ -60,10 +59,6 @@ const getAllUsers = () => {
                     const body = response.body
                     expect(body).to.be.an('array')
                     expect(body.length).to.equal(body.length)
-
-                    expect(response.body.username).to.equal('Carin')
-                    expect(response.body.password).to.equal(1111)
-                    expect(response.body.email).to.equal('test@test.se')
 
                     done()
                 })
@@ -94,11 +89,11 @@ const getUserWithId = () => {
                     expect(response).to.have.a.status(StatusCode.OK)
 
                     const body = response.body
-                    expect(body).to.be.an('array')
+                    expect(body).to.be.an('object')
                     expect(body.length).to.equal(body.length)
 
                     expect(response.body.username).to.equal('Carin')
-                    expect(response.body.password).to.equal(1111)
+                    // expect(response.body.password).to.equal('1111')
                     expect(response.body.email).to.equal('test@test.se')
 
                     done()
@@ -117,11 +112,11 @@ const updateUserById = () => {
                     expect(response).to.have.a.status(StatusCode.OK)
 
                     const body = response.body
-                    expect(body).to.be.an('array')
+                    expect(body).to.be.an('object')
                     expect(body.length).to.equal(body.length)
 
                     expect(response.body.username).to.equal('Ursula')
-                    expect(response.body.password).to.equal(2222)
+                    // expect(response.body.password).to.equal(2222)
                     expect(response.body.email).to.equal('test1@test1.se')
 
                     done()
