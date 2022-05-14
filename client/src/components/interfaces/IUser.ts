@@ -4,3 +4,8 @@ export interface CreateUser {
     email:string;
     active:boolean;
 }
+
+export interface CreateUserObject {
+    username: string
+    password: string
+}

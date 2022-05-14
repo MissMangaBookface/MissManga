@@ -1,4 +1,4 @@
-import { CreateUser } from '../../interfaces/IUser'
+import { CreateUser, CreateUserObject } from '../../interfaces/IUser'
 import http from '../MyApi'
 
 const UserService = {
@@ -6,8 +6,8 @@ const UserService = {
         return http.post('/user/', newUser)
     },
 
-    verifyUser: (payload: any) => {
-        return http.get(`/user/verify`, payload)
+    verifyUser: (payload: CreateUserObject) => {
+        return http.post(`/user/verify`, payload)
     }
 }
 
