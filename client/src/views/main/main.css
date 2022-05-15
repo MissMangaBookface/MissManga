@@ -1,0 +1,29 @@
+.input-div {
+    border: 1px solid lavender;
+    width: 400px;
+    height: 20vh;
+}
+
+.input-text {
+    width: 320px;
+    height: 60px;
+    outline: none;
+    border-radius: 5px;
+    resize: none;
+    margin-bottom: 20px;
+    padding-left: 6px;
+    padding-top: 3px;
+    font-family: 'Adamina';
+}
+
+.post-btn {
+    background-color: var(--primary-color);
+    color: var(--text-color);
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+    width: 70px;
+    font-family: 'Adamina';
+    font-weight: 600;
+    letter-spacing: 1px;
+}
