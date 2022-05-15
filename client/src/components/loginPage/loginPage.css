@@ -43,17 +43,7 @@
    
   }
 
-  .name, .password {
-      margin-right: 10px;
-      color: purple;
-      font-size: 20px;
-      width: 100px;
-      text-align: left;
-      font-weight: 700;
-      
-  }
-
-  .email-input, .password-input {
+  .username-input, .password-input {
       outline: none;
       border: 1px solid purple;
       border-radius: 5px;

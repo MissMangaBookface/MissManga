@@ -8,8 +8,8 @@ const UserRoutes = (server: Express) => {
 
 //     //Read
     server.get('/user/active', UserController.getAllUsers)
-    server.get('/user/exists', UserController.checkIfUserExists)
-    server.get(`/user/verify`, UserController.verifyUser)
+
+    server.post(`/user/verify`, UserController.verifyUser)
 
 //     server.get('/user/name/:name', UserController.getUserByName)
     server.get('/user/:id', UserController.getUserById)

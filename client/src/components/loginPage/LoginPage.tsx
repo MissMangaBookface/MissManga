@@ -3,18 +3,37 @@ import './loginPage.css'
 import Register from '../register/Register'
 import Main from '../../views/main/Main'
 import sailormoon from '../../img/mainSailor.png'
+import UserService from '../api/service/UserService'
+import { useNavigate } from 'react-router-dom'
 
 const InlogPage: FC = () => {
   const [openRegister, setOpenRegister] = useState(false)
-  const [email, setEmail] = useState('')
+  const [username, setUsername] = useState('')
   const [password, setPassword] = useState('')
+  const navigate = useNavigate()
 
   const openRegisterFunc = () => {
       setOpenRegister(!openRegister)
+
   }
 
   const LoginFunc = () => {
-    console.log(email, password)
+    const user = {
+      username: username,
+      password: password
+    }
+
+    UserService.verifyUser(user)
+    .then(response => {
+      console.log(response.data.message)
+      if (response.data.message === true) {
+        localStorage.setItem("username", username)
+        navigate('/main')
+      } else {
+        alert('Wrong password or username!')
+      }
+    })
+    .catch(error => console.log(error))
   }
 
 
@@ -28,10 +47,10 @@ const InlogPage: FC = () => {
             <h1 className='signin-heading'>SIGN IN</h1>
             <div className='input-div'>
                 <input
-                  className="email-input"
-                  placeholder='Email'
-                  value={email}
-                  onChange={e => setEmail(e.target.value)}
+                  className="username-input"
+                  placeholder='Username'
+                  value={username}
+                  onChange={e => setUsername(e.target.value)}
                 />
                 <input
                   className='password-input'
