@@ -50,6 +50,45 @@ const createNewUser = async (req: Request, res: Response) => {
     }
 }
 
+interface VerifyUser {
+    message: boolean
+}
+
+interface SearchForUser {
+    username: string
+}
+
+const verifyUser = async (req: Request, res: Response) => {
+    try {
+        const {username, password} = req.body
+        Logger.http(req.body)
+
+        // Query
+        const query: SearchForUser = {username: String(username)}
+        const dbQuery = await UserModel.find(query)
+        Logger.debug(dbQuery)
+
+        // Verify password in bcrypt
+        let response: VerifyUser
+        await bcrypt.compare(String(password), dbQuery[0].password)
+            .then(function (result) {
+                Logger.debug('bcrypt')
+                response = {
+                    message: result
+                }
+            })
+
+        res.status(StatusCode.OK).send(response)
+
+    } catch (error) {
+        res.status(StatusCode.INTERNAL_SERVER_ERROR)
+            .send({
+                message: `Error occurred while trying to retrieve user with username: ${ req.query.username }`,
+                error: error.message
+            })
+    }
+}
+
 const updateUserById = (req: Request, res: Response) => {
     try {
         Logger.debug(req.params.id)
@@ -176,6 +215,7 @@ const checkIfUserExists = (req: Request, res: Response) => {
 
 export default {
     createNewUser,
+    verifyUser,
     updateUserById,
     getAllUsers,
     getUserById,

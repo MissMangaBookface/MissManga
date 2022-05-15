@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import MessageService from '../../components/api/service/MessageService'
 import Card from '../../components/card/Card'
+import Header from '../../components/header/Header'
 import { ReadMessage } from '../../components/interfaces/IMessage'
 
 const Main = () => {
@@ -35,7 +36,10 @@ const Main = () => {
     }, [])
 
   return (
+    <>
+    <Header/>
     <div>
+      
         <input
           placeholder="write something..."
           value={text}
@@ -51,6 +55,7 @@ const Main = () => {
        
        
     </div>
+    </>
   )
 }
 

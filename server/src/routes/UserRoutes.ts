@@ -8,7 +8,7 @@ const UserRoutes = (server: Express) => {
 
 //     //Read
     server.get('/user/active', UserController.getAllUsers)
-    server.get('/user/exists', UserController.checkIfUserExists)
+    server.post(`/user/verify`, UserController.verifyUser)
 
 //     server.get('/user/name/:name', UserController.getUserByName)
     server.get('/user/:id', UserController.getUserById)
