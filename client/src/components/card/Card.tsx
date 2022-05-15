@@ -1,4 +1,5 @@
 import { FC } from 'react'
+import './card.css'
 
 interface Props {
   message: string
@@ -6,8 +7,8 @@ interface Props {
 
 const Card:FC<Props>=({message}) => {
   return (
-    <div>
-        <p>{message}</p>
+    <div className='card'>
+        <p className='message'>{message}</p>
     </div>
   )
 }

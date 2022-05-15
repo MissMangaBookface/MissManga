@@ -3,10 +3,16 @@ import MessageService from '../../components/api/service/MessageService'
 import Card from '../../components/card/Card'
 import Header from '../../components/header/Header'
 import { ReadMessage } from '../../components/interfaces/IMessage'
+import './main.css'
 
 const Main = () => {
     const [text, setText] = useState('')
     const [messages, setMessages] = useState<Array<ReadMessage>>([])
+
+
+    useEffect(() => {
+      getAllMesages()
+    }, [])
 
     const postMessageFunc = () => {
 
@@ -18,6 +24,7 @@ const Main = () => {
           .then(response => {
              console.log(response.data)
              setText('')
+             getAllMesages()
           })
           .catch(error => console.log(error))
     }
@@ -26,28 +33,25 @@ const Main = () => {
     const getAllMesages = () => {
       MessageService.getAllMessages()
       .then(response => {
-        setMessages(response.data)
-        console.log(messages)
+        setMessages(response.data.sort((a:any ,b:any): any => {return 1}))
       })
     }
 
-    useEffect(() => {
-      getAllMesages()
-    }, [])
+  
 
   return (
     <>
     <Header/>
     <div>
-      
-        <input
+        <div className='input-div'>
+        <textarea
+          className='input-text'
           placeholder="write something..."
           value={text}
           onChange={e => setText(e.target.value)}
-          type="text"
         />
-        <button onClick={() => postMessageFunc()}>POST</button>
-        <button onClick={() => getAllMesages()}>Get ALL</button>
+        <button className='post-btn' onClick={() => postMessageFunc()}>POST</button>
+        </div>
           {messages.map(msg => (
                 <Card message={msg.message} />
           ))}
