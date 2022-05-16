@@ -45,7 +45,7 @@ const InlogPage: FC = () => {
           <img className='sailor-pic' src={sailormoon} alt="sailor moon"/>
           <section className='login-square'>
             <h1 className='signin-heading'>SIGN IN</h1>
-            <div className='input-div'>
+            <div className='login-input-div'>
                 <input
                   className="username-input"
                   placeholder='Username'
