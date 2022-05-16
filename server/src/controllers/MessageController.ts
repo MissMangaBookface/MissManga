@@ -36,7 +36,7 @@ const createMessage = async (req: Request, res: Response) => {
 
 const getAllMessages = (req: Request, res: Response) => {
     try {
-        // UserModel.find({name: req.body.name, skoStorlek: req.body.skoStorlek} , '', (error: ErrorCallback, users: Array<ReadUser>) => {
+
         MessageModel.find({} , '', (error: ErrorCallback, messages: Array<ReadMessage>) => {
             if (error) {
                 Logger.error(error)
