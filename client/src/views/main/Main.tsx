@@ -6,17 +6,20 @@ import { ReadMessage } from '../../components/interfaces/IMessage'
 import './main.css'
 
 const Main = () => {
-    const [text, setText] = useState('')
+    const [text, setText] = useState<string>('')
     const [messages, setMessages] = useState<Array<ReadMessage>>([])
+    const [username, setUsername] = useState<string | null>('')
 
 
     useEffect(() => {
       getAllMesages()
+      setUsername(localStorage.getItem("username"))
     }, [])
 
     const postMessageFunc = () => {
 
           const newMessage = {
+            "username": username,
             "message": text
           }
 
@@ -53,7 +56,7 @@ const Main = () => {
         <button className='post-btn' onClick={() => postMessageFunc()}>POST</button>
         </div>
           {messages.map(msg => (
-                <Card message={msg.message} />
+                <Card message={msg.message} username={msg.username} id={msg._id} getAllMesages={getAllMesages}/>
           ))}
               
        

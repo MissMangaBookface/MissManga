@@ -8,9 +8,10 @@ const createMessage = async (req: Request, res: Response) => {
     try {
         Logger.info('createMessage()')
         Logger.http('req.body' + req.body)
-        const {message} = req.body
-        if (message) {
+        const {message, username} = req.body
+        if (message && username) {
             const newObject: CreateMessage = {
+                username: username,
                 message: message
             }
             Logger.http('newObject' + newObject)
@@ -79,11 +80,16 @@ const getMessageById = (req: Request, res: Response) => {
     }
 }
 
+interface IUpdatedMessage {
+    message: string
+}
+
+
 const updateMessageById = (req: Request, res: Response) => {
     try {
         Logger.debug('req.params.id' + req.params.id)
         Logger.debug('req.body' + req.body)
-        const updatedMessage: CreateMessage = {
+        const updatedMessage: IUpdatedMessage = {
             message: req.body.message
         }
         Logger.debug('updatedMessage' + updatedMessage)

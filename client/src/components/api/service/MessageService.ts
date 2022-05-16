@@ -9,6 +9,14 @@ const MessageService = {
 
     getAllMessages: () => {
         return http.get('/message')
+    },
+
+    deleteMessage: (id: string) => {
+        return http.delete(`/message/${id}`)
+    },
+
+    updateMessage: (id: string, _newMessage: {}) => {
+        return http.put(`/message/${id}`, _newMessage)
     }
 
 }
