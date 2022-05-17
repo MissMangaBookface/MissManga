@@ -125,7 +125,7 @@ const updateUserById = (req: Request, res: Response) => {
     }
 }
 
-const getAllUsers = (req: Request, res: Response) => {
+const getOnlineUsers = (req: Request, res: Response) => {
     try {
 
         UserModel.find({active: true}, '', (error: ErrorCallback, users: Array<ReadUser>) => {
@@ -220,7 +220,7 @@ export default {
     createNewUser,
     verifyUser,
     updateUserById,
-    getAllUsers,
+    getOnlineUsers,
     getUserById,
     deleteUserById,
     checkIfUserExists
