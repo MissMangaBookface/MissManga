@@ -25,8 +25,15 @@ const InlogPage: FC = () => {
 
     UserService.verifyUser(user)
     .then(response => {
-      console.log(response.data.message)
+      console.log(response.data.id)
       if (response.data.message === true) {
+        const active = {
+          active: false
+        }
+        UserService.changeActive(response.data.id, active)
+        .then(response => {
+          console.log(response.data)
+        })
         localStorage.setItem("username", username)
         navigate('/main')
       } else {

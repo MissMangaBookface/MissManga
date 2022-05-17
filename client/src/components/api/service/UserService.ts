@@ -12,6 +12,10 @@ const UserService = {
 
     getOnlineUsers: () => {
         return http.post('/user/active')
+    },
+
+    changeActive: (id: string, active: {}) => {
+        return http.post(`/active/${id}`, active)
     }
 }
 
