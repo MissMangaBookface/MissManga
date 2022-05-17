@@ -61,7 +61,7 @@ interface SearchForUser {
 
 const verifyUser = async (req: Request, res: Response) => {
     try {
-        const {username, password}: ReadUser = req.body
+        const {username, password} = req.body
         Logger.http(req.body)
 
         // Query
@@ -125,7 +125,7 @@ const updateUserById = (req: Request, res: Response) => {
     }
 }
 
-const getAllUsers = (req: Request, res: Response) => {
+const getOnlineUsers = (req: Request, res: Response) => {
     try {
 
         UserModel.find({active: true}, '', (error: ErrorCallback, users: Array<ReadUser>) => {
@@ -252,7 +252,7 @@ export default {
     createNewUser,
     verifyUser,
     updateUserById,
-    getAllUsers,
+    getOnlineUsers,
     getUserById,
     deleteUserById,
     checkIfUserExists,

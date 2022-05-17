@@ -2,7 +2,7 @@ import {FC, useState} from 'react'
 import './loginPage.css'
 import Register from '../register/Register'
 import Main from '../../views/main/Main'
-import sailormoon from '../../img/mainSailor.png'
+import sailorgirls from '../../img/maintop.png'
 import UserService from '../api/service/UserService'
 import { useNavigate } from 'react-router-dom'
 
@@ -25,8 +25,15 @@ const InlogPage: FC = (id, active) => {
 
     UserService.verifyUser(user)
     .then(response => {
-      console.log(response.data.message)
+      console.log(response.data.id)
       if (response.data.message === true) {
+        const active = {
+          active: false
+        }
+        UserService.changeActive(response.data.id, active)
+        .then(response => {
+          console.log(response.data)
+        })
         localStorage.setItem("username", username)
         navigate('/main')
       } else {
@@ -42,7 +49,7 @@ const InlogPage: FC = (id, active) => {
     <>
     {openRegister === false ?
           <div className='login-div'>
-          <img className='sailor-pic' src={sailormoon} alt="sailor moon"/>
+          <img className='sailor-pic' src={sailorgirls} alt="sailor moon"/>
           <section className='login-square'>
             <h1 className='signin-heading'>SIGN IN</h1>
             <div className='login-input-div'>
