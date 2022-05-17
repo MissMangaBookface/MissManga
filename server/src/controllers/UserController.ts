@@ -86,7 +86,7 @@ const verifyUser = async (req: Request, res: Response) => {
     } catch (error) {
         res.status(StatusCode.INTERNAL_SERVER_ERROR)
             .send({
-                message: `Error occurred while trying to retrieve user with username: ${ req.query.username }`,
+                message: `Error occurred while trying to retrieve user with username: ${req.query.username}`,
                 error: error.message
             })
     }
@@ -195,24 +195,56 @@ const deleteUserById = (req: Request, res: Response) => {
 }
 
 const checkIfUserExists = (req: Request, res: Response) => {
-	try {
-		UserModel.find({email: req.body.email, password: req.body.password}, (error: ErrorCallback, users: Array<ReadUser>) => {
-			if (error) {
-				Logger.error(error)
-				res.status(StatusCode.BAD_REQUEST).send({
-					error: 'Error getting user'
-				})
-			} else {
-				Logger.http(users)
-				res.status(StatusCode.OK).send(users)
-			}
-		})
-	} catch (error) {
-		Logger.error(error)
-		res.status(StatusCode.BAD_REQUEST).send({
-			error: 'Error getting user'
-		})
-	}
+    try {
+        UserModel.find({
+            email: req.body.email,
+            password: req.body.password
+        }, (error: ErrorCallback, users: Array<ReadUser>) => {
+            if (error) {
+                Logger.error(error)
+                res.status(StatusCode.BAD_REQUEST).send({
+                    error: 'Error getting user'
+                })
+            } else {
+                Logger.http(users)
+                res.status(StatusCode.OK).send(users)
+            }
+        })
+    } catch (error) {
+        Logger.error(error)
+        res.status(StatusCode.BAD_REQUEST).send({
+            error: 'Error getting user'
+        })
+    }
+}
+
+const changeActiveStatus = (req: Request, res: Response) => {
+
+    try {
+        const {id} = req.params
+        const {newActiveStatus} = req.body
+        const returnUpdatedObject = {
+            new: true
+        }
+        const Query = {
+            active: newActiveStatus
+        }
+        UserModel.findByIdAndUpdate(id, Query, returnUpdatedObject, (error, user) => {
+            if (error) {
+                Logger.error(error)
+                res.status(StatusCode.BAD_REQUEST).send({
+                    error: `Error changing Active`
+                })
+            } else {
+                res.status(StatusCode.OK).send(user.active)
+            }
+        })
+    } catch (error) {
+        Logger.error(error)
+        res.status(StatusCode.BAD_REQUEST).send({
+            error: `Error updating Active`
+        })
+    }
 }
 
 
@@ -223,5 +255,6 @@ export default {
     getAllUsers,
     getUserById,
     deleteUserById,
-    checkIfUserExists
+    checkIfUserExists,
+    changeActiveStatus
 }

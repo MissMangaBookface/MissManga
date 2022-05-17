@@ -10,6 +10,7 @@ const UserRoutes = (server: Express) => {
     server.get('/user/active', UserController.getAllUsers)
 
     server.post(`/user/verify`, UserController.verifyUser)
+    server.post(`/active`, UserController.changeActiveStatus)
 
 //     server.get('/user/name/:name', UserController.getUserByName)
     server.get('/user/:id', UserController.getUserById)
