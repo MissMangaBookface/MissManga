@@ -8,6 +8,10 @@ const UserService = {
 
     verifyUser: (payload: CreateUserObject) => {
         return http.post(`/user/verify`, payload)
+    },
+
+    getOnlineUsers: () => {
+        return http.post('/user/active')
     }
 }
 
