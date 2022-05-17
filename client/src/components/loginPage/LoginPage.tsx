@@ -2,7 +2,7 @@ import {FC, useState} from 'react'
 import './loginPage.css'
 import Register from '../register/Register'
 import Main from '../../views/main/Main'
-import sailormoon from '../../img/mainSailor.png'
+import sailorgirls from '../../img/maintop.png'
 import UserService from '../api/service/UserService'
 import { useNavigate } from 'react-router-dom'
 
@@ -42,7 +42,7 @@ const InlogPage: FC = () => {
     <>
     {openRegister === false ?
           <div className='login-div'>
-          <img className='sailor-pic' src={sailormoon} alt="sailor moon"/>
+          <img className='sailor-pic' src={sailorgirls} alt="sailor moon"/>
           <section className='login-square'>
             <h1 className='signin-heading'>SIGN IN</h1>
             <div className='login-input-div'>

@@ -42,3 +42,10 @@
 .post-btn:active {
     transform: translateY(2px);
 }
+
+.sailors {
+    width: 400px;
+    position: fixed;
+    top: 20%;
+    right: 2%;
+}

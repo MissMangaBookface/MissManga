@@ -4,6 +4,7 @@ import Card from '../../components/card/Card'
 import Header from '../../components/header/Header'
 import { ReadMessage } from '../../components/interfaces/IMessage'
 import './main.css'
+import sailormoon from '../../img/mainSailor.png'
 
 const Main = () => {
     const [text, setText] = useState<string>('')
@@ -45,6 +46,7 @@ const Main = () => {
   return (
     <>
     <Header/>
+    <img src={sailormoon} alt="" className='sailors'/>
     <div>
         <div className='input-div'>
         <textarea
