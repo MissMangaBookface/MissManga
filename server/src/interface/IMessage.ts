@@ -1,6 +1,11 @@
+export interface Comment {
+    username: string
+    comment: string
+}
+
 export interface CreateMessage {
     username: string
-    message: string
+    message: string,
 }
 
 export interface ReadMessage {
@@ -9,4 +14,5 @@ export interface ReadMessage {
     message: string
     createdAt: Date
     updatedAt: Date
+    comment: Comment[]
 }
