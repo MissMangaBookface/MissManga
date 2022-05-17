@@ -17,6 +17,7 @@ const UserService = {
     changeActive: (id: string, active: {}) => {
         return http.post(`/active/${id}`, active)
     }
+
 }
 
 export default UserService
