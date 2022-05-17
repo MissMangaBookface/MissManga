@@ -61,7 +61,7 @@ interface SearchForUser {
 
 const verifyUser = async (req: Request, res: Response) => {
     try {
-        const {username, password}: ReadUser = req.body
+        const {username, password} = req.body
         Logger.http(req.body)
 
         // Query
