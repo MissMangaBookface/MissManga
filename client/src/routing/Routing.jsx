@@ -10,7 +10,7 @@ import InfoView from '../views/infoMissManga/InfoView';
 
 const Routing = (props) => {
     return (
-        <BrowserRouter>
+        <>
             {props.children}
             <Routes>
                 <Route path={RoutingPath.infoView} element={<InfoView/>}/>
@@ -19,7 +19,7 @@ const Routing = (props) => {
                 <Route path={RoutingPath.mainView} element={<Main/>}/>
                 <Route path={RoutingPath.loginView} element={<LoginPage/>}/>
             </Routes>
-        </BrowserRouter>
+        </>
     )
 }
 

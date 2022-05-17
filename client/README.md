@@ -8,6 +8,7 @@ npx create-react-app client --template typescript
    npm install react-router-dom@6
    npm i @types/react-router-dom
     npm install react-icons
+    npm install tachyons@4.12.0
    
 ```
 
