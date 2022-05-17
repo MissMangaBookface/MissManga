@@ -8,7 +8,8 @@ const UserService = {
 
     verifyUser: (payload: CreateUserObject) => {
         return http.post(`/user/verify`, payload)
-    }
+    },
+
 }
 
 export default UserService
