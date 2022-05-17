@@ -229,11 +229,11 @@ const changeActiveStatus = (req: Request, res: Response) => {
         const Query = {
             active: newActiveStatus
         }
-        UserModel.findByIdAndUpdate(id, Query, returnUpdatedObject, (error, user) => {
+        UserModel.findByIdAndUpdate(id, Query, returnUpdatedObject, (error, user: ReadUser) => {
             if (error) {
                 Logger.error(error)
                 res.status(StatusCode.BAD_REQUEST).send({
-                    error: `Error changing Active`
+                    error: `Error changing active`
                 })
             } else {
                 res.status(StatusCode.OK).send(user.active)
@@ -242,7 +242,7 @@ const changeActiveStatus = (req: Request, res: Response) => {
     } catch (error) {
         Logger.error(error)
         res.status(StatusCode.BAD_REQUEST).send({
-            error: `Error updating Active`
+            error: `Error updating active`
         })
     }
 }
