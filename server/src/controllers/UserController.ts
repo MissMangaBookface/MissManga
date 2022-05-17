@@ -51,7 +51,8 @@ const createNewUser = async (req: Request, res: Response) => {
 }
 
 interface VerifyUser {
-    message: boolean
+    message: boolean,
+    id: string
 }
 
 interface SearchForUser {
@@ -60,7 +61,7 @@ interface SearchForUser {
 
 const verifyUser = async (req: Request, res: Response) => {
     try {
-        const {username, password} = req.body
+        const {username, password}: ReadUser = req.body
         Logger.http(req.body)
 
         // Query
@@ -69,12 +70,14 @@ const verifyUser = async (req: Request, res: Response) => {
         Logger.debug(dbQuery)
 
         // Verify password in bcrypt
+        const user = await UserModel.findOne({username})
         let response: VerifyUser
         await bcrypt.compare(String(password), dbQuery[0].password)
             .then(function (result) {
                 Logger.debug('bcrypt')
                 response = {
-                    message: result
+                    message: result,
+                    id: user.id
                 }
             })
 
