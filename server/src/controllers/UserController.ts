@@ -233,7 +233,7 @@ const changeActiveStatus = (req: Request, res: Response) => {
             if (error) {
                 Logger.error(error)
                 res.status(StatusCode.BAD_REQUEST).send({
-                    error: `Error changing Active`
+                    error: `Error changing active`
                 })
             } else {
                 res.status(StatusCode.OK).send(user.active)
@@ -242,7 +242,7 @@ const changeActiveStatus = (req: Request, res: Response) => {
     } catch (error) {
         Logger.error(error)
         res.status(StatusCode.BAD_REQUEST).send({
-            error: `Error updating Active`
+            error: `Error updating active`
         })
     }
 }
