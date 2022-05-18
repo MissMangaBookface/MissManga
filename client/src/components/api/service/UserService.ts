@@ -14,7 +14,7 @@ const UserService = {
         return http.post('/user/active')
     },
 
-    changeActive: (id: string, active: {}) => {
+    changeActive: (id: string | null, active: {}) => {
         return http.post(`/active/${id}`, active)
     },
 

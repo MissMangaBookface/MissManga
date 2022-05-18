@@ -9,6 +9,7 @@ import OnlineUsers from '../../components/onlineUsers/OnlineUsers'
 import EditUser from '../../components/editUser/EditUser'
 import UserService from '../../components/api/service/UserService'
 import { ReadUser } from '../../components/interfaces/IUser'
+import { useNavigate } from 'react-router-dom'
 
 const Main = () => {
     const [text, setText] = useState<string>('')
@@ -19,6 +20,8 @@ const Main = () => {
     const [userId, setUserId] = useState<string | null>('')
     const [editUsername, setEditUsername] = useState('')
     const [editEmail, setEditEmail] = useState('')
+    const [editPassword, setEditPassword] = useState('')
+    const navigate = useNavigate()
 
 
     useEffect(() => {
@@ -70,7 +73,21 @@ const Main = () => {
     .then(res => {
         setEditUsername(res.data.username)
         setEditEmail(res.data.email)
+        setEditPassword(res.data.password)
+        console.log(res.data)
        
+    })
+    .catch(error => console.log(error))
+}
+
+const logOutFunc = () => {
+    const updateActive = {
+      newActiveStatus: false
+    }
+
+    UserService.changeActive(userId, updateActive)
+    .then(res => {
+      navigate('/')
     })
     .catch(error => console.log(error))
 }
@@ -81,10 +98,10 @@ const Main = () => {
     <Header getOnlineUsers={getOnlineUsers}/>
     <img src={sailormoon} alt="" className='sailors'/>
     <div className='edit-section'>
-      <button className='logout-btn'>Logout</button>
+      <button className='logout-btn' onClick={() => logOutFunc()}>Logout</button>
       <button className='logout-btn' onClick={() => toggleEditFunc()}>Edit</button>
     </div>
-    {toggleEdit && <EditUser toggleEditFunc={toggleEditFunc} getOnlineUsers={getOnlineUsers} editUsername={editUsername} editEmail={editEmail} />}
+    {toggleEdit && <EditUser toggleEditFunc={toggleEditFunc} getOnlineUsers={getOnlineUsers} editUsername={editUsername} editEmail={editEmail} editPassword={editPassword} />}
     <OnlineUsers getOnlineUsers={getOnlineUsers} onlineUsers={onlineUsers}/>
     <div>
         <div className='input-div'>
