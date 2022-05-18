@@ -33,7 +33,7 @@ const createUser = () => {
     describe('Create user', () => {
         it('should create new user', (done) => {
             Chai.request(server)
-                .post(`/user`)
+                .post(`/user/`)
                 .send(newUser)
                 .then((response) => {
                     expect(response).to.have.a.status(StatusCode.CREATED)
@@ -52,7 +52,7 @@ const getAllUsers = () => {
     describe('Testing to get an array of users', () => {
         test('Should get an array of users', (done) => {
             Chai.request(server)
-                .get('/user/active')
+                .post('/user/active')
                 .end((error, response) => {
                     expect(response).to.have.a.status(StatusCode.OK)
 
