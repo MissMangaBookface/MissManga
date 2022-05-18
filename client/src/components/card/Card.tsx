@@ -3,6 +3,8 @@ import MessageService from '../api/service/MessageService'
 import EditMessage from '../editMessage/EditMessage'
 import Menu from '../menu/Menu'
 import './card.css'
+import { IoMdArrowDropright, IoMdArrowDropdown } from "react-icons/io";
+import CommentCard from '../commentCard/CommentCard'
 
 interface Props {
   message: string
@@ -14,6 +16,7 @@ interface Props {
 const Card:FC<Props>=({message, username, id, getAllMesages}) => {
   const [menu, setMenu] = useState(false)
   const [toggleEdit, setToggleEdit] = useState(false)
+  const [toggleComments, setToggleComments] = useState(false)
 
   const toggleMenu = () => {
       setMenu(!menu)
@@ -45,17 +48,25 @@ const Card:FC<Props>=({message, username, id, getAllMesages}) => {
       getAllMesages()     
     })
     .catch(error => console.log(error))
+  }
 
+  const foldCommentsFunc = () => {
+      setToggleComments(!toggleComments)
   }
 
   return (
-    <div className='card'>
-      <h3 className='card-name'>{username}:</h3>
-        <p className='card-message'>{message}</p>
-        <div className='circle' onClick={() => toggleMenu()}><span className='dots'>...</span></div>
-        {menu && <Menu deleteMessageFunc={deleteMessageFunc} toggleEditFunc={toggleEditFunc}/>}
-        {toggleEdit && <EditMessage message={message} updateMessage={updateMessage}/> }
-    </div>
+    <>
+      <div className='card'>
+        <h3 className='card-name'>{username}:</h3>
+          <p className='card-message'>{message}</p>
+          <p className='comments' onClick={() => foldCommentsFunc()}>Comments {toggleComments ? <IoMdArrowDropdown className='arrow'/> : <IoMdArrowDropright className='arrow'/>}</p>
+          <div className='circle' onClick={() => toggleMenu()}><span className='dots'>...</span></div>
+          {menu && <Menu deleteMessageFunc={deleteMessageFunc} toggleEditFunc={toggleEditFunc}/>}
+          {toggleEdit && <EditMessage message={message} updateMessage={updateMessage}/> }
+      </div>
+  
+        {toggleComments && <CommentCard/>}
+    </>
   )
 }
 
