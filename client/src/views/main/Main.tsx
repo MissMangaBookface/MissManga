@@ -6,11 +6,13 @@ import { ReadMessage } from '../../components/interfaces/IMessage'
 import './main.css'
 import sailormoon from '../../img/mainSailor.png'
 import OnlineUsers from '../../components/onlineUsers/OnlineUsers'
+import EditUser from '../../components/editUser/EditUser'
 
 const Main = () => {
     const [text, setText] = useState<string>('')
     const [messages, setMessages] = useState<Array<ReadMessage>>([])
     const [username, setUsername] = useState<string | null>('')
+    const [toggleEdit, setToggleEdit] = useState(false)
 
 
     useEffect(() => {
@@ -42,12 +44,20 @@ const Main = () => {
       })
     }
 
+    const toggleEditFunc = () => {
+      setToggleEdit(!toggleEdit)
+    }
   
 
   return (
     <>
     <Header/>
     <img src={sailormoon} alt="" className='sailors'/>
+    <div className='edit-section'>
+      <button className='logout-btn'>Logout</button>
+      <button className='logout-btn' onClick={() => toggleEditFunc()}>Edit</button>
+    </div>
+    {toggleEdit && <EditUser toggleEditFunc={toggleEditFunc} username={username}/>}
     <OnlineUsers/>
     <div>
         <div className='input-div'>
