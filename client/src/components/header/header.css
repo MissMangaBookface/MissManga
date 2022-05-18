@@ -13,15 +13,6 @@
 .header-name {
     color: white;
     letter-spacing: 1px;
-    margin-right: 10px;    
+    margin-right: 120px;    
 }
 
-.logout {
-    margin-right: 70px;
-}
-
-.logout:hover {
-    opacity: 0.8;
-    text-decoration: underline;
-    cursor: pointer;
-}

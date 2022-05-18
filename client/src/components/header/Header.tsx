@@ -8,14 +8,12 @@ const Header = () => {
         setUsername(localStorage.getItem("username"))
     }, [])
 
-    const logoutFunc = () => {
-      alert('hello')
-    }
+  
 
   return (
     <div className='header'>
-        <h2 className='header-name'>{username}</h2>
-        <h2 className='logout' onClick={() => logoutFunc()}>(Logout)</h2>
+        <h2 className='header-name'>Hi {username}!</h2>
+      
     </div>
   )
 }

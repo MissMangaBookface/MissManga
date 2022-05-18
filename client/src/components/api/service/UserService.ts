@@ -16,6 +16,10 @@ const UserService = {
 
     changeActive: (id: string, active: {}) => {
         return http.post(`/active/${id}`, active)
+    },
+
+    updateUserById: (id: string, updateUser: {}) => {
+        return http.put(`/user/${id}`, updateUser)
     }
 
 }

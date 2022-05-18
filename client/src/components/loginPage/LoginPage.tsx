@@ -11,6 +11,7 @@ const InlogPage: FC = (id, active) => {
   const [username, setUsername] = useState('')
   const [password, setPassword] = useState('')
   const navigate = useNavigate()
+  const [id, setId] = useState('')
 
   const openRegisterFunc = () => {
       setOpenRegister(!openRegister)
@@ -25,7 +26,8 @@ const InlogPage: FC = (id, active) => {
 
     UserService.verifyUser(user)
     .then(response => {
-      console.log(response.data.id)
+      console.log(response.data)
+
       if (response.data.message === true) {
         const active = {
           active: false
@@ -33,6 +35,7 @@ const InlogPage: FC = (id, active) => {
         UserService.changeActive(response.data.id, active)
         .then(response => {
           console.log(response.data)
+          
         })
         localStorage.setItem("username", username)
         navigate('/main')

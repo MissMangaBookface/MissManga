@@ -49,3 +49,36 @@
     top: 20%;
     right: 2%;
 }
+
+.edit-section {
+    position: absolute;
+    left: 5%;
+    top: 28%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.logout-btn {
+    background-color: var(--primary-color);
+    color: var(--text-color);
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+    width: 120px;
+    font-family: 'Adamina';
+    font-size: 22px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    margin-bottom: 20px;
+    cursor: pointer;
+    margin-right: 15px;
+}
+
+.logout-btn:hover {
+    opacity: 0.8;
+}
+
+.logout-btn:active {
+    transform: translateY(2px);
+}
