@@ -6,16 +6,25 @@ import { ReadMessage } from '../../components/interfaces/IMessage'
 import './main.css'
 import sailormoon from '../../img/mainSailor.png'
 import OnlineUsers from '../../components/onlineUsers/OnlineUsers'
+import EditUser from '../../components/editUser/EditUser'
+import UserService from '../../components/api/service/UserService'
+import { ReadUser } from '../../components/interfaces/IUser'
 
 const Main = () => {
     const [text, setText] = useState<string>('')
     const [messages, setMessages] = useState<Array<ReadMessage>>([])
     const [username, setUsername] = useState<string | null>('')
+    const [toggleEdit, setToggleEdit] = useState(false)
+    const [onlineUsers, setOnlineUsers] = useState<Array<ReadUser>>([])
+    const [userId, setUserId] = useState<string | null>('')
+    const [editUsername, setEditUsername] = useState('')
+    const [editEmail, setEditEmail] = useState('')
 
 
     useEffect(() => {
       getAllMesages()
       setUsername(localStorage.getItem("username"))
+      setUserId(localStorage.getItem("userId"))
     }, [])
 
     const postMessageFunc = () => {
@@ -27,7 +36,6 @@ const Main = () => {
 
           MessageService.createMessage(newMessage)
           .then(response => {
-             console.log(response.data)
              setText('')
              getAllMesages()
           })
@@ -42,13 +50,42 @@ const Main = () => {
       })
     }
 
+    const toggleEditFunc = () => {
+      getUserFeatures()
+      setToggleEdit(!toggleEdit)
+     
+    }
+
+    const getOnlineUsers = () => {
+      UserService.getOnlineUsers()
+      .then(res => {
+       setOnlineUsers(res.data)
+       
+      })
+      .catch(error => console.log(error))
+  }
+
+  const getUserFeatures = () => {
+    UserService.getUserById(userId)
+    .then(res => {
+        setEditUsername(res.data.username)
+        setEditEmail(res.data.email)
+       
+    })
+    .catch(error => console.log(error))
+}
   
 
   return (
     <>
-    <Header/>
+    <Header getOnlineUsers={getOnlineUsers}/>
     <img src={sailormoon} alt="" className='sailors'/>
-    <OnlineUsers/>
+    <div className='edit-section'>
+      <button className='logout-btn'>Logout</button>
+      <button className='logout-btn' onClick={() => toggleEditFunc()}>Edit</button>
+    </div>
+    {toggleEdit && <EditUser toggleEditFunc={toggleEditFunc} getOnlineUsers={getOnlineUsers} editUsername={editUsername} editEmail={editEmail} />}
+    <OnlineUsers getOnlineUsers={getOnlineUsers} onlineUsers={onlineUsers}/>
     <div>
         <div className='input-div'>
         <textarea

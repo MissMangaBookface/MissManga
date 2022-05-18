@@ -1,21 +1,24 @@
-import React, { useState, useEffect } from 'react'
+import React, { FC, useState, useEffect } from 'react'
 import './header.css'
 
-const Header = () => {
+interface Props {
+  getOnlineUsers: () => void
+}
+
+const Header:FC<Props> = ({getOnlineUsers}) => {
     const [username, setUsername] = useState<string | null>('')
 
     useEffect(() => {
         setUsername(localStorage.getItem("username"))
-    }, [])
+        
+    }, [getOnlineUsers])
 
-    const logoutFunc = () => {
-      alert('hello')
-    }
+  
 
   return (
     <div className='header'>
-        <h2 className='header-name'>{username}</h2>
-        <h2 className='logout' onClick={() => logoutFunc()}>(Logout)</h2>
+        <h2 className='header-name'>Hi {username}!</h2>
+      
     </div>
   )
 }
