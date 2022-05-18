@@ -5,7 +5,6 @@ import { ReadMessage } from "../interface/IMessage";
 import Logger from '../utils/Logger'
 import StatusCode from '../utils/StatusCode'
 import { describe, it as test } from "mocha";
-import exp from "constants";
 
 Chai.should()
 Chai.use(chaiHttp)
@@ -15,6 +14,7 @@ const randomString = Math.random().toString(36).substring(7)
 Logger.debug(randomString)
 
 const newMessage = {
+    username: "Carin",
     message: "Test"
 }
 
@@ -23,6 +23,7 @@ let createdMessage: ReadMessage
 let global_id = ''
 
 const updatedMessage = {
+    username: "Michaela",
     message: "Updated message"
 }
 
@@ -44,7 +45,7 @@ const createMessage = () => {
     })
 }
 
-const getAllTests = () => {
+const getAllMessages = () => {
     describe('Testing to get an array of messages', () => {
         test('Should get an array of messages', (done) => {
             Chai.request(server)
@@ -133,7 +134,7 @@ const deleteMessageById = () => {
 
 describe('Testing message routes', () => {
     createMessage()
-    getAllTests()
+    getAllMessages()
     checkThatMessageDoNotExist()
     getMessageWithId()
     updateMessageById()
