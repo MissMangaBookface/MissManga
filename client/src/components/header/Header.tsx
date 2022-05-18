@@ -1,12 +1,17 @@
-import React, { useState, useEffect } from 'react'
+import React, { FC, useState, useEffect } from 'react'
 import './header.css'
 
-const Header = () => {
+interface Props {
+  getOnlineUsers: () => void
+}
+
+const Header:FC<Props> = ({getOnlineUsers}) => {
     const [username, setUsername] = useState<string | null>('')
 
     useEffect(() => {
         setUsername(localStorage.getItem("username"))
-    }, [])
+        
+    }, [getOnlineUsers])
 
   
 

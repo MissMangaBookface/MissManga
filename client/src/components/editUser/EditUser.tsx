@@ -1,19 +1,29 @@
-import { FC, useState } from 'react'
+import { FC, useState, useEffect } from 'react'
 import './editUser.css'
 import { GrClose } from "react-icons/gr";
 import UserService from '../api/service/UserService';
 
 interface Props {
     toggleEditFunc: () => void
-    username: string | null
+    getOnlineUsers: () => void
+    editUsername: string
+    editEmail: string
 }
 
-const EditUser:FC<Props> = ({toggleEditFunc, username}) => {
+const EditUser:FC<Props> = ({toggleEditFunc, getOnlineUsers, editUsername, editEmail}) => {
 
-    const [newUsername, setNewUsername] = useState('')
-    const [newEmail, setNewEmail] = useState('')
+    const [newUsername, setNewUsername] = useState(editUsername)
+    const [newEmail, setNewEmail] = useState(editEmail)
     const [newPassword, setNewPassword] = useState('')
+    const [userId, setUserId] = useState<string | null>('')
 
+    useEffect(() => {
+
+    setUserId(localStorage.getItem("userId"))
+    
+    }, [])
+
+   
     const updateUser = () => {
         const _updateUser = {
             username: newUsername,
@@ -22,7 +32,16 @@ const EditUser:FC<Props> = ({toggleEditFunc, username}) => {
             active: true
         }
 
+        console.log(_updateUser, userId)
+
+        UserService.updateUserById(userId, _updateUser)
+        .then(res => {
+            toggleEditFunc()
+            getOnlineUsers()
+            localStorage.setItem("username", newUsername)
         
+        })
+        .catch(error => console.log(error))    
     }
 
   return (
@@ -33,8 +52,10 @@ const EditUser:FC<Props> = ({toggleEditFunc, username}) => {
         <h2 className='edit-username'>Username:</h2>
             <input 
                 type="text"
+                value={newUsername}
                 className="edit-username-input" 
                 onChange={e => setNewUsername(e.target.value)}
+                
             />
         </section>
         <section className='edit-email-section'>
@@ -43,6 +64,7 @@ const EditUser:FC<Props> = ({toggleEditFunc, username}) => {
                 type="text"
                 className="edit-email-input" 
                 onChange={e => setNewEmail(e.target.value)}
+                value={newEmail}
             />
         </section>
         <section className='edit-password-section'>
