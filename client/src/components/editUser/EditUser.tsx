@@ -8,13 +8,14 @@ interface Props {
     getOnlineUsers: () => void
     editUsername: string
     editEmail: string
+    editPassword: string
 }
 
-const EditUser:FC<Props> = ({toggleEditFunc, getOnlineUsers, editUsername, editEmail}) => {
+const EditUser:FC<Props> = ({toggleEditFunc, getOnlineUsers, editUsername, editEmail, editPassword}) => {
 
     const [newUsername, setNewUsername] = useState(editUsername)
     const [newEmail, setNewEmail] = useState(editEmail)
-    const [newPassword, setNewPassword] = useState('')
+    const [newPassword, setNewPassword] = useState(editPassword)
     const [userId, setUserId] = useState<string | null>('')
 
     useEffect(() => {
@@ -25,6 +26,8 @@ const EditUser:FC<Props> = ({toggleEditFunc, getOnlineUsers, editUsername, editE
 
    
     const updateUser = () => {
+        if(newUsername && newEmail && newPassword) {
+
         const _updateUser = {
             username: newUsername,
             email: newEmail,
@@ -41,7 +44,11 @@ const EditUser:FC<Props> = ({toggleEditFunc, getOnlineUsers, editUsername, editE
             localStorage.setItem("username", newUsername)
         
         })
-        .catch(error => console.log(error))    
+        .catch(error => console.log(error))   
+    }
+    else {
+        alert('All fields need to be filled in')
+    } 
     }
 
   return (
@@ -70,9 +77,10 @@ const EditUser:FC<Props> = ({toggleEditFunc, getOnlineUsers, editUsername, editE
         <section className='edit-password-section'>
         <h2 className='edit-password'>Password:</h2>
             <input 
-                type="password"
+                type="text"
                 className="edit-password-input" 
                 onChange={e => setNewPassword(e.target.value) }
+                placeholder="*****"
             />
         </section>
         <section className='edit-user-btn-area'>

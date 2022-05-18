@@ -13,7 +13,7 @@ const UserRoutes = (server: Express) => {
     server.post(`/active/:id`, UserController.changeActiveStatus)
 
 //     server.get('/user/name/:name', UserController.getUserByName)
-    server.get('/user/:id', UserController.getUserById)
+    server.post('/user/:id', UserController.getUserById)
 //
     //Update
     server.put('/user/:id', UserController.updateUserById)
