@@ -22,6 +22,11 @@ const UserSchema = new Schema<CreateUser>({
     active: {
         type: Boolean,
         required: true
+    },
+
+    image: {
+        type: String,
+        required: true
     }
     
 }, {
