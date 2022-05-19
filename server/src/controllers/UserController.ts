@@ -149,9 +149,9 @@ const getOnlineUsers = (req: Request, res: Response) => {
     }
 }
 
-const getUserById = (req: Request, res: Response) => {
+const getUserById = async (req: Request, res: Response) => {
     try {
-        UserModel.findById(req.params.id, (error: ErrorCallback, user: ReadUser) => {
+        await UserModel.findById(req.params.id, (error: ErrorCallback, user: ReadUser) => {
             if (error) {
                 Logger.error(error)
                 res.status(StatusCode.BAD_REQUEST).send({
