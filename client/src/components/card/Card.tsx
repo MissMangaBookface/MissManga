@@ -25,10 +25,8 @@ const Card: FC<Props> = ({ message, username, id, getAllMesages }) => {
 
   useEffect(() => {
     setUserId(localStorage.getItem("userId"));
-    console.log("userId", userId);
-    setTimeout(() => {
-      getUser();
-    }, 1000);
+    getUser()
+   
   }, []);
 
   const toggleMenu = () => {
@@ -70,7 +68,7 @@ const Card: FC<Props> = ({ message, username, id, getAllMesages }) => {
   const getUser = () => {
     UserService.getUserById(userId)
       .then((res) => {
-        console.log(res.data.image);
+        console.log(res.data);
       })
       .catch((error) => console.log(error));
   };
