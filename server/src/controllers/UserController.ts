@@ -28,6 +28,7 @@ const createNewUser = async (req: Request, res: Response) => {
                 password,
                 email: email,
                 active: false,
+                image: 'moon'
             }
             Logger.http(newObject)
 
@@ -101,6 +102,7 @@ const updateUserById = (req: Request, res: Response) => {
             password: req.body.password,
             email: req.body.email,
             active: req.body.active,
+            image: req.body.image
         }
         Logger.debug(updatedUser)
 
@@ -194,29 +196,6 @@ const deleteUserById = (req: Request, res: Response) => {
     }
 }
 
-const checkIfUserExists = (req: Request, res: Response) => {
-    try {
-        UserModel.find({
-            email: req.body.email,
-            password: req.body.password
-        }, (error: ErrorCallback, users: Array<ReadUser>) => {
-            if (error) {
-                Logger.error(error)
-                res.status(StatusCode.BAD_REQUEST).send({
-                    error: 'Error getting user'
-                })
-            } else {
-                Logger.http(users)
-                res.status(StatusCode.OK).send(users)
-            }
-        })
-    } catch (error) {
-        Logger.error(error)
-        res.status(StatusCode.BAD_REQUEST).send({
-            error: 'Error getting user'
-        })
-    }
-}
 
 const changeActiveStatus = (req: Request, res: Response) => {
 
@@ -247,6 +226,40 @@ const changeActiveStatus = (req: Request, res: Response) => {
     }
 }
 
+interface IUserImage {
+    image: string
+}
+
+const updateUserImage = (req: Request, res: Response) => {
+    try {
+        Logger.debug(req.params.id)
+        Logger.debug(req.body)
+        const updatedUserImage: IUserImage = {
+              image: req.body.image
+        }
+        Logger.debug(updatedUserImage)
+
+        UserModel.findByIdAndUpdate(req.params.id, updatedUserImage, {new: true}, (error, user: ReadUser) => {
+            if (error) {
+                Logger.error(error)
+                res.status(StatusCode.BAD_REQUEST).send({
+                    error: 'Error updating user'
+                })
+            } else {
+                Logger.http(user)
+                res.status(StatusCode.OK).send(user ? user : {
+                    message: `User with id '${req.params.id}' not found`
+                })
+            }
+        })
+    } catch (error) {
+        Logger.error(error)
+        res.status(StatusCode.BAD_REQUEST).send({
+            error: 'Error updating user'
+        })
+    }
+}
+
 
 export default {
     createNewUser,
@@ -255,6 +268,6 @@ export default {
     getOnlineUsers,
     getUserById,
     deleteUserById,
-    checkIfUserExists,
-    changeActiveStatus
+    changeActiveStatus,
+    updateUserImage
 }

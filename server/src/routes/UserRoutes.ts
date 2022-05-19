@@ -17,6 +17,7 @@ const UserRoutes = (server: Express) => {
 //
     //Update
     server.put('/user/:id', UserController.updateUserById)
+    server.put('/user/image/:id', UserController.updateUserImage)
 //
 //     Delete
     server.delete('/user/:id', UserController.deleteUserById)
