@@ -6,7 +6,7 @@ import sailorgirls from '../../img/maintop.png'
 import UserService from '../api/service/UserService'
 import { useNavigate } from 'react-router-dom'
 
-const InlogPage: FC = (id, active) => {
+const LoginPage: FC = (id, active) => {
   const [openRegister, setOpenRegister] = useState(false)
   const [username, setUsername] = useState('')
   const [password, setPassword] = useState('')
@@ -58,7 +58,7 @@ const InlogPage: FC = (id, active) => {
             <h1 className='signin-heading'>SIGN IN</h1>
             <div className='login-input-div'>
                 <input
-                  className="username-input"
+                  className="username-login-input"
                   placeholder='Username'
                   value={username}
                   onChange={e => setUsername(e.target.value)}
@@ -88,4 +88,4 @@ const InlogPage: FC = (id, active) => {
   )
 }
 
-export default InlogPage
+export default LoginPage

@@ -20,7 +20,8 @@ const Register:FC<Props> = ({openRegisterFunc}) => {
       username: username,
       password: password,
       email: email,
-      active: false
+      active: false,
+      image: 'moon'
     }
 
     UserService.createUser(newUser)

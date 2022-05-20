@@ -42,6 +42,7 @@
    
   }
 
+
   .username-input {
       outline: none;
       border: 1px solid purple;
@@ -60,6 +61,14 @@
     border: 1px solid purple;
     border-radius: 5px;
     width: 287px;
+    font-family: 'Adomina';
+  }
+
+  .username-login-input {
+    outline: none;
+    border: 1px solid purple;
+    border-radius: 5px;
+    width: 255px;
     margin-bottom: 20px;
     font-size: 18px;
     letter-spacing: 1px;
