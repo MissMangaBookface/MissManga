@@ -51,10 +51,11 @@
 }
 
 .edit-section {
-    position: absolute;
-    left: 5%;
+    position: fixed;
+    left: 9%;
     top: 28%;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
 }
@@ -82,3 +83,7 @@
 .logout-btn:active {
     transform: translateY(2px);
 }
+
+.user-sailor {
+    width: 45px;
+} 
