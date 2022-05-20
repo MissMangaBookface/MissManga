@@ -11,6 +11,7 @@ import UserService from '../../components/api/service/UserService'
 import { ReadUser } from '../../components/interfaces/IUser'
 import { useNavigate } from 'react-router-dom'
 import ChooseImage from '../../components/chooseImage/ChooseImage'
+import moon from '../../img/userSailorMoon.png'
 
 
 const Main = () => {
@@ -31,6 +32,7 @@ const Main = () => {
       getAllMesages()
       setUsername(localStorage.getItem("username"))
       setUserId(localStorage.getItem("userId"))
+
     }, [])
 
     const postMessageFunc = () => {
@@ -98,7 +100,8 @@ const logOutFunc = () => {
 const toggleImagesFunc = () => {
   setToggleChooseImage(!toggleChooseImage)
 }
-  
+
+
 
   return (
     <>

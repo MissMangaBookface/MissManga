@@ -21,11 +21,12 @@ const Card: FC<Props> = ({ message, username, id, getAllMesages }) => {
   const [toggleEdit, setToggleEdit] = useState(false);
   const [toggleComments, setToggleComments] = useState(false);
   const [userId, setUserId] = useState<string | null>("");
-  const [image, setImage] = useState("");
+  const [image, setImage] = useState<any>("");
 
   useEffect(() => {
-    setUserId(localStorage.getItem("userId"));
     getUser()
+   
+    
    
   }, []);
 
@@ -65,12 +66,18 @@ const Card: FC<Props> = ({ message, username, id, getAllMesages }) => {
     setToggleComments(!toggleComments);
   };
 
+
+
   const getUser = () => {
-    UserService.getUserById(userId)
-      .then((res) => {
-        console.log(res.data);
-      })
-      .catch((error) => console.log(error));
+    UserService.getUserImage(localStorage.getItem("userId"))
+    .then(res => {
+      console.log('res.data: ' + res.data)
+      console.log('res.data.image:' + res.data.image)
+      setImage(res.data.image)
+      console.log('image: ' + image)
+  
+    })
+    .catch(error => console.log(error))
   };
 
   return (

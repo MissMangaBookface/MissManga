@@ -28,6 +28,10 @@ const UserService = {
 
     updateUserImage: (id: string | null, newImage: {}) => {
         return http.put(`/user/image/${id}`, newImage)
+    },
+
+    getUserImage: (id: string | null) => {
+        return http.post(`/get/image/${id}`)
     }
 
 }
