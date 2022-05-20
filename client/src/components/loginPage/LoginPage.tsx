@@ -64,7 +64,7 @@ const LoginPage: FC = (id, active) => {
                   onChange={e => setUsername(e.target.value)}
                 />
                 <input
-                  className='password-input'
+                  className='password-user-input'
                   placeholder='Password'
                   type="password"
                   value={password}

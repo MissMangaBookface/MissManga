@@ -197,6 +197,7 @@ const deleteUserById = (req: Request, res: Response) => {
 }
 
 
+
 const changeActiveStatus = (req: Request, res: Response) => {
 
     try {
@@ -225,6 +226,7 @@ const changeActiveStatus = (req: Request, res: Response) => {
         })
     }
 }
+
 
 interface IUserImage {
     image: string

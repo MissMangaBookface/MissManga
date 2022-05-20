@@ -42,7 +42,8 @@
    
   }
 
-   .password-input {
+
+  .username-input {
       outline: none;
       border: 1px solid purple;
       border-radius: 5px;
@@ -52,7 +53,15 @@
       letter-spacing: 1px;
       padding: 10px 7px;
       color: rgb(85, 85, 85);
-      font-family: 'Adomina';
+      font-family: 'Adomina';  
+  }
+
+  .password-user-input {
+    outline: none;
+    border: 1px solid purple;
+    border-radius: 5px;
+    width: 287px;
+    font-family: 'Adomina';
   }
 
   .username-login-input {
@@ -65,7 +74,7 @@
     letter-spacing: 1px;
     padding: 10px 7px;
     color: rgb(85, 85, 85);
-      font-family: 'Adomina';
+    font-family: 'Adomina'; 
   }
 
   .login-btn {
