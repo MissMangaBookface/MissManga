@@ -194,29 +194,6 @@ const deleteUserById = (req: Request, res: Response) => {
     }
 }
 
-const checkIfUserExists = (req: Request, res: Response) => {
-    try {
-        UserModel.find({
-            email: req.body.email,
-            password: req.body.password
-        }, (error: ErrorCallback, users: Array<ReadUser>) => {
-            if (error) {
-                Logger.error(error)
-                res.status(StatusCode.BAD_REQUEST).send({
-                    error: 'Error getting user'
-                })
-            } else {
-                Logger.http(users)
-                res.status(StatusCode.OK).send(users)
-            }
-        })
-    } catch (error) {
-        Logger.error(error)
-        res.status(StatusCode.BAD_REQUEST).send({
-            error: 'Error getting user'
-        })
-    }
-}
 
 const changeActiveStatus = (req: Request, res: Response) => {
 
@@ -255,6 +232,5 @@ export default {
     getOnlineUsers,
     getUserById,
     deleteUserById,
-    checkIfUserExists,
     changeActiveStatus
 }
