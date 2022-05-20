@@ -105,16 +105,16 @@ const toggleImagesFunc = () => {
     <Header getOnlineUsers={getOnlineUsers}/>
     <img src={sailormoon} alt="" className='sailors'/>
     <div className='edit-section'>
-      <button className='logout-btn' onClick={() => logOutFunc()}>Logout</button>
-      <button className='logout-btn' onClick={() => toggleEditFunc()}>Edit</button>
+      <button className='logout-btn' data-testid='btnTextLogOut' onClick={() => logOutFunc()}>Logout</button>
+      <button className='logout-btn' data-testid='btnTextEdit'  onClick={() => toggleEditFunc()}>Edit</button>
       <button className='logout-btn' onClick={() => toggleImagesFunc()}>Image</button>
     </div>
     {toggleEdit && <EditUser toggleEditFunc={toggleEditFunc} getOnlineUsers={getOnlineUsers} editUsername={editUsername} editEmail={editEmail} editPassword={editPassword} />}
     <OnlineUsers getOnlineUsers={getOnlineUsers} onlineUsers={onlineUsers}/>
     <div>
         <div className='input-div'>
-        <textarea
-          className='input-text'
+        <textarea data-testid='textArea'
+                  className='input-text'
           placeholder="write something..."
           value={text}
           onChange={e => setText(e.target.value)}

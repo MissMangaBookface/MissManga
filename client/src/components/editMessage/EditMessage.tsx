@@ -11,13 +11,13 @@ const EditMessage:FC<Props> = ({message, updateMessage}) => {
 
   return (
     <div className='edit-window'>
-    <h3 className='edit-text'>Edit your post:</h3>
-    <textarea
-        className='edit-message-input'
+    <h3 className='edit-text' data-testid='inputEditMessage' >Edit your post:</h3>
+    <textarea data-testid='textAreaEdit'
+              className='edit-message-input'
         value={editMessage}
         onChange={e => setEditMessage(e.target.value) }
     />
-    <button className='done-btn' onClick={() => updateMessage(editMessage)}>Done</button>
+    <button className='done-btn'data-testid='btnUpdateMessage' onClick={() => updateMessage(editMessage)}>Done</button>
 </div>
   )
 }

@@ -68,13 +68,14 @@ const InlogPage: FC = (id, active) => {
                   placeholder='Password'
                   type="password"
                   value={password}
+                  data-testid='textPassword'
                   onChange={e => setPassword(e.target.value)}
                 />
               </div>
          
 
               <div className='button-area'>
-                  <button className='login-btn' onClick={() => LoginFunc()}>Go!</button>
+                  <button className='login-btn' data-testid='btnLogInTest' onClick={() => LoginFunc()}>Go!</button>
                   <div className='register-div'>
                       <p className='not-a-member'>Not a member yet?</p>
                       <p onClick={() => openRegisterFunc()} className='register'><i>Register</i></p>
