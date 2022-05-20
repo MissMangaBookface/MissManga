@@ -3,6 +3,8 @@ export interface CreateUser {
     password:string;
     email:string;
     active:boolean;
+    image: string
+   
 }
 
 export interface CreateUserObject {
@@ -18,5 +20,6 @@ export interface ReadUser {
     active: boolean
     createdAt: Date
     updatedAt: Date
+    image: string
 
 }

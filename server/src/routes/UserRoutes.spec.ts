@@ -106,7 +106,7 @@ const updateUserById = () => {
     describe('Testing to update message using id', () => {
         test('Should update message', (done) => {
             Chai.request(server)
-                .put(`/user/${global_id}`)
+                .put(`/user/6284ac6bd9fc3959aa6ee484`)
                 .send(updatedUser)
                 .end((error, response) => {
                     expect(response).to.have.a.status(StatusCode.OK)

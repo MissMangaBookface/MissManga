@@ -11,12 +11,14 @@ const UserRoutes = (server: Express) => {
 
     server.post(`/user/verify`, UserController.verifyUser)
     server.post(`/active/:id`, UserController.changeActiveStatus)
+    server.post('/get/image/:id', UserController.getUserImage)
 
 //     server.get('/user/name/:name', UserController.getUserByName)
     server.post('/user/:id', UserController.getUserById)
 //
     //Update
     server.put('/user/:id', UserController.updateUserById)
+    server.put('/user/image/:id', UserController.updateUserImage)
 //
 //     Delete
     server.delete('/user/:id', UserController.deleteUserById)

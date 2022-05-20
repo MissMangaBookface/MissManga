@@ -10,12 +10,16 @@ import EditUser from '../../components/editUser/EditUser'
 import UserService from '../../components/api/service/UserService'
 import { ReadUser } from '../../components/interfaces/IUser'
 import { useNavigate } from 'react-router-dom'
+import ChooseImage from '../../components/chooseImage/ChooseImage'
+import moon from '../../img/userSailorMoon.png'
+
 
 const Main = () => {
     const [text, setText] = useState<string>('')
     const [messages, setMessages] = useState<Array<ReadMessage>>([])
     const [username, setUsername] = useState<string | null>('')
     const [toggleEdit, setToggleEdit] = useState(false)
+    const [toggleChooseImage, setToggleChooseImage] = useState(false)
     const [onlineUsers, setOnlineUsers] = useState<Array<ReadUser>>([])
     const [userId, setUserId] = useState<string | null>('')
     const [editUsername, setEditUsername] = useState('')
@@ -28,6 +32,7 @@ const Main = () => {
       getAllMesages()
       setUsername(localStorage.getItem("username"))
       setUserId(localStorage.getItem("userId"))
+
     }, [])
 
     const postMessageFunc = () => {
@@ -91,7 +96,12 @@ const logOutFunc = () => {
     })
     .catch(error => console.log(error))
 }
-  
+
+const toggleImagesFunc = () => {
+  setToggleChooseImage(!toggleChooseImage)
+}
+
+
 
   return (
     <>
@@ -100,6 +110,7 @@ const logOutFunc = () => {
     <div className='edit-section'>
       <button className='logout-btn' onClick={() => logOutFunc()}>Logout</button>
       <button className='logout-btn' onClick={() => toggleEditFunc()}>Edit</button>
+      <button className='logout-btn' onClick={() => toggleImagesFunc()}>Image</button>
     </div>
     {toggleEdit && <EditUser toggleEditFunc={toggleEditFunc} getOnlineUsers={getOnlineUsers} editUsername={editUsername} editEmail={editEmail} editPassword={editPassword} />}
     <OnlineUsers getOnlineUsers={getOnlineUsers} onlineUsers={onlineUsers}/>
@@ -117,9 +128,8 @@ const logOutFunc = () => {
                 <Card message={msg.message} username={msg.username} id={msg._id} getAllMesages={getAllMesages}/>
           ))}
               
-       
-       
     </div>
+    {toggleChooseImage && <ChooseImage toggleImagesFunc={toggleImagesFunc}/>}
     </>
   )
 }

@@ -1,13 +1,21 @@
-import css from './ContactView.module.css'
+import css from './AboutView.module.css'
 
 const AboutView = () => {
 
     return (
-        <div >
-                <h1>ABOUT</h1>
+        <>
+            <header className={css.heroAbout}/>
+            <div >
 
-           
-        </div>
+                <h1>Pending!!!   Samantha? </h1>
+
+
+            </div>
+
+
+
+
+        </>
 
     )
 }
