@@ -1,19 +1,19 @@
 .comment-card {
     width: 600px;
-    height: 20vh;
     border-radius: 5px;
     margin-top: 10px;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: flex-start;
     position: relative;
     font-family: 'Adamina';
     box-shadow: 0px 5px 10px 0px rgba(0,0,0,0.7);
+  
 }
 
 .comment-input-section {
-    position: absolute;
+
     bottom: 0;
     width: 100%;
     margin-bottom: 10px;
@@ -46,4 +46,43 @@
 
 .send-btn:active {
     transform: translateY(2px);
+}
+
+.item-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    width: 580px;
+    position: relative;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    background-color: var(--background);
+    padding-left: 5px;
+}
+
+.item-name {
+    margin-top: 10px;
+    font-weight: 600;
+    margin-bottom: 0px;
+    margin-left: 10px;
+    font-size: 30px;
+    font-family: "Licorice";
+    font-weight: 900;
+    letter-spacing: 2px;
+
+}
+
+.item-text {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    text-align: left;
+    width: 550px;
+    font-size: 15px;
+    margin-top: 8px;
+    margin-left: 10px;
+    line-height: 18px;
+    letter-spacing: 1px;
+    font-family: "Adamina";
 }

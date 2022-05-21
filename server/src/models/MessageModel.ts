@@ -14,8 +14,8 @@ const MessageSchema = new Schema<CreateMessage>({
         username: {
             type: String,
             required: true
-        },
-
+        }
+        
     }, {timestamps: true}
 )
 

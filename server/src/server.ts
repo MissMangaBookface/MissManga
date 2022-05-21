@@ -4,6 +4,7 @@ import Middleware from "./middlewares/Middleware"
 import Logger from "./utils/Logger";
 import AliveRoutes from './routes/AliveRoute';
 import UserRoutes from "./routes/UserRoutes";
+import CommentRoutes from "./routes/CommentRoutes";
 
 
 import MessageRoutes from "./routes/MessageRoutes";
@@ -15,11 +16,9 @@ Middleware.applyMiddlewares(server)
 
 //Routes
 AliveRoutes(server)
-
 UserRoutes(server)
-
-
 MessageRoutes(server)
+CommentRoutes(server)
 
 
 Middleware.errorHandlerAndNotFound(server)

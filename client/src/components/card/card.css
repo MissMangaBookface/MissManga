@@ -11,12 +11,20 @@
     box-shadow: 0px 5px 10px 0px rgba(0,0,0,0.7);
 }
 
+.image-name-div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .card-name {
     margin: 0;
-    margin-top: 15px;
-    margin-left: 20px;
-    letter-spacing: 1px;
-    font-family: 'Adamina'
+    margin-top: 10px;
+    font-weight: 900;
+    margin-left: 10px;
+    letter-spacing: 2px;
+    font-size: 30px;
+    font-family: 'Licorice';
 }
 
 .card-message {
@@ -65,3 +73,9 @@
     font-size: 20px;
     margin-bottom: -5px;
 }
+
+.counter {
+    margin-right: 5px;
+}
+
+

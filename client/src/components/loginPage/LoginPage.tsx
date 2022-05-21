@@ -6,7 +6,7 @@ import sailorgirls from '../../img/maintop.png'
 import UserService from '../api/service/UserService'
 import { useNavigate } from 'react-router-dom'
 
-const InlogPage: FC = (id, active) => {
+const LoginPage: FC = (id, active) => {
   const [openRegister, setOpenRegister] = useState(false)
   const [username, setUsername] = useState('')
   const [password, setPassword] = useState('')
@@ -58,23 +58,24 @@ const InlogPage: FC = (id, active) => {
             <h1 className='signin-heading'>SIGN IN</h1>
             <div className='login-input-div'>
                 <input
-                  className="username-input"
+                  className="username-login-input"
                   placeholder='Username'
                   value={username}
                   onChange={e => setUsername(e.target.value)}
                 />
                 <input
-                  className='password-input'
+                  className='password-user-input'
                   placeholder='Password'
                   type="password"
                   value={password}
+                  data-testid='textPassword'
                   onChange={e => setPassword(e.target.value)}
                 />
               </div>
          
 
               <div className='button-area'>
-                  <button className='login-btn' onClick={() => LoginFunc()}>Go!</button>
+                  <button className='login-btn' data-testid='btnLogInTest' onClick={() => LoginFunc()}>Go!</button>
                   <div className='register-div'>
                       <p className='not-a-member'>Not a member yet?</p>
                       <p onClick={() => openRegisterFunc()} className='register'><i>Register</i></p>
@@ -88,4 +89,4 @@ const InlogPage: FC = (id, active) => {
   )
 }
 
-export default InlogPage
+export default LoginPage

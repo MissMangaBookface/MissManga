@@ -54,10 +54,10 @@ const EditUser:FC<Props> = ({toggleEditFunc, getOnlineUsers, editUsername, editE
   return (
     <div className='edit-user-window'>
         <GrClose className='close' onClick={() => toggleEditFunc()}/>
-        <h1 className='edit-user-headline'>Edit Profile</h1>
+        <h1 className='edit-user-headline' data-testid='editProfile'>Edit Profile</h1>
         <section className='edit-username-section'>
         <h2 className='edit-username'>Username:</h2>
-            <input 
+            <input data-testid='inputEditUser'
                 type="text"
                 value={newUsername}
                 className="edit-username-input" 
@@ -75,8 +75,8 @@ const EditUser:FC<Props> = ({toggleEditFunc, getOnlineUsers, editUsername, editE
             />
         </section>
         <section className='edit-password-section'>
-        <h2 className='edit-password'>Password:</h2>
-            <input 
+        <h2 className='edit-password' data-testid='textPassword'>Password:</h2>
+            <input data-testid='textInputPassword'
                 type="text"
                 className="edit-password-input" 
                 onChange={e => setNewPassword(e.target.value) }
@@ -84,8 +84,8 @@ const EditUser:FC<Props> = ({toggleEditFunc, getOnlineUsers, editUsername, editE
             />
         </section>
         <section className='edit-user-btn-area'>
-            <button className='edit-user-cancel-btn' onClick={() =>toggleEditFunc()}>Cancel</button>
-            <button className='edit-user-save-btn' onClick={() => updateUser() }>Save</button>
+            <button className='edit-user-cancel-btn' data-testid='btnCancel' onClick={() =>toggleEditFunc()}>Cancel</button>
+            <button className='edit-user-save-btn' data-testid='btnEditSave' onClick={() => updateUser() }>Save</button>
         </section>
     </div>
   )

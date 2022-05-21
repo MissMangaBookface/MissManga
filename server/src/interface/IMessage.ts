@@ -5,7 +5,7 @@ export interface Comment {
 
 export interface CreateMessage {
     username: string
-    message: string,
+    message: string
 }
 
 export interface ReadMessage {

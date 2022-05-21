@@ -149,9 +149,9 @@ const getOnlineUsers = (req: Request, res: Response) => {
     }
 }
 
-const getUserById = (req: Request, res: Response) => {
+const getUserById =  (req: Request, res: Response) => {
     try {
-        UserModel.findById(req.params.id, (error: ErrorCallback, user: ReadUser) => {
+         UserModel.findById(req.params.id, (error: ErrorCallback, user: ReadUser) => {
             if (error) {
                 Logger.error(error)
                 res.status(StatusCode.BAD_REQUEST).send({
@@ -197,6 +197,7 @@ const deleteUserById = (req: Request, res: Response) => {
 }
 
 
+
 const changeActiveStatus = (req: Request, res: Response) => {
 
     try {
@@ -225,6 +226,7 @@ const changeActiveStatus = (req: Request, res: Response) => {
         })
     }
 }
+
 
 interface IUserImage {
     image: string
@@ -261,6 +263,29 @@ const updateUserImage = (req: Request, res: Response) => {
 }
 
 
+const getUserImage = (req: Request, res: Response) => {
+	try {
+      
+		UserModel.findById(req.params.id, 'image', (error: ErrorCallback, user: ReadUser) => {
+			if (error) {
+				Logger.error(error)
+				res.status(StatusCode.BAD_REQUEST).send({
+					error: 'Error getting user'
+				})
+			} else {
+				Logger.info(user)
+				res.status(StatusCode.OK).send(user)
+			}
+		})
+	} catch (error) {
+		Logger.error(error)
+		res.status(StatusCode.BAD_REQUEST).send({
+			error: 'Error getting user'
+		})
+	}
+}
+
+
 export default {
     createNewUser,
     verifyUser,
@@ -269,5 +294,6 @@ export default {
     getUserById,
     deleteUserById,
     changeActiveStatus,
-    updateUserImage
+    updateUserImage,
+    getUserImage
 }

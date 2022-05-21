@@ -13,6 +13,11 @@
   src: url('../fonts/Freckle_Face/FreckleFace-Regular.ttf')
 }
 
+@font-face {
+  font-family:'PTSansNarrow-Regular';
+  src: url('../fonts/PT_Sans_Narrow/PTSansNarrow-Regular.ttf')
+}
+
 :root {
   --background: #3E9D9F;
   --text-color: #FFF;
