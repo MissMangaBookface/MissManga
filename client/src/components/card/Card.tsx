@@ -8,6 +8,7 @@ import CommentCard from "../commentCard/CommentCard";
 import moon from "../../img/userSailorMoon.png";
 import venus from "../../img/userSailorVenus.png";
 import UserService from "../api/service/UserService";
+import CommentService from "../api/service/CommentService";
 
 interface Props {
   message: string;
@@ -21,10 +22,12 @@ const Card: FC<Props> = ({ message, username, id, getAllMesages }) => {
   const [toggleEdit, setToggleEdit] = useState(false);
   const [toggleComments, setToggleComments] = useState(false);
   const [userId, setUserId] = useState<string | null>("");
+  const [counter, setCounter] = useState(0)
 
 
   useEffect(() => {
     getUser()
+    getComments()
   }, []);
 
   const toggleMenu = () => {
@@ -73,6 +76,24 @@ const Card: FC<Props> = ({ message, username, id, getAllMesages }) => {
     .catch(error => console.log(error))
   };
 
+  const getComments = () => {
+    const messageKey = {
+      messagekey: id
+    }
+
+    CommentService.searchByKey(messageKey)
+    .then(response => {
+        updateCounter(response.data.length)
+    })
+    .catch(error => console.log(error))
+  
+  }
+
+    
+  const updateCounter = (num: number) => {
+    setCounter(num)
+  }
+
   return (
     <>
       <div className="card">
@@ -81,7 +102,8 @@ const Card: FC<Props> = ({ message, username, id, getAllMesages }) => {
         </div>
         <p className="card-message">{message}</p>
         <p className="comments" onClick={() => foldCommentsFunc()}>
-          Comments{" "}
+          <span className="counter">{counter}</span>
+          Comments
           {toggleComments ? (
             <IoMdArrowDropdown className="arrow" />
           ) : (
@@ -102,7 +124,7 @@ const Card: FC<Props> = ({ message, username, id, getAllMesages }) => {
         )}
       </div>
 
-      {toggleComments && <CommentCard />}
+      {toggleComments && <CommentCard messageId={id} updateCounter={updateCounter}/>}
     </>
   );
 };
