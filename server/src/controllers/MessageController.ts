@@ -12,7 +12,8 @@ const createMessage = async (req: Request, res: Response) => {
         if (message && username) {
             const newObject: CreateMessage = {
                 username: username,
-                message: message
+                message: message,
+             
             }
             Logger.http('newObject' + newObject)
 
