@@ -19,7 +19,7 @@ const CommentCard:FC<Props> = ({messageId, updateCounter}) => {
   useEffect(() => {
     setUser(localStorage.getItem("username"))
     getComments()
-  })
+  }, [])
 
   const createCommentFunc = () => {
       const newComment = {
@@ -30,6 +30,7 @@ const CommentCard:FC<Props> = ({messageId, updateCounter}) => {
       CommentService.createComment(newComment)
       .then(res => {
           setComment('')
+          getComments()
       })
   }
 
