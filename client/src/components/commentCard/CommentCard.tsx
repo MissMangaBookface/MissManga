@@ -10,7 +10,7 @@ const CommentCard = () => {
             <input 
                 className='comment-input'
             />
-            <button className='send-btn'>Send</button>
+            <button className='send-btn' data-testid='btnSendCard' >Send</button>
         </section>
     </div>
   )
