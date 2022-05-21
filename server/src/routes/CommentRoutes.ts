@@ -1,5 +1,15 @@
 import {Express} from "express"
+import CommentController from "../controllers/CommentController"
 
-const CommentRoutes = (server: Express) => {}
+const CommentRoutes = (server: Express) => {
+
+    //CREATE
+    server.post('/comment/', CommentController.createNewComment)
+
+    //READ
+    server.post('/get/comments/', CommentController.searchByKey)
+
+    //UPDATE
+}
 
 export default CommentRoutes

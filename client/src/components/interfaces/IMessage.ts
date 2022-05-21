@@ -1,6 +1,7 @@
 export interface CreateMessage {
     username: string | null
     message: string
+
 }
 
 export interface ReadMessage {

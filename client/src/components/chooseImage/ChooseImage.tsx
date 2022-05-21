@@ -22,12 +22,31 @@ const ChooseImage:FC<Props> = ({toggleImagesFunc}) => {
 
   const clickedImage = (choice: string) => {
     console.log(id, choice)
-        UserService.updateUserImage(id, choice)
-        .then(res => {
-          console.log(res.data.image)
-          toggleImagesFunc()
-        })
-        .catch(error => console.log(error))
+        if (choice === 'moon') {
+          const newImage = {
+            image: "http://localhost:3000/static/media/userSailorMoon.cfd7d6d7bb97b1ac1432.png"
+          }
+           UserService.updateUserImage(id, newImage)
+           .then(res => {
+             console.log(res.data.image)
+             localStorage.setItem("userImage", res.data.image)
+             toggleImagesFunc()
+           })
+           .catch(error => console.log(error))
+        }
+         else if (choice === 'uranus') {
+           const newImage = {
+            image: "http://localhost:3000/static/media/userneptuneUranus.b1d177c363e6aaeaba64.png"
+           }
+           UserService.updateUserImage(id, newImage)
+           .then(res => {
+             console.log(res.data.image)
+             localStorage.setItem("userImage", res.data.image)
+             toggleImagesFunc()
+           })
+           .catch(error => console.log(error))
+         }
+       
         
       
   }

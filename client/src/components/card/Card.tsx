@@ -21,13 +21,10 @@ const Card: FC<Props> = ({ message, username, id, getAllMesages }) => {
   const [toggleEdit, setToggleEdit] = useState(false);
   const [toggleComments, setToggleComments] = useState(false);
   const [userId, setUserId] = useState<string | null>("");
-  const [image, setImage] = useState<any>("");
+
 
   useEffect(() => {
     getUser()
-   
-    
-   
   }, []);
 
   const toggleMenu = () => {
@@ -72,10 +69,6 @@ const Card: FC<Props> = ({ message, username, id, getAllMesages }) => {
     UserService.getUserImage(localStorage.getItem("userId"))
     .then(res => {
       console.log('res.data: ' + res.data)
-      console.log('res.data.image:' + res.data.image)
-      setImage(res.data.image)
-      console.log('image: ' + image)
-  
     })
     .catch(error => console.log(error))
   };
@@ -84,7 +77,6 @@ const Card: FC<Props> = ({ message, username, id, getAllMesages }) => {
     <>
       <div className="card">
         <div className="image-name-div">
-          <img className="user-image" src={image} alt="" />
           <h3 className="card-name">{username}:</h3>
         </div>
         <p className="card-message">{message}</p>
