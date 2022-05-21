@@ -4,12 +4,12 @@
     margin-top: 10px;
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
-    align-items: flex-start;
+    justify-content: center;
+    align-items: center;
     position: relative;
     font-family: 'Adamina';
     box-shadow: 0px 5px 10px 0px rgba(0,0,0,0.7);
-  
+    padding-top: 10px;
 }
 
 .comment-input-section {
@@ -57,8 +57,8 @@
     position: relative;
     border-radius: 10px;
     margin-bottom: 10px;
-    background-color: var(--background);
     padding-left: 5px;
+    background-color: #63b5b7
 }
 
 .item-name {
@@ -70,6 +70,7 @@
     font-family: "Licorice";
     font-weight: 900;
     letter-spacing: 2px;
+    color: purple;
 
 }
 
@@ -85,4 +86,5 @@
     line-height: 18px;
     letter-spacing: 1px;
     font-family: "Adamina";
+    color: purple;
 }
