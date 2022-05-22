@@ -96,3 +96,51 @@
     font-family: "Adamina";
     color: purple;
 }
+
+.edit-comment-input {
+    width: 550px;
+    height: auto;
+    font-size: 15px;
+    margin-top: 8px;
+    margin-left: 10px;
+    line-height: 18px;
+    resize: none;
+    outline: none; 
+    border: 0.3 solid lavender; 
+    border-radius: 5px;
+}
+
+.edit-comment {
+    position: absolute;
+    top: -3%;
+    right: 7%;
+    cursor: pointer; 
+}
+
+.comment-buttons-area {
+    margin-top: 6px;
+    margin-bottom: 9px;
+    margin-left: 10px;
+}
+
+.cancel-btn, .post-comment-btn {
+    background-color: lavender;
+    color: black;
+    letter-spacing: 1px;
+    border: none;
+    border-radius: 5px;
+    padding: 4px 6px;
+    cursor: pointer;
+} 
+
+.cancel-btn {
+    margin-right: 8px;
+}
+
+.cancel-btn:hover, .post-comment-btn:hover {
+    opacity: 0.8;
+}
+
+.cancel-btn:active, .post-comment-btn:active {
+    transform: translateY(2px);
+}

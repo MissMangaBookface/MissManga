@@ -10,6 +10,7 @@ const CommentRoutes = (server: Express) => {
     server.post('/get/comments/', CommentController.searchByKey)
 
     //UPDATE
+    server.put('/update/comment/:id', CommentController.updateCommentById)
 
     //DELETE
     server.delete('/delete/comment/:id', CommentController.deleteComment)
