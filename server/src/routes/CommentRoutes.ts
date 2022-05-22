@@ -10,6 +10,9 @@ const CommentRoutes = (server: Express) => {
     server.post('/get/comments/', CommentController.searchByKey)
 
     //UPDATE
+
+    //DELETE
+    server.delete('/delete/comment/:id', CommentController.deleteComment)
 }
 
 export default CommentRoutes

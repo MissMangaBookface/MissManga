@@ -2,6 +2,7 @@ import { FC, useState, useEffect } from 'react'
 import CommentService from '../api/service/CommentService'
 import { ReadComment } from '../interfaces/IComments'
 import './commentCard.css'
+import { FaRegTrashAlt, FaRegEdit } from "react-icons/fa";
 
 interface Props {
   messageId: string
@@ -48,6 +49,15 @@ const CommentCard:FC<Props> = ({messageId, updateCounter}) => {
       .catch(error => console.log(error))
     }
 
+    const deleteComment = (_id: string) => {
+
+      CommentService.deleteComment(_id)
+               .then(response => {
+               getComments()
+            })
+        .catch(error => console.log(error))
+   }
+
 
 
   return (
@@ -56,6 +66,7 @@ const CommentCard:FC<Props> = ({messageId, updateCounter}) => {
                  <div className="item-card">
                     <p className='item-name'>{item.name} :</p>
                     <p className='item-text'>{item.text}</p>
+                    {user === item.name && <p className='delete-comment' onClick={() => deleteComment(item._id)}><FaRegTrashAlt className='trashcan'/></p>}
                  </div>
                ))}
         <section className='comment-input-section'>

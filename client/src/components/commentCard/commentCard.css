@@ -12,6 +12,14 @@
     padding-top: 10px;
 }
 
+.delete-comment {
+    position: absolute;
+    top: -3%;
+    right: 2%;
+    cursor: pointer;
+}
+
+
 .comment-input-section {
 
     bottom: 0;
