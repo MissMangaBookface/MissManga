@@ -4,3 +4,26 @@
     top: 50%;
     letter-spacing: 1px;
 }
+
+.online-username-div {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding-left: 10px;
+    padding-bottom: 0px;
+    color: lavender;
+    font-size: 22px;
+    position: relative;
+    margin-bottom: 0px;
+
+}
+
+.green-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    border: 1.5px solid lavenderblush;
+    background-color: rgb(10, 196, 23); 
+    margin-right: 15px;
+}
+
