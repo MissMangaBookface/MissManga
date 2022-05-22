@@ -89,10 +89,11 @@
     text-align: left;
     width: 550px;
     font-size: 15px;
+    font-weight: 900;
     margin-top: 8px;
     margin-left: 10px;
     line-height: 18px;
-    letter-spacing: 1px;
+    letter-spacing: 2px;
     font-family: "Adamina";
     color: purple;
 }

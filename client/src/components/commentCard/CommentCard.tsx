@@ -37,8 +37,9 @@ const CommentCard:FC<Props> = ({messageId, updateCounter}) => {
       })
   }
 
-  const openEditField = (_id: string) => {
+  const openEditField = (_id: string, text: string) => {
     setToggleInput(_id)
+    setNewComment(text)
   }
 
 
@@ -68,6 +69,19 @@ const CommentCard:FC<Props> = ({messageId, updateCounter}) => {
     setToggleInput('')
    }
 
+   const updateCommentFunc = () => {
+    const _newComment = {
+        text: newComment
+    }
+
+    CommentService.updateComment(toggleInput, _newComment)
+    .then(res => {
+        getComments()
+        setToggleInput('')
+    })
+    .catch(error => console.log(error))
+}
+
 
 
   return (
@@ -77,7 +91,7 @@ const CommentCard:FC<Props> = ({messageId, updateCounter}) => {
                     <p className='item-name'>{item.name} :</p>
                   
                     {user === item.name && <p className='delete-comment' onClick={() => deleteComment(item._id)}><FaRegTrashAlt className='trashcan'/></p>}
-                    {user === item.name && <p className='edit-comment' onClick={() => openEditField(item._id)}><FaRegEdit className='trashcan'/></p>}
+                    {user === item.name && <p className='edit-comment' onClick={() => openEditField(item._id, item.text)}><FaRegEdit className='trashcan'/></p>}
                   {toggleInput === item._id ?
                   <>
                   <textarea 
@@ -87,7 +101,7 @@ const CommentCard:FC<Props> = ({messageId, updateCounter}) => {
             />
             <div className='comment-buttons-area'>
             <button className='cancel-btn' onClick={() =>cancelCommentFunc()}>Cancel</button>
-            <button className='post-comment-btn'>Post</button>
+            <button className='post-comment-btn' onClick={() => updateCommentFunc()}>Post</button>
             </div>
             </>
             :   <p className='item-text'>{item.text}</p>
