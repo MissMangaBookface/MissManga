@@ -109,9 +109,11 @@ const toggleImagesFunc = () => {
     <Header getOnlineUsers={getOnlineUsers}/>
     <img src={sailormoon} alt="" className='sailors'/>
     <div className='edit-section'>
-      <button className='logout-btn' data-testid='btnTextLogOut' onClick={() => logOutFunc()}>Logout</button>
-      <button className='logout-btn' data-testid='btnTextEdit'  onClick={() => toggleEditFunc()}>Edit</button>
-      <button className='logout-btn' onClick={() => toggleImagesFunc()}>Image</button>
+        <h2 className='edit-user-username'>Edit profile:</h2>
+        <div className='edit-profile-buttons'>
+        <button className='logout-btn' data-testid='btnTextLogOut' onClick={() => logOutFunc()}>Logout</button>
+        <button className='logout-btn' data-testid='btnTextEdit'  onClick={() => toggleEditFunc()}>Edit</button>
+        </div>
     </div>
     {toggleEdit && <EditUser toggleEditFunc={toggleEditFunc} getOnlineUsers={getOnlineUsers} editUsername={editUsername} editEmail={editEmail} editPassword={editPassword} />}
     <OnlineUsers getOnlineUsers={getOnlineUsers} onlineUsers={onlineUsers}/>

@@ -23,7 +23,10 @@ const OnlineUsers:FC<Props> = ({getOnlineUsers, onlineUsers}) => {
         <h2> Online Users: </h2>
         <div data-testid='getInfo'>
             {onlineUsers.map(user => (
-                <p data-testid='dbResponse'>{user.username}</p>
+                <div  className='online-username-div'>
+                <p className='green-dot'></p>
+                <p className='online-username' data-testid='dbResponse'>{user.username}</p>
+                </div>
             ))}
         </div>
     

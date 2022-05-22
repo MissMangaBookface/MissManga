@@ -52,7 +52,66 @@ const searchByKey = async (req: Request, res: Response) => {
 	}
 }
 
+const deleteComment = async (req: Request, res: Response) => {
+	try {
+		CommentModel.findByIdAndDelete(req.params.id, (error: ErrorCallback, comment: ReadComment) => {
+			if(error) {
+				Logger.error(error)
+				res.status(404).send('Error while trying to delete comment')
+			} else {
+				Logger.http(comment)
+				res.status(200).send('Comment deleted')
+			}
+		})
+
+	}
+	catch (error) {
+		Logger.error(error)
+		res.status(400).send({
+			error: 'Error deleting comment'
+		})
+	}
+}
+
+interface IUpdatedComment {
+	text: string
+}
+
+const updateCommentById = (req: Request, res: Response) => {
+	try {
+		Logger.debug(req.params.id)
+		Logger.debug(req.body)
+		const updatedComment: IUpdatedComment = {
+			text: req.body.text
+		}
+
+		Logger.debug(updatedComment)
+		
+		CommentModel.findByIdAndUpdate(req.params.id, updatedComment, {new : true }, (error, comment: ReadComment) => {
+			if (error) {
+				Logger.error(error)
+				res.status(StatusCode.BAD_REQUEST).send({
+					error: 'Error updating comment'
+				})
+			} else {
+				Logger.http(comment)
+				res.status(StatusCode.OK).send(comment ? comment : {
+					message: `Comment with id '${ req.params.id }' not found`
+				})
+			}
+		})
+	} catch (error) {
+		Logger.error(error)
+		res.status(StatusCode.BAD_REQUEST).send({
+			error: 'Error updating comment'
+		})
+	}
+}
+
+
 export default {
     createNewComment,
-    searchByKey
+    searchByKey,
+	deleteComment,
+	updateCommentById
 }
