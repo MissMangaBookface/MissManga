@@ -52,7 +52,29 @@ const searchByKey = async (req: Request, res: Response) => {
 	}
 }
 
+const deleteComment = async (req: Request, res: Response) => {
+	try {
+		CommentModel.findByIdAndDelete(req.params.id, (error: ErrorCallback, comment: ReadComment) => {
+			if(error) {
+				Logger.error(error)
+				res.status(404).send('Error while trying to delete comment')
+			} else {
+				Logger.http(comment)
+				res.status(200).send('Comment deleted')
+			}
+		})
+
+	}
+	catch (error) {
+		Logger.error(error)
+		res.status(400).send({
+			error: 'Error deleting comment'
+		})
+	}
+}
+
 export default {
     createNewComment,
-    searchByKey
+    searchByKey,
+	deleteComment
 }
