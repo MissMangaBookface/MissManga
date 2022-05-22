@@ -15,6 +15,8 @@ const CommentCard:FC<Props> = ({messageId, updateCounter}) => {
   const [comment, setComment] = useState('')
   const [user, setUser] = useState<string | null>('')
   const [data, setData] = useState<Array<ReadComment>>([])
+  const [toggleInput, setToggleInput] = useState('')
+  const [newComment, setNewComment] = useState('')
 
 
   useEffect(() => {
@@ -23,16 +25,20 @@ const CommentCard:FC<Props> = ({messageId, updateCounter}) => {
   }, [])
 
   const createCommentFunc = () => {
-      const newComment = {
+      const _newComment = {
           text: comment,
           name: user,
           messagekey: messageId
       }
-      CommentService.createComment(newComment)
+      CommentService.createComment(_newComment)
       .then(res => {
           setComment('')
           getComments()
       })
+  }
+
+  const openEditField = (_id: string) => {
+    setToggleInput(_id)
   }
 
 
@@ -58,6 +64,10 @@ const CommentCard:FC<Props> = ({messageId, updateCounter}) => {
         .catch(error => console.log(error))
    }
 
+   const cancelCommentFunc = () => {
+    setToggleInput('')
+   }
+
 
 
   return (
@@ -65,8 +75,24 @@ const CommentCard:FC<Props> = ({messageId, updateCounter}) => {
                {data.map(item => (
                  <div className="item-card">
                     <p className='item-name'>{item.name} :</p>
-                    <p className='item-text'>{item.text}</p>
+                  
                     {user === item.name && <p className='delete-comment' onClick={() => deleteComment(item._id)}><FaRegTrashAlt className='trashcan'/></p>}
+                    {user === item.name && <p className='edit-comment' onClick={() => openEditField(item._id)}><FaRegEdit className='trashcan'/></p>}
+                  {toggleInput === item._id ?
+                  <>
+                  <textarea 
+                  value={newComment} 
+                  className='edit-comment-input'
+                  onChange={e => setNewComment(e.target.value)}
+            />
+            <div className='comment-buttons-area'>
+            <button className='cancel-btn' onClick={() =>cancelCommentFunc()}>Cancel</button>
+            <button className='post-comment-btn'>Post</button>
+            </div>
+            </>
+            :   <p className='item-text'>{item.text}</p>
+                  }
+                 
                  </div>
                ))}
         <section className='comment-input-section'>
