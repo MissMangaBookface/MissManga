@@ -28,7 +28,6 @@ const createNewUser = async (req: Request, res: Response) => {
                 password,
                 email: email,
                 active: false,
-                image: 'moon'
             }
             Logger.http(newObject)
 
@@ -101,8 +100,7 @@ const updateUserById = (req: Request, res: Response) => {
             username: req.body.username,
             password: req.body.password,
             email: req.body.email,
-            active: req.body.active,
-            image: req.body.image
+            active: req.body.active
         }
         Logger.debug(updatedUser)
 
@@ -228,62 +226,12 @@ const changeActiveStatus = (req: Request, res: Response) => {
 }
 
 
-interface IUserImage {
-    image: string
-}
-
-const updateUserImage = (req: Request, res: Response) => {
-    try {
-        Logger.debug(req.params.id)
-        Logger.debug(req.body)
-        const updatedUserImage: IUserImage = {
-              image: req.body.image
-        }
-        Logger.debug(updatedUserImage)
-
-        UserModel.findByIdAndUpdate(req.params.id, updatedUserImage, {new: true}, (error, user: ReadUser) => {
-            if (error) {
-                Logger.error(error)
-                res.status(StatusCode.BAD_REQUEST).send({
-                    error: 'Error updating user'
-                })
-            } else {
-                Logger.http(user)
-                res.status(StatusCode.OK).send(user ? user : {
-                    message: `User with id '${req.params.id}' not found`
-                })
-            }
-        })
-    } catch (error) {
-        Logger.error(error)
-        res.status(StatusCode.BAD_REQUEST).send({
-            error: 'Error updating user'
-        })
-    }
-}
 
 
-const getUserImage = (req: Request, res: Response) => {
-	try {
-      
-		UserModel.findById(req.params.id, 'image', (error: ErrorCallback, user: ReadUser) => {
-			if (error) {
-				Logger.error(error)
-				res.status(StatusCode.BAD_REQUEST).send({
-					error: 'Error getting user'
-				})
-			} else {
-				Logger.info(user)
-				res.status(StatusCode.OK).send(user)
-			}
-		})
-	} catch (error) {
-		Logger.error(error)
-		res.status(StatusCode.BAD_REQUEST).send({
-			error: 'Error getting user'
-		})
-	}
-}
+
+
+
+
 
 
 export default {
@@ -294,6 +242,4 @@ export default {
     getUserById,
     deleteUserById,
     changeActiveStatus,
-    updateUserImage,
-    getUserImage
 }

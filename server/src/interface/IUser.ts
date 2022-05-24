@@ -3,7 +3,7 @@ export interface CreateUser {
     password:string
     email:string
     active:boolean
-    image: string
+    
 }
 
 
