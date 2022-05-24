@@ -65,7 +65,11 @@ Själva genomförandet av projektet vad gäller skrivandet av kod har i sig vari
 
 ## Något som var besvärligt att få till / varför jag bytte lösning
 
-Det jobbigaste som jag personligen stötte på i projektet var att lägg in och hämta en profilbild som skulle tillhöra användaren. Jag försökte länge med att få det att fungera, men det gick inte, så vi tog ett gemensamt beslut i teamet att skippa profilbild då det inte var avgörande för betyget.
+Det jobbigaste som jag stötte på i projektet var att lägg in och hämta en profilbild som skulle tillhöra användaren. Jag fick ut URL:en från backend till frontend, men det fungerade inte när jag skulle sätta den i en variabel och använda den.
+
+## Lösningar jag valde att inte implementera
+
+På grund av ovanstående problem, tog ett gemensamt beslut i teamet att skippa profilbild då det inte var avgörande för betyget.
 
 ## Framtida möjligheter
 
