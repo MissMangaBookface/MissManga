@@ -70,7 +70,7 @@ const checkThatUserDoNotExist = () => {
     describe('Check that user do not exist', () => {
         test('Should return 404', (done) => {
             Chai.request(server)
-                .get(`/user/name/${updatedUser.username}`)
+                .post(`/user/name/${updatedUser.username}`)
                 .end((error, response) => {
                     expect(response.status).to.equal(StatusCode.NOT_FOUND)
 
@@ -84,7 +84,7 @@ const getUserWithId = () => {
     describe('Testing to get an existing user using id', () => {
         test('Should return an array of users', (done) => {
             Chai.request(server)
-                .get(`/user/${global_id}`)
+                .post(`/user/${global_id}`)
                 .end((error, response) => {
                     expect(response).to.have.a.status(StatusCode.OK)
 
@@ -106,7 +106,7 @@ const updateUserById = () => {
     describe('Testing to update message using id', () => {
         test('Should update message', (done) => {
             Chai.request(server)
-                .put(`/user/6284ac6bd9fc3959aa6ee484`)
+                .put(`/user/${global_id}`)
                 .send(updatedUser)
                 .end((error, response) => {
                     expect(response).to.have.a.status(StatusCode.OK)
