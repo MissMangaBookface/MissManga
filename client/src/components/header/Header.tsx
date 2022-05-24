@@ -9,8 +9,7 @@ const Header:FC<Props> = ({getOnlineUsers}) => {
     const [username, setUsername] = useState<string | null>('')
 
     useEffect(() => {
-        setUsername(localStorage.getItem("username"))
-        
+        setUsername(localStorage.getItem("username"))    
     }, [getOnlineUsers])
 
   
