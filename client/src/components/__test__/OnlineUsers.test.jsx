@@ -1,5 +1,6 @@
-import {fireEvent, render} from "@testing-library/react";
+import { render} from "@testing-library/react";
 import OnlineUsers from "../onlineUsers/OnlineUsers";
+
 
 
 let getByTestId
@@ -9,4 +10,7 @@ beforeEach(() =>{
     getByTestId = component.getByTestId
 })
 
+test('text test', () => {
+    expect(getByTestId('onlineUser').textContent).toBe('  Online Users: ')
+})
 
