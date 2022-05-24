@@ -1,7 +1,6 @@
 import Chai from 'chai'
 import chaiHttp from 'chai-http'
 import server from '../server'
-import { ReadMessage } from "../interface/IMessage";
 import Logger from '../utils/Logger'
 import StatusCode from '../utils/StatusCode'
 import { describe, it as test } from "mocha";
@@ -32,8 +31,8 @@ const commentMessageKey = {
 let global_id = ''
 
 const createComment = () => {
-    describe('Create message', () => {
-        it('should create new message', (done) => {
+    describe('Create comment', () => {
+        it('should create new comment', (done) => {
             Chai.request(server)
                 .post(`/comment/`)
                 .send(newComment)
@@ -51,8 +50,8 @@ const createComment = () => {
 }
 
 const getCommentWithKey = () => {
-    describe('Testing to get an existing message using id', () => {
-        test('Should return an array of messages', (done) => {
+    describe('Testing to get an existing comment using key', () => {
+        test('Should return an object of a comment', (done) => {
             Chai.request(server)
                 .post('/get/comments/')
                 .send(commentMessageKey)
@@ -71,8 +70,8 @@ const getCommentWithKey = () => {
 }
 
 const updateCommentById = () => {
-    describe('Testing to update message using id', () => {
-        test('Should update message', (done) => {
+    describe('Testing to update comment using id', () => {
+        test('Should update comment', (done) => {
             Chai.request(server)
                 .put(`/update/comment/${global_id}`)
                 .send(updatedComment)
@@ -90,8 +89,8 @@ const updateCommentById = () => {
 }
 
 const deleteCommentById = () => {
-    describe('Testing to delete a message using id', () => {
-        test('Should delete the message', (done) => {
+    describe('Testing to delete a comment using id', () => {
+        test('Should delete the comment', (done) => {
             Chai.request(server)
                 .delete(`/delete/comment/${global_id}`)
                 .end((error, response) => {
