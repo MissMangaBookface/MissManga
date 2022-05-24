@@ -79,7 +79,6 @@ const Main = () => {
         setEditUsername(res.data.username)
         setEditEmail(res.data.email)
         setEditPassword(res.data.password)
-        console.log(res.data)
        
     })
     .catch(error => console.log(error))
@@ -115,7 +114,7 @@ const logOutFunc = () => {
     <OnlineUsers getOnlineUsers={getOnlineUsers} onlineUsers={onlineUsers}/>
     <div>
         <div className='input-div'>
-        <textarea data-testid='textArea'
+        <textarea data-testid='textArea'  
                   className='input-text'
           placeholder="write something..."
           value={text}
