@@ -114,17 +114,17 @@ const logOutFunc = () => {
     {toggleEdit && <EditUser toggleEditFunc={toggleEditFunc} getOnlineUsers={getOnlineUsers} editUsername={editUsername} editEmail={editEmail} editPassword={editPassword} />}
     <OnlineUsers getOnlineUsers={getOnlineUsers} onlineUsers={onlineUsers}/>
     <div>
-        <div className='input-div'>
+        <div className='input-div' data-testid='dbResponse'>
         <textarea data-testid='textArea'
                   className='input-text'
           placeholder="write something..."
           value={text}
           onChange={e => setText(e.target.value)}
         />
-        <button className='post-btn' onClick={() => postMessageFunc()}>POST</button>
+        <button className='post-btn' data-testid='btnPost' onClick={() => postMessageFunc()}>POST</button>
         </div>
           {messages.map(msg => (
-                <Card message={msg.message} username={msg.username} id={msg._id} getAllMesages={getAllMesages}/>
+                <Card   message={msg.message} username={msg.username} id={msg._id} getAllMesages={getAllMesages}/>
           ))}
               
     </div>
