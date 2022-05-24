@@ -26,7 +26,6 @@ const Card: FC<Props> = ({ message, username, id, getAllMesages }) => {
 
 
   useEffect(() => {
-    getUser()
     getComments()
   }, []);
 
@@ -66,15 +65,6 @@ const Card: FC<Props> = ({ message, username, id, getAllMesages }) => {
     setToggleComments(!toggleComments);
   };
 
-
-
-  const getUser = () => {
-    UserService.getUserImage(localStorage.getItem("userId"))
-    .then(res => {
-      console.log('res.data: ' + res.data)
-    })
-    .catch(error => console.log(error))
-  };
 
   const getComments = () => {
     const messageKey = {

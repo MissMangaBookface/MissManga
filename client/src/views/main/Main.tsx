@@ -10,7 +10,7 @@ import EditUser from '../../components/editUser/EditUser'
 import UserService from '../../components/api/service/UserService'
 import { ReadUser } from '../../components/interfaces/IUser'
 import { useNavigate } from 'react-router-dom'
-import ChooseImage from '../../components/chooseImage/ChooseImage'
+
 
 
 
@@ -19,7 +19,6 @@ const Main = () => {
     const [messages, setMessages] = useState<Array<ReadMessage>>([])
     const [username, setUsername] = useState<string | null>('')
     const [toggleEdit, setToggleEdit] = useState(false)
-    const [toggleChooseImage, setToggleChooseImage] = useState(false)
     const [onlineUsers, setOnlineUsers] = useState<Array<ReadUser>>([])
     const [userId, setUserId] = useState<string | null>('')
     const [editUsername, setEditUsername] = useState('')
@@ -98,9 +97,6 @@ const logOutFunc = () => {
     .catch(error => console.log(error))
 }
 
-const toggleImagesFunc = () => {
-  setToggleChooseImage(!toggleChooseImage)
-}
 
 
 
@@ -132,7 +128,6 @@ const toggleImagesFunc = () => {
           ))}
               
     </div>
-    {toggleChooseImage && <ChooseImage toggleImagesFunc={toggleImagesFunc}/>}
     </>
   )
 }
