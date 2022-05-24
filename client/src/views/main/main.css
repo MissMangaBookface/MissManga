@@ -58,8 +58,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding-top: 20px;
-  
+    padding-top: 20px;  
 }
 
 .edit-user-username {
@@ -91,7 +90,7 @@
 }
 
 .edit-user-btn {
-      background-color: #63b5b7;
+    background-color: #63b5b7;
     color: var(--text-color);
     border: none;
     border-radius: 5px;
@@ -114,6 +113,48 @@
     transform: translateY(2px);
 }
 
-.user-sailor {
-    width: 45px;
-} 
+@media screen and (max-width: 1262px) {
+     .edit-user-username {
+         visibility: hidden;
+     }
+
+     .edit-section {
+         height: 0px;
+         top: -1.5%;
+         box-shadow: none;
+     }
+
+     .sailors {
+         width: 290px;
+         top: 15%;
+         right: 0;
+        
+     }  
+
+}
+
+
+@media screen and (max-width: 1096px) {
+    .sailors {
+        width: 200px;
+        top: 22%;
+        right: 1%;  
+    }  
+
+}
+
+@media screen and (max-width: 1096px) {
+    .sailors {
+        visibility: hidden;
+    }  
+}
+
+@media screen and (max-width: 1096px) {
+    .input-div {
+        width: 500px;
+    }
+
+    .input-text {
+        width: 430px;
+    }
+}

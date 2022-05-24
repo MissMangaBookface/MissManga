@@ -15,7 +15,6 @@
     font-size: 22px;
     position: relative;
     margin-bottom: 0px;
-
 }
 
 .green-dot {
@@ -27,3 +26,41 @@
     margin-right: 15px;
 }
 
+@media screen and (max-width: 1262px) {
+    .online-users-container {
+        position: fixed;
+        left: 4%;
+        top: 18%;
+        letter-spacing: 1px;
+    }
+
+    .online-username-div {
+        font-size: 18px;
+    }
+
+    .online-username {
+        font-size: 18px;
+    }
+
+    .online-user-heading {
+        font-size: 22px;
+    }
+}
+
+@media screen and (max-width: 1096px) {
+    .online-user-heading {
+        font-size: 18px;
+    }
+
+    .online-username {
+        font-size: 15px;
+    }
+
+
+}
+
+@media screen and (max-width: 1096px) {
+    .online-users-container {
+        visibility: hidden;
+    }
+}
