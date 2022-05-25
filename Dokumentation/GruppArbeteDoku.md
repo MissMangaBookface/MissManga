@@ -26,7 +26,7 @@ En del av projektet är att ha en projektutvecklingsplan vars beståndsdelar är
 
 Du kan se projektplan i länken nedan:
 
-[Trello Webbsida ](https://trello.com/invite/b/M7UjVzOj/fb20311872839905b792a56b94906268/datalagringmongodb-rest)
+[Trello Webbsida ](https://trello.com/invite/b/e33HvTu4/a377d7edde9fe517ee789e0362e7a304/bookface)
 
 Varje fil har en README där du kan se de olika paketen som installerades. Här är en sammanfattning:
 
@@ -55,21 +55,10 @@ FRONTEND:
 # 2. Personas :
 
 För att utveckla projektet har vi beslutat att specificera en typ av användare som vårt förslag av BookFace.
-Vi har haft idé att segmentera det till kvinnor mellan 15 och 30 år. Som har en gemensam smak som är mangaserier. Ett exklusivt utrymme för dem där de bara får vänner, därför utesluter vi pojkar så att det inte finns något dejtingsätt.
+Vi har haft idé att segmentera det till kvinnor mellan 15 och 30 år. Som har en gemensam smak som är mangaserier / comic. 
+Ett exklusivt utrymme för dem där de bara får vänner, därför utesluter vi pojkar så att det inte finns något dejtingsätt.
 
-För att utveckla projektet beaktas potentiella användares profiler. Vi har skapat personas om möjliga riktiga användare:
-
-1. En invånare i Sverige som gillar att fiska och brukar fiska mycket i den sjön, så han är intresserad av att få tillgång till fiskekort och leta efter information om hur man går med i klubben. Han har nyligen köpt ett sommarhus i området.
-
-2. En pensionär från Sverige som gillar att göra utomhusaktiviteter som yoga, promenader, plocka bär och göra brasor. Hon bidrar ekonomiskt till att underhålla sjön, till exempel ge pengar genom att swish för ved och ge information till de grupper hon organiserar om lagarna för Allemansrätt.
-
-3. En turist från Tyskland som letar efter destinationer för att flugfiska. Han behöver information om sjöns läge, fiskereglerna, värdet på fiskekortet för att kunna organisera hans resa. Han kan också ha möjlighet att vilja kontakta klubben för eventuella frågor under hans besök.
-
-
-
-
-
-Vi har skapat 3 olika personas :
+För att utveckla projektet beaktas potentiella användares profiler. Vi har skapat personas om möjliga användare:
 
 ![](imgDoku/personasMissMaanga1.jpg)
 
@@ -78,13 +67,17 @@ Vi har skapat 3 olika personas :
 ![](imgDoku/personasMissMaanga3.jpg)
 
 
-
-
 # 3. Wireframes (mobiler, tablets och desktop) :
 
-Utvecklingen av Wireframes för projektet utvecklades i Figma, för vilket jag inbjuder dig att se utvecklingen av detta i följande länk:
+Utvecklingen av Wireframes för projektet utvecklades i Figma. Där kan du hitta den segmenterade informationen för varje sida och de allmänna element som har implementerats i projektet. 
+För detta vi inbjuder dig att se utvecklingen av detta i följande länk:
 
 [PROTOTYP FIGMA PROJECT ](https://www.figma.com/file/wA043HDhQpEwBM8DhTxEy7/Miss-Manga-Bookface?node-id=802%3A7804)
+
+
+[<img src="./imgDoku/figmaGeneral.png" width="800"/>](./imgDoku/figmaGeneral.png)
+
+[<img src="./imgDoku/figma1.png" width="800"/>](./imgDoku/figma1.png)
 
 
 ### UI och UX:
@@ -156,6 +149,8 @@ Jag har tagit idé att klubben är min klient och behöver anpassa sig och förs
 # 6. Projektgenomförande :
 
 Sedan berättar jag processen jag var tvungen att utveckla projektet.
+
+## SCRUM:
 
 ## Funktionen i projekten:
 
