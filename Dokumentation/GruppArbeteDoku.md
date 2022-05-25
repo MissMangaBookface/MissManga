@@ -125,33 +125,22 @@ Typeface vi valde var följande:
 4. Adamina (Layout)
 5. PT Sans Narrow (Layout)
 
-När mitt urval gjordes efter researchprocessen testade jag dem på webblasaren för att se om de verkligen fungerade bra tillsammans. Vilket du kan se nedan:
-
-![](imgDoku/TitleIntro.jpg)
-
-##Final Fonts , sizes and color:
+##Final Fonts :
 
 ![](imgDoku/Typefeace.jpg)
 
 # 5. Färgschema :
 
-Klubben har redan en logotyp som de använde och är nöjda med den. De vill behålla som möjligt vissa färger kan matcha vad de brukar använda: orange, grått, svart och vitt.
-
-Se nedan logotypen de har och någon broschyr de gör för evenemang:
-
-
-
-## Color Style:
-
-Jag har tagit idé att klubben är min klient och behöver anpassa sig och försöka tillgodose vad kunden frågar, eftersom de har klart vill behålla samma logotyp.  Under den förutsättningen måste rymma en rad färger som kan fungera med de som de använde (orange och grå).
+För att definiera en färgpalett har vi inspirerats av färgomfånget som används i Sailor Moon. I den dominerar kontrasterande färger med en stor tendens till levande färger. 
+Färgen vi använder som bas är en blågrön ton som skapar en kontrast mot de andra elementen.
 
 ##Final Color Palette:
 
-!![](imgDoku/colorpalette.jpg)
+![](imgDoku/colorpalette.jpg)
 
 # 6. Projektgenomförande :
 
-Sedan berättar jag processen jag var tvungen att utveckla projektet.
+Sedan berättar vi processen att utveckla projektet.
 
 ## SCRUM:
 
