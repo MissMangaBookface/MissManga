@@ -6,8 +6,6 @@
 - [1. General Projektplan](#1-general-projektplan-)
 - [2. Personas](#2-personas-)
 - [3. Wireframes](#3-wireframes-mobiler-tablets-och-desktop-)
-    - [A. Low Fidelity](#a-low-fidelity)
-    - [B. Prototyp](#b-prototyp-)
         - [UI och UX](#ui-och-ux)
 - [4. Fonts](#4-fonts-)
 - [5. Färgschema](#5-frgschema-)
@@ -22,11 +20,11 @@
 # 1. General Projektplan :
 
 
-I Datalagring projektet består av flera delar, generera en backend med koppling med MONGO_DB och därifrån utveckla innehållet i en version av TODO i REACT.
+I FullStack projektet består av flera delar, generera en backend med koppling med MONGO_DB och därifrån utveckla innehållet i en version av BookFace i REACT.
 
 En del av projektet är att ha en projektutvecklingsplan vars beståndsdelar är nedbrutna i Trello.
 
-Du kan se mitt projektplan i länken nedan:
+Du kan se projektplan i länken nedan:
 
 [Trello Webbsida ](https://trello.com/invite/b/M7UjVzOj/fb20311872839905b792a56b94906268/datalagringmongodb-rest)
 
@@ -46,16 +44,20 @@ BACKEND:
    npm install -D mocha chai chai-http
    
 FRONTEND:
-   npm install react-icons
+   npx create-react-app client --template typescript
    npm install axios
+   npm install react-router-dom@6
+   npm i @types/react-router-dom
+   npm install react-icons
    npm install tachyons@4.12.0
    
 ```
 # 2. Personas :
 
-I Gråbos omgivningar finns två sjöar där man kan njuta av naturen och även fiska. Fiskeklubben tar hand om dessa platser och sköter fiskekorten, för vilka den tillhandahåller information och möjlighet att köpa dem och ta emot ekonomiska donationer på sin hemsida.
+För att utveckla projektet har vi beslutat att specificera en typ av användare som vårt förslag av BookFace.
+Vi har haft idé att segmentera det till kvinnor mellan 15 och 30 år. Som har en gemensam smak som är mangaserier. Ett exklusivt utrymme för dem där de bara får vänner, därför utesluter vi pojkar så att det inte finns något dejtingsätt.
 
-För att utveckla projektet beaktas potentiella användares profiler. Jag har skapat personas från observationer om möjliga riktiga användare:
+För att utveckla projektet beaktas potentiella användares profiler. Vi har skapat personas om möjliga riktiga användare:
 
 1. En invånare i Sverige som gillar att fiska och brukar fiska mycket i den sjön, så han är intresserad av att få tillgång till fiskekort och leta efter information om hur man går med i klubben. Han har nyligen köpt ett sommarhus i området.
 
@@ -63,49 +65,33 @@ För att utveckla projektet beaktas potentiella användares profiler. Jag har sk
 
 3. En turist från Tyskland som letar efter destinationer för att flugfiska. Han behöver information om sjöns läge, fiskereglerna, värdet på fiskekortet för att kunna organisera hans resa. Han kan också ha möjlighet att vilja kontakta klubben för eventuella frågor under hans besök.
 
-4. Medlem i fiskeklubben sedan 80-talet, intresserad av att främja fiskeevenemang och aktiviteter på sjön. Tillsammans med andra medlemmar är de intresserade av att kunna marknadsföra klubben på webben och sociala medier för att samla in mer pengar samtidigt som de engagerar sig för underhåll och hållbar utveckling av miljön.
 
-För närvarande görs webben i wordpressWebbsidan och förvaltas av fiskeklubben där de visar olika information.
 
-Jag har skapat 4 olika personas baserat på de olika scenarierna som jag beskrev tidigare där användarna främst interagerar med webbsidan:
 
-![](img/persona1Kim.jpg)
 
-![](img/persona2Jenny.jpg)
+Vi har skapat 3 olika personas :
 
-![](img/persona3Nils.jpg)
+![](imgDoku/personasMissMaanga1.jpg)
 
-![](img/persona4Tommy.jpg)
+![](imgDoku/personasMissMaanga1.jpg)
+
+![](imgDoku/personasMissMaanga1.jpg)
+
+
+
 
 # 3. Wireframes (mobiler, tablets och desktop) :
 
-## A. Low fidelity:
-
-Tanken är att de olika sidorna delar samma layoutformat, och att informationen presenteras på ett tydligt och organiserat sätt.
-Nedan kan vi se den första skissen på tillvägagångssättet för hemsidan för fiskeklubben:
-
-
-![](img/lowFrameHem.png)
-
-![](img/lowFrameNyheter.png)
-
-![](img/lowFrameRegOmFiske.png)
-
-![](img/lowFrameMedlem.png)
-
-
-## B. Prototyp :
-
 Utvecklingen av Wireframes för projektet utvecklades i Figma, för vilket jag inbjuder dig att se utvecklingen av detta i följande länk:
 
-[PROTOTYP FIGMA PROJECT ](https://www.figma.com/file/DigiQII48pqsoi3BTXHqTk/Gr%C3%A4nssnittsdesign-FiskeKlubb?node-id=0%3A1)
+[PROTOTYP FIGMA PROJECT ](https://www.figma.com/file/wA043HDhQpEwBM8DhTxEy7/Miss-Manga-Bookface?node-id=802%3A7804)
 
 
 ### UI och UX:
 
-För att utveckla mitt UI/UX baserar jag mig på informationen från People och den hemsida som fiskeklubben driver.
+För att utveckla mitt UI/UX baserar på informationen från Personas och inspirerad i Sailor Moon program.
 
-![](img/menuGraboweb.png)
+![](imgDoku/saliorSerie.jpg)
 
 - När man går in på den aktuella hemsidan finns det ingen hänvisning till logotypen, så fort man kommer in på webben finns den på en sida utan betydelse då jag bestämde mig för att prioritera den nya designen så att de som besöker webben kommer ihåg att de är de som hanterar den plattformen. Planera att göra en Hero där logotypen (som ändrar färg från grå till svart för mer vikt visuellt) har en visuell läsprioritet.
 
@@ -118,13 +104,7 @@ För att utveckla mitt UI/UX baserar jag mig på informationen från People och 
 
 Nedan kan vi se undermenyerna:
 
-![](img/optionerHem.png)
-
-![](img/optionerOmfiske.png)
-
-![](img/optionerRegler.png)
-
-![](img/optionerMedlem.png)
+![](imgDoku/TitleIntro.jpg)
 
 - På huvudsidan anses det vara relevant att ha informationen om Gråbosjöarna då de personer som kommer åt denna sida relaterar till varandra eftersom de ska besöka dessa sjöar för sin motivation och en kort introduktion av var Gråbo ligger och vad det gör Fiskeklubban. Denna aspekt som inte fanns på den tidigare hemsidan och jag anser vara viktig för att försätta användaren i en situation.
 
@@ -139,21 +119,23 @@ Nedan kan vi se undermenyerna:
 
 # 4. Fonts :
 
-För att utveckla hemsidan valde jag 3 olika typer av typeface som har en markerad geometrisk bas som överensstämmer med den befintliga klubbens logotyp. Detta förklarar jag mer i detalj i dokumentationsdelen.
+För att utveckla hemsidan valde olika typer av typeface som har en style relaterad med Manga eller skrivstil.
 
-Typeface jag valde var följande:
+Typeface vi valde var följande:
 
-1. Oswald
-2. Montserrat
-3. SourceSansPro
+1. Licorice (title MissManga)
+2. Freckle face (title MissManga)
+3. Comic Neue (Layout)
+4. Adamina (Layout)
+5. PT Sans Narrow (Layout)
 
 När mitt urval gjordes efter researchprocessen testade jag dem på webblasaren för att se om de verkligen fungerade bra tillsammans. Vilket du kan se nedan:
 
-![](img/fontPreview.png)
+![](imgDoku/TitleIntro.jpg)
 
 ##Final Fonts , sizes and color:
 
-![](img/fontsLayout.jpg)
+![](imgDoku/Typefeace.jpg)
 
 # 5. Färgschema :
 
@@ -161,8 +143,7 @@ Klubben har redan en logotyp som de använde och är nöjda med den. De vill beh
 
 Se nedan logotypen de har och någon broschyr de gör för evenemang:
 
-![](img/sportfiske.png)
-![](img/events.png)
+
 
 ## Color Style:
 
@@ -170,7 +151,7 @@ Jag har tagit idé att klubben är min klient och behöver anpassa sig och förs
 
 ##Final Color Palette:
 
-![](img/colorpalette.jpg)
+!![](imgDoku/colorpalette.jpg)
 
 # 6. Projektgenomförande :
 
@@ -216,22 +197,23 @@ I projektet har både frontend och backend testats, vilket vi kan se nedan:
 
   I Backend-mappen hittar du Insomnia-testfilen.
 
-
-Api test Insomnia:
-![](./img_docu/TestInsomnia_Api_docu.png)
-
-
-Task test Insomnia:
-![](./img_docu/TestInsomnia_Tasks_docu.png)
+Test Insomnia:
+![](../server/img/InsomniaTestsNew.PNG)
 
 Test backend:
 
-![](./img_docu/Api_routes_test.png)
-![](./img_docu/Tasks_routes_test.png)
+- User:
+  ![](./../server/img/userTestBakend.png)
+
+- Messages:
+![](./../server/img/mesageTestBakend.png)
+
+- Comments:
+![](../server/img/commentTestBakend.png)
 
 * Frontend:
 
-  ![](./img_docu/frontend_tests.png)
+![](imgDoku/testFrontend.png)
 
 
 ## Nya koncept:
