@@ -144,37 +144,18 @@ Sedan berättar vi processen att utveckla projektet.
 
 ## SCRUM:
 
+I projektutvecklingsprocessen har vi följt Scrums riktlinjer. För detta har vi segmenterat projektet i delar och distribuerat det mellan oss för dess utveckling.
+
+Vi har satt datum för varje process och vi har haft en daglig kommunikation så att alla medlemmar i gruppen vet i vilket tillstånd av utarbetande vi var, vilka svårigheter vi stötte på och de saker som vi såg längs vägen var platt att utveckla.
+
+I denna process har en av medlemmarna i gruppen fyllt funktionen att samordna gruppen och hjälpa till att fördela arbetet och försöka följa varje utvecklingsstadium noggrant.
+
 ## Funktionen i projekten:
 
-Min enkla todo projektet består av endast en sida där funktionerna som finns i backend reflekteras. Dessa är:
+I projektet har vi utvecklat tre grundläggande delar i utvecklingen av projektets funktionalitet. 
+För detta delar vi konceptuellt in det i tre segment: användare, inlägg och kommentarer.
 
-- Alive :för att bekräfta om det finns en anslutning till API:et.
-  I den nedre delen, lämna den tillgänglig via en ikon för detta leveransprojekt för att kunna verifiera att denna funktion har utförts. I en enda användarversion bör detta inte inkluderas.
-
-### CRUD:
-
-*GET:
-
-- Get Todo Data: tar med sig informationen om befintlig data i arrayen.
-- Get User Data by Name : Hitta en användare i arrayen, och returnerar hela objektet.
-- Get all users:det finns i backend men använd det inte i frontend eftersom det bara ger namnen och inte användaruppgifterna.
-
-*POST:
-
-- Create Todo: ger möjlighet att skapa en ny användare och en uppgift som tilldelas honom.
-
-*PUT:
-
-- Update User Todo: ger möjlighet att modifiera en befintlig användare i arrayen, ge den ett annat namn och modifiera task.
-
-*DELETE:
-
-_ Delete User: Ta bort en användare med namnet som tar bort allt objekt i arrayen.
-
-För att göra backend-delen följde jag Arasto-handledningen och modifierade den sedan med informationen vi hade i klassen.
-När jag skapade mapparna inom MongoDB följde jag Arasto-modellen, så min .env filen i backend skiljer sig från den som implementerats i klassen.
-
-[Tutorial Arasto Node Mongo](https://www.youtube.com/watch?v=-rToCU-vQLM&list=PLo-BJUIALMg_twGJ5IjJIUpXqZH-ULmx0)
+I dessa tre segment har vi implementerat CRUD : GET, POST, PUT, DELETE; som vi har kontrollerat vid sömnlöshet och motsvarande tester.
 
 ## Tester:
 
