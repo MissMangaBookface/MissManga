@@ -140,7 +140,7 @@ const deleteUserById = () => {
     })
 }
 
-describe('Testing message routes', () => {
+describe('Testing user routes', () => {
     createUser()
     getAllUsers()
     checkThatUserDoNotExist()
