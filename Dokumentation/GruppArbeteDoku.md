@@ -82,33 +82,36 @@ För detta vi inbjuder dig att se utvecklingen av detta i följande länk:
 
 ### UI och UX:
 
-För att utveckla mitt UI/UX baserar på informationen från Personas och inspirerad i Sailor Moon program.
+För att utveckla projekten UI/UX baserar vi på informationen från Personas och inspirerad i Sailor Moon program.
 
 ![](imgDoku/saliorSerie.jpg)
 
-- När man går in på den aktuella hemsidan finns det ingen hänvisning till logotypen, så fort man kommer in på webben finns den på en sida utan betydelse då jag bestämde mig för att prioritera den nya designen så att de som besöker webben kommer ihåg att de är de som hanterar den plattformen. Planera att göra en Hero där logotypen (som ändrar färg från grå till svart för mer vikt visuellt) har en visuell läsprioritet.
-
-- När jag skapade personerna identifierade jag att det finns många användare som behöver ha snabb tillgång till alternativen för att köpa fiskekortet eller möjligheten att göra en swish, för vilket jag valde att ha två knappar på den del av hjälten som är markerade från bakgrunden för att ha dem visuellt och lättillgängliga.
-
-![](img/ux1.png)
-
-- I menyn på den aktuella sidan som vi ser ovan finns 15 olika alternativ så det är inte lätt att se innehållet. Efter vad vi såg i klassen om informationsarkitektur, grupperade jag dem i 5 huvudalternativ: HEM, NYHETER, OM FISKE, REGLER och MEDLEM.
-  Av dessa 5 menyer visar information relaterad till dem för att förbättra användargränssnittet.
-
-Nedan kan vi se undermenyerna:
+- I rubriken som fungerar som sidans logotyp har vi blandat två typsnitt. En mer feminin (handskriven) och en serie för manga. Således är det konceptuellt kopplat till idén om allmänheten som vi vänder oss till: kvinnor med gemensam smak till den manga-komiska världen.
 
 ![](imgDoku/TitleIntro.jpg)
 
-- På huvudsidan anses det vara relevant att ha informationen om Gråbosjöarna då de personer som kommer åt denna sida relaterar till varandra eftersom de ska besöka dessa sjöar för sin motivation och en kort introduktion av var Gråbo ligger och vad det gör Fiskeklubban. Denna aspekt som inte fanns på den tidigare hemsidan och jag anser vara viktig för att försätta användaren i en situation.
+- Det beslutades i projektet att ha flera sidor som simulerar att vårt projekt är en riktig app, för vilken vi har inkluderat följande sidor:
 
-- För att få en visuell balans på webbsidan, välj att förena ikonerna för andra plattformar som t.ex. Facebook, instagram eller Swish med färgpaletten som används på webben. Också för att hitta denna visuella förening med bilder mestadels i svartvitt.
+* Info MissManga:
+  Information om konceptet Miss Manga Bookface finns med här. Så det är tydligt för vem som besöker oss för vilken typ av publik vårt projekt riktar sig.
 
-- Höjknappar som sticker ut med bakgrundsfärgen där annan information kan nås: från externa sidor eller dropdown Menu ( Button Medlem sida: Contact, styrelse eller Swisha ) med kompletterande information.
+* Contact Us:
+  Här finns ett kontaktformulär så att användare kan kontakta företaget.
 
-- Ha samma layout för Main, där samma struktur föreslås med en sida där de senaste nyheterna finns, ett sökfält och möjlighet att följa dem på sociala medier. Allt detta är samma schema på alla webben.
-- Den enda sidan där detta varierar är Medlem där även ett kontaktformulär läggs till.
+* About Us:
+  I det här avsnittet har vi beslutat att lägga informationen om gruppens medlemmar och vår kontaktinformation så att den kan fungera som en framtida referens och den som besöker den kan veta vem som har utvecklat projektet.
 
-- I Footer väljer du att sätta informationen om nödtelefonnumret så att det alltid finns till hands och kontakten till fiskeklubben.
+* Main:
+ Denna delen kan endast synas om användaren har registrerat sig. Här är väggen där du kan se inläggen och kommentarerna. 
+ På samma sätt finns en sektion för att kunna visualisera de användare som är aktiva.
+
+* Logged In page / Register a new user:
+  Det är ingångssidan till projektet där du hittar ett formulär för att identifiera dig eller för att registrera dig.
+
+- Hela projektets layout har samma färg och tema för att skapa enhetlighet i innehåll och lika konceptuellt.
+
+- Knapparna för att komma åt formulären och registrera valdes att göras i en kontrasterande färg så att processen som ska följas av användaren skulle vara tydlig.
+
 
 # 4. Fonts :
 
