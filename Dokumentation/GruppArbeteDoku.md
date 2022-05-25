@@ -73,9 +73,9 @@ Vi har skapat 3 olika personas :
 
 ![](imgDoku/personasMissMaanga1.jpg)
 
-![](imgDoku/personasMissMaanga1.jpg)
+![](imgDoku/personasMissMaanga2.jpg)
 
-![](imgDoku/personasMissMaanga1.jpg)
+![](imgDoku/personasMissMaanga3.jpg)
 
 
 
