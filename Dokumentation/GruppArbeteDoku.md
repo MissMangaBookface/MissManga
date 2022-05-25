@@ -186,29 +186,29 @@ Test backend:
 
 ## Nya koncept:
 
-I det här projektet var användningen av Docker och generering av en databas i MongoDB nytt för mig.
+I det här projektet har vi gjort det i Typescript som var ett nytt programmeringsspråk för alla medlemmar i gruppen.
 
-Idé att till exempel generera en taskModel som referens och hur man får en koppling till MongoDB är nya koncept som skiljer sig från det tidigare projektet.
+Ett annat nytt element som vi har lärt oss är att använda Bcrypt för att hantera lösenordskryptering och hur man implementerar det i vårt projekt.
 
 
 ## Svårigheter:
 
-1.Den första svårigheten jag hittade var att kunna justera modellen som jag hade följt i Arasto-handledningen så att den skulle fungera med min frontend.
-Till exempel, i det tidigare projektet, gjordes delete- och uppdateringsfunktionen med namnet och inte med id. Jag trodde att det skulle vara enkelt att göra den förändringen, men i implementeringen var det inte lätt eftersom det var svårt för mig att förstå hur man anropar informationen från den externa databasen.
+1.Den första svårigheten vi hade när vi stod inför projektet var hur man skulle överväga hur man skulle arbeta tillsammans och hur man delar upp delarna till var och en för dess utveckling.
+I slutet har vi tittat närmare på den information som krävdes för projektet och vi implementerade SCRUM för att kunna gå efter delar. Hittade vi också en konsensus om styrkorna som var och en hade i gruppen och komplettera den med hjälp av andra för att genomföra projektet.
 
-2.En annan svårighet som jag har haft och den som har tagit mig mer tid och ansträngning var svårigheten som jag stötte på när funktionerna gav det förväntade resultatet men de skrev inte ut meddelanden som att användaren inte hittades.
-För att lösa detta i klassen hjälpte Lars mig att klargöra var informationen kommer ifrån och hur den kommer (vilken typ) för att kunna skriva ut den i min frontend, genom att förstå detta kunde jag förstå hur jag skulle slutföra lösningen.
+2.Ett hinder som vi har haft är när vi använder GITHUB att vi inte har så mycket erfarenhet av att arbeta med det i grupp. Vi har behövt mer förtydligande från vår lärare och trots det har vi haft problemet att vi har tappat den information som vi hade genererat i projektet på grund av konflikter i hur vi hanterat informationen på denna plattform, varför vi var tvungna att starta ett projekt igen från noll.
 
-3. När jag gjorde backend-testerna på task var jag tvungen att ange ett id-nummer varje gång, vilket inte kunde vara svårt vid utvärderingstillfället. I slutet av klassen har de erbjudit oss en idé som hjälpte till att lösa denna svårighet som jag hade när jag skapade en (let userId = '').
+3. I Backend-delen har vi haft flera problem med .env som inte tillät oss att öppna projektet. En sak som hände flera gånger i den här processen som gav oss ett fel när vi startade den.
+
+4. Vi har haft svårt att kunna länka en bild till ett användar-id. Vi fick höra att detta inte skulle spara minne i den externa databasen men vi kunde inte lösa det, så i slutet av att prova det på olika sätt valde vi att inte implementera det. Vi anser att vi för frontend saknade lite för att kunna se den här typen av innehåll i klassen när det är relaterat till en databas i backend.
+
 
 
 ## Konklusionen
 
-Övningen att kunna använda en extern databas var väldigt intressant eftersom de i projekt redan i arbetslivet oftast genomförs och jag tycker att det är ett bra verktyg åtminstone för att veta hur det kan genomföras.
-Det verkade som en bra utgångspunkt för att förstå relationen med API:t, men jag tror att det hade varit intressant att se hur en mer komplex frontend implementering kunde göras.
+Projektet har verkat intressant för oss eftersom det är en mer verklig approximation till vad som skulle kunna vara en arbetsmiljö där flera personer samarbetar i ett projekt och ska följa en viss parameter och struktur. För detta hjälpte SCRUM och Trellos hjälp oss mycket.
 
-Jag hade gärna haft en mer detaljerad förklaring av hur implementeringen gjordes korrekt i frontend-delen och hur den skiljde sig från vad vi implementerade förra gången.
-När man gjorde implementeringen den här gången var det många saker som inte fungerade ordentligt och kommunikationen mellan de olika delarna görs olika, varför jag gärna hade sett detta mer på djupet.
+Vi hade gärna haft en mer detaljerad förklaring av hur implementeringen gjordes korrekt i frontend-delen och hur den skiljde sig från en projekt inte delat informationen med backend.
 
-Arastos tutorial hjälpte mycket i backend-delen men det hade varit intressant att se hur olika komponenter översätts till typscript.
+Andra delen vi ser att vissa aspekter som användningen av kryptering och hanteringen av bilder som är relaterade till exempelvis ett id för databasen/backend, kunde vi ha sett lite mer detaljerat under hela kursen, innan vi nådde utarbetandet av projektet.
 
