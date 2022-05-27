@@ -6,7 +6,7 @@ Projekt
 Hur kan vi implementera en databas till en backend med tillhörande API som vi testar med API-tester. Detta ska göras med hjälp av Docker, Node.js, MongoDB, Mongoose och React.js med Typescript
 
 Projektplanering:
-Har som vanligt gjorts i Trello och här kommer länken: [TRELLO](https://trello.com/invite/b/pmEH232P/00fb040016014da2676e713bd8fb1320/fullstack "Trello")
+Har som vanligt gjorts i Trello och här kommer länken: [TRELLO](https://trello.com/b/M7UjVzOj/datalagringmongodb-rest "Trello")
 
 Beskriv lite olika lösningar du gjort:
 Har med hjälp av Lars skapat en funktion som verifierar användaren på backend. Den jämför lösenordet med det som hashades och om sant, skicka tillbaka true till frontend.
