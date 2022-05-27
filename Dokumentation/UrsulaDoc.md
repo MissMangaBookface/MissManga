@@ -2,7 +2,7 @@
 # FullStack Projekt: MissMangaBookFace
 ## Projektuppgift *Ursula Vallejo Janne*
 
-##Projekt
+## Projekt
 
 Projektet föreslås göras i grupp och omsätta vår kunskap om Fullstack i praktiken en BookFace Projekt.
 Tanken är att genomföra en databas till en backend med tillhörande API som vi kopplar till frontend med react ( tester på : client och server). Detta ska göras med hjälp av Docker, Node.js, MongoDB, Mongoose och React.js med Typescript
@@ -11,7 +11,7 @@ En viktig del av projektet har också varit implementeringen av de projekt genom
 I det här avsnittet har vi valt att en i gruppen ska ta på sig rollen att samordna de uppgifter som ska utföras och övervaka varje steg i projektet.
 Jag har haft denna roll för att kunna hjälpa till att hantera de olika aspekterna av projektet på ett tydligt och effektivt sätt och för att kunna ha en bra koordination och kommunikation med teamet.
 
-##Projektplanering:
+## Projektplanering:
 
 För detta bryter vi ner alla krav som har ställts på oss och utvärderar vad vi behövde utveckla för att ha en tydlig vision om det arbete som ska göras.
 Vi har gjorts det i Trello och här kommer länken: 
