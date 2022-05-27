@@ -1,6 +1,6 @@
 ### Juni 2022
 # FullStack Projekt: MissMangaBookFace
-## Projektuppgift *Ursula Vallejo*
+## Projektuppgift *Ursula Vallejo Janne*
 
 ##Projekt
 
@@ -51,6 +51,8 @@ Det här var vad vi definierade att använda:
 -Med hjälp av Photoshop skapa ett första koncept av hur projektet skulle se ut:
 [<img src="./imgDoku/intropage.jpg" width="800"/>](./imgDoku/intropage.jpg)
 
+-Hitta och redigera bilderna som ska användas i projektet.
+
 -Skapa i Figma wireframes för projektet och de allmänna aspekterna att ta hänsyn till i utvecklingen av projektet som kan ses i följande länk:
 
 [PROTOTYP FIGMA PROJECT ](https://www.figma.com/file/wA043HDhQpEwBM8DhTxEy7/Miss-Manga-Bookface?node-id=802%3A7804)
@@ -61,51 +63,90 @@ CRUD-bas för de 3 grupperna som vi måste skapa: användare, meddelanden och ko
 
 [<img src="./imgDoku/figmaView.png" width="800"/>](./imgDoku/figmaView.png)
 
+-Till sist har jag gjort justeringar av Figma och gjort den allmänna dokumentationen av projektet.
 
-##Beskriv lite olika lösningar du gjort:
+
+## Backend:
+
+I denna del, hjälp initialt med att göra hela grunden att användas i servern: Middlewares, StatusCode, Server.ts,osv ..konfigurationer och ordningen på mapparna. Den första delen handlade om att skapa en anslutning för att visa att API är fungerade vid Insomnia:
+
+[<img src="./imgDoku/apiAlive.png" width="500"/>](./imgDoku/apiAlive.png)
+
+I det här avsnittet har jag gjort delen som motsvarar användaren; modell, gränssnitt och den första delen av kontrollerna (skapa, getByID, ta bort).Och verifiera att dessa funktioner fungerade korrekt i Insomnia och de sågs korrekt i Mongo.
+
+[<img src="./imgDoku/user-api.png" width="250"/>](./imgDoku/user-api.png)
+
+Felen kunde hanteras med hjälp av Logger vilket gjorde det lättare att se eventuella fel i terminalen.
+
+## Frontend:
+
+I Frontend-delen, hjälp till att generera de olika router som länkar till de olika sidorna, generera mallen med sidhuvudbilderna på varje sida. Även innehållet på de sidor där kontaktformuläret och informationen finns genomförs.
+
+När man skapade rutterna fungerade det inte korrekt för när man startade projektet i Typescript gjordes ändringar som inte gjorde att det fungerade korrekt, så jag letade efter en lösning på webben och bad till slut läraren i klassen att kunna lös det.
+
+I Main-sektionen försökte jag hjälpa till att lösa problemet med att matcha bilden i frontend med användar-id som vi hanterade i backend men till slut har vi inte implementerat det och jag kunde inte få det att fungera heller eftersom modellen jag hittade på webben var det inte det mest bekväma för att hantera bilder eftersom det sparade bilden i databasen vilket inte var det bekvämaste eftersom det i ett projekt med en större skala inte skulle optimera resurser och göra det långsamt att ladda användaren.
+
+I den här console.log-delen eller direkt i inspektionsalternativet i DOM, visualisera de fel den behövde för att kunna lösa dem.
+
+## Tester Frontend:
+
+I Frontend-delen var jag ansvarig för att göra testerna. Jag har gjort 20 varav 5 med fireEvent.
+
+När jag utförde testerna fann jag svårigheten att informationen för att generera testerna inte lästes på grund av ett problem med UseNavigate.
+
+Till slut var det möjligt att lösa det med hjälp av min lärare, med följande som referens:
 
 ```javascript
 
-{user === item.name && <p className='delete-comment' onClick={() => deleteComment(item._id)}><FaRegTrashAlt className='trashcan'/></p>}
-{user === item.name && <p className='edit-comment' onClick={() => openEditField(item._id, item.text)}><FaRegEdit className='trashcan'/></p>}
+import {fireEvent, render, shallow} from "@testing-library/react";
+import OnlineUsers from "../onlineUsers/OnlineUsers";
+import {BrowserRouter} from 'react-router-dom'
 
+
+let getByTestId
+
+beforeEach(() =>{
+    const view =render(
+        <BrowserRouter>
+            <OnlineUsers/>
+        </BrowserRouter>
+    )
+});
+
+
+test('placeholder test', () => {
+
+})
 ```
 
-Har med hjälp av Lars skapat en funktion som verifierar användaren på backend. Den jämför lösenordet med det som hashades och om sant, skicka tillbaka true till frontend.
 
-##Beskriv något som var besvärligt att få till:
-Att få till en funktion som gör så man kan ändra från active: false till active: true och skicka det till frontend för att kunna lägga alla active: true i en array så man kan se vilka som är inloggade samtidigt.
+## Nya koncept:
 
-##Beskriv om du fått byta lösning och varför i sådana fall:
-Jag försökte att kolla på ToggleTaskDone från förra inlämningen för att kunna lösa active: false till active: true och det tog mig ett tag och en lunch innan jag förstod vad som saknades i funktionen.
+I det här projektet kunde jag implementera Typescript i Backend, vilket var helt nytt för mig.
 
-##Beskriv hur du felsökt ditt program när det uppstått problem:
-Med hjälp av console.log() och logger då jag nästan uteslutande jobbat i backend.. Det har krävts en hel del felsökningar för att vad jag får för svar från backend.
-Dessutom valde jag att ha med en logger i backend för att enklare se svaret från backend.
+Ett annat koncept som var helt nytt var introduktionen av Bcrypt för lösenordshantering.
 
-##Vad gick bra:
-Jag skulle egentligen vilja säga allting men det är mest för att jag har jobbat med det jag känner mig mest bekväm med, dvs backend. Några funktioner krånglade men dessa beskriver jag längre upp.
+## Svårigheter:
 
-##Vad gick dåligt:
-Egentligen ingenting förutom de funktionerna jag beskrev längre upp.
+De flesta av svårigheterna har jag redan nämnt i den allmänna dokumentationen, de kan jag syntetiseras med de frågor som uppstod under hela projektet:
 
-##Vad har du lärt dig:
-Att jag är bra på backendbiten. Jag har även lärt mig om hur Typescript fungerar i backend. Att verifiera en user med att hashat lösenord!
+* Hur man implementerar Scrum?
+* Hur delar man upp projektet inom teamet?
+* GIT orsakar oss problem när vi arbetar som ett team. Hur kan vi lösa det? Letar du efter lärarstöd och onlinematerial?
+* Konflikter vid uppdatering av GIT på varje gruppmedlem. Hur löser man det? Slutlig lösning starta det från början.
+* Hur genererar man gränssnittet och vilka modeller ska man generera i backend-projektet?
+* Problem med .env att vi inte kunde starta serverprojektet.
+* Hur vill vi strukturera informationen som syns i projektet? Vilken typ av interaktion vill vi ha?
+* Hur hanterar man bilder med ett användar-ID? Hitta implementeringslösningar. Till slut bestämde vi oss för att inte göra det eftersom vi inte hittade något bra alternativ och vi tror att detta innehåll inte kommer att kunna synas i kursens innehåll.
 
-##Vilka möjligheter ser du med de kunskaper du fått under kursen:
-Att bygga en backend och databas med hjälp av MongoDB och Mongoose. Jag ser att man med denna kunskapen kan bygga en enklare blogg och att skapa users och messages och comments. Att kunna verifiera en användare på backend så inte vem som helst kan komma in på bloggen. Jag ser ju att detta skulle kunna vara en liten "FaceBook" och att man för att få den till Facebooks storlek måste skala upp men grunden finns där.
+## Konklusionen
 
-##Motivera varför du valt en specifik lösning:
-Jag har valt att lägga alla testerna tillsammans i en enda lång rad i Insomnia för att på så sätt hålla nere antalet filer det annars hade blivit.
+Jag tycker att det har varit ett intressant projekt att genomföra eftersom det har hjälpt oss att simulera hur det skulle vara på arbetsplatsen att genomföra ett projekt när det genomförs i grupp.
 
-##Lämna förslag på förbättringar av din kod:
-Valde att skapa en egen models för comments då det blev lättare att snabbt få det att funka. Man hade kunnat lägga det i Messages på något sätt men då båda sätten fungerar valde jag detta.
+På samma sätt har vi kunnat implementera de olika kunskaper som inhämtats under kursen och kunnat se vilka aspekter var och en har tydligare och vilka som fortfarande behöver fördjupas beroende på var och ens intressen. Personligen tycker jag att frontend och UX/UI-delen är mer intressant eftersom jag är en mer visuell person och jag tycker att det är en nyckelpunkt i interaktionen med användaren som kan göra den effektiv eller inte.
+Backend-delen har jag lärt mig att förstå hur det hänger ihop med varandra och det är en kunskap som bidrar till att kunna förstå hur man genererar ett projekt.
 
-##Lämna exempel på kod du valde att inte implementera:
-Tråkigt svar men jag har använt all kod jag såg framför mig när vi fick inlämningen. Då jag verkligen bara ville jobba med backend visste jag redan vad för kod jag tänkte använda. Annars är det väl det med comments att jag skapade en egen models som jag kunde gjort annorlunda.
+Jag kanske hade velat ha spenderat mer tid på kursen för att kunna gå djupare in i hur man korrekt implementerar backend i frontend, speciellt när det är bilder och Kontaktformulär till exempel inblandade som är relaterade till varandra.
 
-##Lämna förslag på förbättringar av din UI/UX design eller reflektera över den:
-Jag har helt valt att jobba med backend och lämnat UI/UX till dom som verkligen kan det här med design i min grupp. Detta av en enkel anledning, jag hade aldrig kunnat göra det lika snyggt som dom andra gjort!
 
-##Egna tankar:
-Kul att få fortsätta med backend då jag verkligen fastnat för den delen. Och som jag skrev tidigare så är detta en bra grund för en site som typ facebook även om denna är mycket mindre såklart. Sen var det både kul och jobbigt att jobba tillsammans i grupp. Projektet är såpass litet att det blir jobbigt då det är ganska få filer som ska skapas och byggas. Jag fattar att det blir såhär på ett företag men det tar lite tid att vänja sig då vi bara jobbat enskilt fram till nu.
+

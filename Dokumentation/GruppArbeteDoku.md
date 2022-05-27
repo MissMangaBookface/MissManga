@@ -33,15 +33,23 @@ Varje fil har en README där du kan se de olika paketen som installerades. Här 
 ## Installera följande npm paket i varan projekt:
 
 ```shell
+
 BACKEND:
-   npm init --y
-   npm install 
-   npm install cors express dotenv
-   npm install -D nodemon
-   Middlewares:
-   npm install helmet morgan
-   Tests:
-   npm install -D mocha chai chai-http
+cd server
+npm init -y
+npm install 
+npm install express 
+npm install -D nodemon
+npm i --save-dev typescript ts-node-dev @types/express @types/node
+Middlewares:
+npm i cors dotenv helmet mongoose mocha morgan winston
+npm i -D @types/cors @types/dotenv @types/helmet @types/mongoose @types/mocha @types/morgan @types/winston
+Tests:
+npm i -D chai chai-http mocha ts-mocha ts-node @types/chai @types/chai-http @types/mocha @types/expect
+Encryption:
+npm i bcrypt
+npm i --save -dev @types/bcrypt
+
    
 FRONTEND:
    npx create-react-app client --template typescript
