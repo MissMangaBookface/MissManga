@@ -32,7 +32,7 @@ Jag skulle egentligen vilja säga allting men det är mest för att jag har jobb
 
 ## Vad gick dåligt:
 
-Egentligen ingenting förutom de funktionerna jag beskrev längre upp.
+När vi alla skulle börja pusha till samma repo gick något fel efter ett par dagar och förmodligen jag som gjorde så att vi fick börja om helt med vårt projekt då jag troligtvis mergade ihop fel branches och allt blev skit tillslut. Lars försökte hjälpa till men även han sa att det var lika bra att börja om helt och vara mer noggrann med vad och hur man mergar.
 
 ## Vad har du lärt dig:
 
