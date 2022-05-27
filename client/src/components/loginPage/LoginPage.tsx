@@ -61,14 +61,16 @@ const LoginPage: FC = (id, active) => {
                   className="username-login-input"
                   placeholder='Username'
                   value={username}
+                  data-testid='textUser'
                   onChange={e => setUsername(e.target.value)}
                 />
                 <input
+
                   className='password-user-input'
                   placeholder='Password'
                   type="password"
                   value={password}
-                  data-testid='textPassword'
+                  data-testid='inputPassword'
                   onChange={e => setPassword(e.target.value)}
                 />
               </div>

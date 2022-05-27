@@ -145,3 +145,22 @@
 .cancel-btn:active, .post-comment-btn:active {
     transform: translateY(2px);
 }
+
+@media screen and (max-width: 1096px) {
+    .comment-card {
+        width: 500px;
+    }
+
+    .item-card {
+        width: 480px;
+    }
+
+    .send-btn {
+        font-size: 15px;
+        margin-top: 10px;
+    }
+
+    .edit-comment-input {
+        width: 450px;
+    }
+}

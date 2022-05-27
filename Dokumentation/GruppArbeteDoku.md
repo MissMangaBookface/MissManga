@@ -6,8 +6,6 @@
 - [1. General Projektplan](#1-general-projektplan-)
 - [2. Personas](#2-personas-)
 - [3. Wireframes](#3-wireframes-mobiler-tablets-och-desktop-)
-    - [A. Low Fidelity](#a-low-fidelity)
-    - [B. Prototyp](#b-prototyp-)
         - [UI och UX](#ui-och-ux)
 - [4. Fonts](#4-fonts-)
 - [5. Färgschema](#5-frgschema-)
@@ -22,191 +20,150 @@
 # 1. General Projektplan :
 
 
-I Datalagring projektet består av flera delar, generera en backend med koppling med MONGO_DB och därifrån utveckla innehållet i en version av TODO i REACT.
+I FullStack projektet består av flera delar, generera en backend med koppling med MONGO_DB och därifrån utveckla innehållet i en version av BookFace i REACT.
 
 En del av projektet är att ha en projektutvecklingsplan vars beståndsdelar är nedbrutna i Trello.
 
-Du kan se mitt projektplan i länken nedan:
+Du kan se projektplan i länken nedan:
 
-[Trello Webbsida ](https://trello.com/invite/b/M7UjVzOj/fb20311872839905b792a56b94906268/datalagringmongodb-rest)
+[Trello Webbsida ](https://trello.com/invite/b/e33HvTu4/a377d7edde9fe517ee789e0362e7a304/bookface)
 
 Varje fil har en README där du kan se de olika paketen som installerades. Här är en sammanfattning:
 
 ## Installera följande npm paket i varan projekt:
 
 ```shell
+
 BACKEND:
-   npm init --y
-   npm install 
-   npm install cors express dotenv
-   npm install -D nodemon
-   Middlewares:
-   npm install helmet morgan
-   Tests:
-   npm install -D mocha chai chai-http
+cd server
+npm init -y
+npm install 
+npm install express 
+npm install -D nodemon
+npm i --save-dev typescript ts-node-dev @types/express @types/node
+Middlewares:
+npm i cors dotenv helmet mongoose mocha morgan winston
+npm i -D @types/cors @types/dotenv @types/helmet @types/mongoose @types/mocha @types/morgan @types/winston
+Tests:
+npm i -D chai chai-http mocha ts-mocha ts-node @types/chai @types/chai-http @types/mocha @types/expect
+Encryption:
+npm i bcrypt
+npm i --save -dev @types/bcrypt
+
    
 FRONTEND:
-   npm install react-icons
+   npx create-react-app client --template typescript
    npm install axios
+   npm install react-router-dom@6
+   npm i @types/react-router-dom
+   npm install react-icons
    npm install tachyons@4.12.0
    
 ```
 # 2. Personas :
 
-I Gråbos omgivningar finns två sjöar där man kan njuta av naturen och även fiska. Fiskeklubben tar hand om dessa platser och sköter fiskekorten, för vilka den tillhandahåller information och möjlighet att köpa dem och ta emot ekonomiska donationer på sin hemsida.
+För att utveckla projektet har vi beslutat att specificera en typ av användare som vårt förslag av BookFace.
+Vi har haft idé att segmentera det till kvinnor mellan 15 och 30 år. Som har en gemensam smak som är mangaserier / comic. 
+Ett exklusivt utrymme för dem där de bara får vänner, därför utesluter vi pojkar så att det inte finns något dejtingsätt.
 
-För att utveckla projektet beaktas potentiella användares profiler. Jag har skapat personas från observationer om möjliga riktiga användare:
+För att utveckla projektet beaktas potentiella användares profiler. Vi har skapat personas om möjliga användare:
 
-1. En invånare i Sverige som gillar att fiska och brukar fiska mycket i den sjön, så han är intresserad av att få tillgång till fiskekort och leta efter information om hur man går med i klubben. Han har nyligen köpt ett sommarhus i området.
+![](imgDoku/personasMissMaanga1.jpg)
 
-2. En pensionär från Sverige som gillar att göra utomhusaktiviteter som yoga, promenader, plocka bär och göra brasor. Hon bidrar ekonomiskt till att underhålla sjön, till exempel ge pengar genom att swish för ved och ge information till de grupper hon organiserar om lagarna för Allemansrätt.
+![](imgDoku/personasMissMaanga2.jpg)
 
-3. En turist från Tyskland som letar efter destinationer för att flugfiska. Han behöver information om sjöns läge, fiskereglerna, värdet på fiskekortet för att kunna organisera hans resa. Han kan också ha möjlighet att vilja kontakta klubben för eventuella frågor under hans besök.
+![](imgDoku/personasMissMaanga3.jpg)
 
-4. Medlem i fiskeklubben sedan 80-talet, intresserad av att främja fiskeevenemang och aktiviteter på sjön. Tillsammans med andra medlemmar är de intresserade av att kunna marknadsföra klubben på webben och sociala medier för att samla in mer pengar samtidigt som de engagerar sig för underhåll och hållbar utveckling av miljön.
-
-För närvarande görs webben i wordpressWebbsidan och förvaltas av fiskeklubben där de visar olika information.
-
-Jag har skapat 4 olika personas baserat på de olika scenarierna som jag beskrev tidigare där användarna främst interagerar med webbsidan:
-
-![](img/persona1Kim.jpg)
-
-![](img/persona2Jenny.jpg)
-
-![](img/persona3Nils.jpg)
-
-![](img/persona4Tommy.jpg)
 
 # 3. Wireframes (mobiler, tablets och desktop) :
 
-## A. Low fidelity:
+Utvecklingen av Wireframes för projektet utvecklades i Figma. Där kan du hitta den segmenterade informationen för varje sida och de allmänna element som har implementerats i projektet. 
+För detta vi inbjuder dig att se utvecklingen av detta i följande länk:
 
-Tanken är att de olika sidorna delar samma layoutformat, och att informationen presenteras på ett tydligt och organiserat sätt.
-Nedan kan vi se den första skissen på tillvägagångssättet för hemsidan för fiskeklubben:
-
-
-![](img/lowFrameHem.png)
-
-![](img/lowFrameNyheter.png)
-
-![](img/lowFrameRegOmFiske.png)
-
-![](img/lowFrameMedlem.png)
+[PROTOTYP FIGMA PROJECT ](https://www.figma.com/file/wA043HDhQpEwBM8DhTxEy7/Miss-Manga-Bookface?node-id=802%3A7804)
 
 
-## B. Prototyp :
+[<img src="./imgDoku/figmaGeneral.png" width="800"/>](./imgDoku/figmaGeneral.png)
 
-Utvecklingen av Wireframes för projektet utvecklades i Figma, för vilket jag inbjuder dig att se utvecklingen av detta i följande länk:
-
-[PROTOTYP FIGMA PROJECT ](https://www.figma.com/file/DigiQII48pqsoi3BTXHqTk/Gr%C3%A4nssnittsdesign-FiskeKlubb?node-id=0%3A1)
+[<img src="./imgDoku/figma1.png" width="800"/>](./imgDoku/figma1.png)
 
 
 ### UI och UX:
 
-För att utveckla mitt UI/UX baserar jag mig på informationen från People och den hemsida som fiskeklubben driver.
+För att utveckla projekten UI/UX baserar vi på informationen från Personas och inspirerad i Sailor Moon program.
 
-![](img/menuGraboweb.png)
+![](imgDoku/saliorSerie.jpg)
 
-- När man går in på den aktuella hemsidan finns det ingen hänvisning till logotypen, så fort man kommer in på webben finns den på en sida utan betydelse då jag bestämde mig för att prioritera den nya designen så att de som besöker webben kommer ihåg att de är de som hanterar den plattformen. Planera att göra en Hero där logotypen (som ändrar färg från grå till svart för mer vikt visuellt) har en visuell läsprioritet.
+- I rubriken som fungerar som sidans logotyp har vi blandat två typsnitt. En mer feminin (handskriven) och en serie för manga. Således är det konceptuellt kopplat till idén om allmänheten som vi vänder oss till: kvinnor med gemensam smak till den manga-komiska världen.
 
-- När jag skapade personerna identifierade jag att det finns många användare som behöver ha snabb tillgång till alternativen för att köpa fiskekortet eller möjligheten att göra en swish, för vilket jag valde att ha två knappar på den del av hjälten som är markerade från bakgrunden för att ha dem visuellt och lättillgängliga.
+![](imgDoku/TitleIntro.jpg)
 
-![](img/ux1.png)
+- Det beslutades i projektet att ha flera sidor som simulerar att vårt projekt är en riktig app, för vilken vi har inkluderat följande sidor:
 
-- I menyn på den aktuella sidan som vi ser ovan finns 15 olika alternativ så det är inte lätt att se innehållet. Efter vad vi såg i klassen om informationsarkitektur, grupperade jag dem i 5 huvudalternativ: HEM, NYHETER, OM FISKE, REGLER och MEDLEM.
-  Av dessa 5 menyer visar information relaterad till dem för att förbättra användargränssnittet.
+* Info MissManga:
+  Information om konceptet Miss Manga Bookface finns med här. Så det är tydligt för vem som besöker oss för vilken typ av publik vårt projekt riktar sig.
 
-Nedan kan vi se undermenyerna:
+* Contact Us:
+  Här finns ett kontaktformulär så att användare kan kontakta företaget.
 
-![](img/optionerHem.png)
+* About Us:
+  I det här avsnittet har vi beslutat att lägga informationen om gruppens medlemmar och vår kontaktinformation så att den kan fungera som en framtida referens och den som besöker den kan veta vem som har utvecklat projektet.
 
-![](img/optionerOmfiske.png)
+* Main:
+ Denna delen kan endast synas om användaren har registrerat sig. Här är väggen där du kan se inläggen och kommentarerna. 
+ På samma sätt finns en sektion för att kunna visualisera de användare som är aktiva.
 
-![](img/optionerRegler.png)
+* Logged In page / Register a new user:
+  Det är ingångssidan till projektet där du hittar ett formulär för att identifiera dig eller för att registrera dig.
 
-![](img/optionerMedlem.png)
+- Hela projektets layout har samma färg och tema för att skapa enhetlighet i innehåll och lika konceptuellt.
 
-- På huvudsidan anses det vara relevant att ha informationen om Gråbosjöarna då de personer som kommer åt denna sida relaterar till varandra eftersom de ska besöka dessa sjöar för sin motivation och en kort introduktion av var Gråbo ligger och vad det gör Fiskeklubban. Denna aspekt som inte fanns på den tidigare hemsidan och jag anser vara viktig för att försätta användaren i en situation.
+- Knapparna för att komma åt formulären och registrera valdes att göras i en kontrasterande färg så att processen som ska följas av användaren skulle vara tydlig.
 
-- För att få en visuell balans på webbsidan, välj att förena ikonerna för andra plattformar som t.ex. Facebook, instagram eller Swish med färgpaletten som används på webben. Också för att hitta denna visuella förening med bilder mestadels i svartvitt.
-
-- Höjknappar som sticker ut med bakgrundsfärgen där annan information kan nås: från externa sidor eller dropdown Menu ( Button Medlem sida: Contact, styrelse eller Swisha ) med kompletterande information.
-
-- Ha samma layout för Main, där samma struktur föreslås med en sida där de senaste nyheterna finns, ett sökfält och möjlighet att följa dem på sociala medier. Allt detta är samma schema på alla webben.
-- Den enda sidan där detta varierar är Medlem där även ett kontaktformulär läggs till.
-
-- I Footer väljer du att sätta informationen om nödtelefonnumret så att det alltid finns till hands och kontakten till fiskeklubben.
 
 # 4. Fonts :
 
-För att utveckla hemsidan valde jag 3 olika typer av typeface som har en markerad geometrisk bas som överensstämmer med den befintliga klubbens logotyp. Detta förklarar jag mer i detalj i dokumentationsdelen.
+För att utveckla hemsidan valde olika typer av typeface som har en style relaterad med Manga eller skrivstil.
 
-Typeface jag valde var följande:
+Typeface vi valde var följande:
 
-1. Oswald
-2. Montserrat
-3. SourceSansPro
+1. Licorice (title MissManga)
+2. Freckle face (title MissManga)
+3. Comic Neue (Layout)
+4. Adamina (Layout)
+5. PT Sans Narrow (Layout)
 
-När mitt urval gjordes efter researchprocessen testade jag dem på webblasaren för att se om de verkligen fungerade bra tillsammans. Vilket du kan se nedan:
+##Final Fonts :
 
-![](img/fontPreview.png)
-
-##Final Fonts , sizes and color:
-
-![](img/fontsLayout.jpg)
+![](imgDoku/Typefeace.jpg)
 
 # 5. Färgschema :
 
-Klubben har redan en logotyp som de använde och är nöjda med den. De vill behålla som möjligt vissa färger kan matcha vad de brukar använda: orange, grått, svart och vitt.
-
-Se nedan logotypen de har och någon broschyr de gör för evenemang:
-
-![](img/sportfiske.png)
-![](img/events.png)
-
-## Color Style:
-
-Jag har tagit idé att klubben är min klient och behöver anpassa sig och försöka tillgodose vad kunden frågar, eftersom de har klart vill behålla samma logotyp.  Under den förutsättningen måste rymma en rad färger som kan fungera med de som de använde (orange och grå).
+För att definiera en färgpalett har vi inspirerats av färgomfånget som används i Sailor Moon. I den dominerar kontrasterande färger med en stor tendens till levande färger. 
+Färgen vi använder som bas är en blågrön ton som skapar en kontrast mot de andra elementen.
 
 ##Final Color Palette:
 
-![](img/colorpalette.jpg)
+![](imgDoku/colorpalette.jpg)
 
 # 6. Projektgenomförande :
 
-Sedan berättar jag processen jag var tvungen att utveckla projektet.
+Sedan berättar vi processen att utveckla projektet.
+
+## SCRUM:
+
+I projektutvecklingsprocessen har vi följt Scrums riktlinjer. För detta har vi segmenterat projektet i delar och distribuerat det mellan oss för dess utveckling.
+
+Vi har satt datum för varje process och vi har haft en daglig kommunikation så att alla medlemmar i gruppen vet i vilket tillstånd av utarbetande vi var, vilka svårigheter vi stötte på och de saker som vi såg längs vägen var platt att utveckla.
+
+I denna process har en av medlemmarna i gruppen fyllt funktionen att samordna gruppen och hjälpa till att fördela arbetet och försöka följa varje utvecklingsstadium noggrant.
 
 ## Funktionen i projekten:
 
-Min enkla todo projektet består av endast en sida där funktionerna som finns i backend reflekteras. Dessa är:
+I projektet har vi utvecklat tre grundläggande delar i utvecklingen av projektets funktionalitet. 
+För detta delar vi konceptuellt in det i tre segment: användare, inlägg och kommentarer.
 
-- Alive :för att bekräfta om det finns en anslutning till API:et.
-  I den nedre delen, lämna den tillgänglig via en ikon för detta leveransprojekt för att kunna verifiera att denna funktion har utförts. I en enda användarversion bör detta inte inkluderas.
-
-### CRUD:
-
-*GET:
-
-- Get Todo Data: tar med sig informationen om befintlig data i arrayen.
-- Get User Data by Name : Hitta en användare i arrayen, och returnerar hela objektet.
-- Get all users:det finns i backend men använd det inte i frontend eftersom det bara ger namnen och inte användaruppgifterna.
-
-*POST:
-
-- Create Todo: ger möjlighet att skapa en ny användare och en uppgift som tilldelas honom.
-
-*PUT:
-
-- Update User Todo: ger möjlighet att modifiera en befintlig användare i arrayen, ge den ett annat namn och modifiera task.
-
-*DELETE:
-
-_ Delete User: Ta bort en användare med namnet som tar bort allt objekt i arrayen.
-
-För att göra backend-delen följde jag Arasto-handledningen och modifierade den sedan med informationen vi hade i klassen.
-När jag skapade mapparna inom MongoDB följde jag Arasto-modellen, så min .env filen i backend skiljer sig från den som implementerats i klassen.
-
-[Tutorial Arasto Node Mongo](https://www.youtube.com/watch?v=-rToCU-vQLM&list=PLo-BJUIALMg_twGJ5IjJIUpXqZH-ULmx0)
+I dessa tre segment har vi implementerat CRUD : GET, POST, PUT, DELETE; som vi har kontrollerat vid sömnlöshet och motsvarande tester.
 
 ## Tester:
 
@@ -216,49 +173,50 @@ I projektet har både frontend och backend testats, vilket vi kan se nedan:
 
   I Backend-mappen hittar du Insomnia-testfilen.
 
-
-Api test Insomnia:
-![](./img_docu/TestInsomnia_Api_docu.png)
-
-
-Task test Insomnia:
-![](./img_docu/TestInsomnia_Tasks_docu.png)
+Test Insomnia:
+![](../server/img/InsomniaTestsNew.PNG)
 
 Test backend:
 
-![](./img_docu/Api_routes_test.png)
-![](./img_docu/Tasks_routes_test.png)
+- User:
+  ![](./../server/img/userTestBakend.png)
+
+- Messages:
+![](./../server/img/mesageTestBakend.png)
+
+- Comments:
+![](../server/img/commentTestBakend.png)
 
 * Frontend:
 
-  ![](./img_docu/frontend_tests.png)
+![](imgDoku/testFrontend.png)
 
 
 ## Nya koncept:
 
-I det här projektet var användningen av Docker och generering av en databas i MongoDB nytt för mig.
+I det här projektet har vi gjort det i Typescript som var ett nytt programmeringsspråk för alla medlemmar i gruppen.
 
-Idé att till exempel generera en taskModel som referens och hur man får en koppling till MongoDB är nya koncept som skiljer sig från det tidigare projektet.
+Ett annat nytt element som vi har lärt oss är att använda Bcrypt för att hantera lösenordskryptering och hur man implementerar det i vårt projekt.
 
 
 ## Svårigheter:
 
-1.Den första svårigheten jag hittade var att kunna justera modellen som jag hade följt i Arasto-handledningen så att den skulle fungera med min frontend.
-Till exempel, i det tidigare projektet, gjordes delete- och uppdateringsfunktionen med namnet och inte med id. Jag trodde att det skulle vara enkelt att göra den förändringen, men i implementeringen var det inte lätt eftersom det var svårt för mig att förstå hur man anropar informationen från den externa databasen.
+1.Den första svårigheten vi hade när vi stod inför projektet var hur man skulle överväga hur man skulle arbeta tillsammans och hur man delar upp delarna till var och en för dess utveckling.
+I slutet har vi tittat närmare på den information som krävdes för projektet och vi implementerade SCRUM för att kunna gå efter delar. Hittade vi också en konsensus om styrkorna som var och en hade i gruppen och komplettera den med hjälp av andra för att genomföra projektet.
 
-2.En annan svårighet som jag har haft och den som har tagit mig mer tid och ansträngning var svårigheten som jag stötte på när funktionerna gav det förväntade resultatet men de skrev inte ut meddelanden som att användaren inte hittades.
-För att lösa detta i klassen hjälpte Lars mig att klargöra var informationen kommer ifrån och hur den kommer (vilken typ) för att kunna skriva ut den i min frontend, genom att förstå detta kunde jag förstå hur jag skulle slutföra lösningen.
+2.Ett hinder som vi har haft är när vi använder GITHUB att vi inte har så mycket erfarenhet av att arbeta med det i grupp. Vi har behövt mer förtydligande från vår lärare och trots det har vi haft problemet att vi har tappat den information som vi hade genererat i projektet på grund av konflikter i hur vi hanterat informationen på denna plattform, varför vi var tvungna att starta ett projekt igen från noll.
 
-3. När jag gjorde backend-testerna på task var jag tvungen att ange ett id-nummer varje gång, vilket inte kunde vara svårt vid utvärderingstillfället. I slutet av klassen har de erbjudit oss en idé som hjälpte till att lösa denna svårighet som jag hade när jag skapade en (let userId = '').
+3. I Backend-delen har vi haft flera problem med .env som inte tillät oss att öppna projektet. En sak som hände flera gånger i den här processen som gav oss ett fel när vi startade den.
+
+4. Vi har haft svårt att kunna länka en bild till ett användar-id. Vi fick höra att detta inte skulle spara minne i den externa databasen men vi kunde inte lösa det, så i slutet av att prova det på olika sätt valde vi att inte implementera det. Vi anser att vi för frontend saknade lite för att kunna se den här typen av innehåll i klassen när det är relaterat till en databas i backend.
+
 
 
 ## Konklusionen
 
-Övningen att kunna använda en extern databas var väldigt intressant eftersom de i projekt redan i arbetslivet oftast genomförs och jag tycker att det är ett bra verktyg åtminstone för att veta hur det kan genomföras.
-Det verkade som en bra utgångspunkt för att förstå relationen med API:t, men jag tror att det hade varit intressant att se hur en mer komplex frontend implementering kunde göras.
+Projektet har verkat intressant för oss eftersom det är en mer verklig approximation till vad som skulle kunna vara en arbetsmiljö där flera personer samarbetar i ett projekt och ska följa en viss parameter och struktur. För detta hjälpte SCRUM och Trellos hjälp oss mycket.
 
-Jag hade gärna haft en mer detaljerad förklaring av hur implementeringen gjordes korrekt i frontend-delen och hur den skiljde sig från vad vi implementerade förra gången.
-När man gjorde implementeringen den här gången var det många saker som inte fungerade ordentligt och kommunikationen mellan de olika delarna görs olika, varför jag gärna hade sett detta mer på djupet.
+Vi hade gärna haft en mer detaljerad förklaring av hur implementeringen gjordes korrekt i frontend-delen och hur den skiljde sig från en projekt inte delat informationen med backend.
 
-Arastos tutorial hjälpte mycket i backend-delen men det hade varit intressant att se hur olika komponenter översätts till typscript.
+Andra delen vi ser att vissa aspekter som användningen av kryptering och hanteringen av bilder som är relaterade till exempelvis ett id för databasen/backend, kunde vi ha sett lite mer detaljerat under hela kursen, innan vi nådde utarbetandet av projektet.
 

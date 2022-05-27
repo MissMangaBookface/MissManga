@@ -10,7 +10,7 @@ import EditUser from '../../components/editUser/EditUser'
 import UserService from '../../components/api/service/UserService'
 import { ReadUser } from '../../components/interfaces/IUser'
 import { useNavigate } from 'react-router-dom'
-import ChooseImage from '../../components/chooseImage/ChooseImage'
+
 
 
 
@@ -19,7 +19,6 @@ const Main = () => {
     const [messages, setMessages] = useState<Array<ReadMessage>>([])
     const [username, setUsername] = useState<string | null>('')
     const [toggleEdit, setToggleEdit] = useState(false)
-    const [toggleChooseImage, setToggleChooseImage] = useState(false)
     const [onlineUsers, setOnlineUsers] = useState<Array<ReadUser>>([])
     const [userId, setUserId] = useState<string | null>('')
     const [editUsername, setEditUsername] = useState('')
@@ -98,9 +97,6 @@ const logOutFunc = () => {
     .catch(error => console.log(error))
 }
 
-const toggleImagesFunc = () => {
-  setToggleChooseImage(!toggleChooseImage)
-}
 
 
 
@@ -118,21 +114,20 @@ const toggleImagesFunc = () => {
     {toggleEdit && <EditUser toggleEditFunc={toggleEditFunc} getOnlineUsers={getOnlineUsers} editUsername={editUsername} editEmail={editEmail} editPassword={editPassword} />}
     <OnlineUsers getOnlineUsers={getOnlineUsers} onlineUsers={onlineUsers}/>
     <div>
-        <div className='input-div'>
+        <div className='input-div' data-testid='dbResponse'>
         <textarea data-testid='textArea'
                   className='input-text'
           placeholder="write something..."
           value={text}
           onChange={e => setText(e.target.value)}
         />
-        <button className='post-btn' onClick={() => postMessageFunc()}>POST</button>
+        <button className='post-btn' data-testid='btnPost' onClick={() => postMessageFunc()}>POST</button>
         </div>
           {messages.map(msg => (
-                <Card message={msg.message} username={msg.username} id={msg._id} getAllMesages={getAllMesages}/>
+                <Card   message={msg.message} username={msg.username} id={msg._id} getAllMesages={getAllMesages}/>
           ))}
               
     </div>
-    {toggleChooseImage && <ChooseImage toggleImagesFunc={toggleImagesFunc}/>}
     </>
   )
 }

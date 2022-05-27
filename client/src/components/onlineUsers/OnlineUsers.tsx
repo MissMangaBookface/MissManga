@@ -20,8 +20,8 @@ const OnlineUsers:FC<Props> = ({getOnlineUsers, onlineUsers}) => {
     
   return (
     <div className='online-users-container'>
-        <h2> Online Users: </h2>
-        <div data-testid='getInfo'>
+        <h2 className='online-user-heading' data-testid='onlineUser'>  Online Users: </h2>
+        <div>
             {onlineUsers.map(user => (
                 <div  className='online-username-div'>
                 <p className='green-dot'></p>
