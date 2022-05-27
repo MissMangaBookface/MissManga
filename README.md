@@ -1,9 +1,15 @@
-# MissManga
-Fullstack projekt
+# MissManga BookFace
+## Fullstack projekt.
+
+###Projektdokumentationen samt varje enskild dokumentation finns i foldern:
+
+Dokumentation
 
 
-## OBS! Innan du börjar arbeta:
-## I terminalen, stå i BookFace:
+-----------------------------------------
+
+#### OBS! Innan du börjar arbeta:
+#### I terminalen, stå i BookFace:
 
 - git checkout main
 - git pull
