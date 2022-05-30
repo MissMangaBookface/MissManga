@@ -2,6 +2,10 @@
 # FullStack Projekt: MissMangaBookFace
 ## Projektuppgift *Carin Wood*
 
+## Projekt
+
+Vi har arbetat med att bygga ett fullstackprojekt i grupp. Projektet har varit att göra en "Bookface". I vårt projekt kan man registrera en användare, logga in, skriva meddelanden, kommentera och uppdatera användaren. Planering har gjorts i [Trello](https://trello.com/invite/b/e33HvTu4/a377d7edde9fe517ee789e0362e7a304/bookface)
+
 ## Felsökning
 
 De gånger jag har behövt felsöka har jag använt mig av console.log för att ta reda på hur koden körs och var det möjligtvis kan ha gått snett. Jag har också använt mig av metoden att jag har backat och byggt en liten bit i taget och få det att fungera för att sedan utöka koden i små steg.
