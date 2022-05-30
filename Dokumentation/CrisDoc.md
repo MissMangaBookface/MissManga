@@ -60,4 +60,4 @@ Jag har helt valt att jobba med backend och lämnat UI/UX till dom som verkligen
 
 ## Egna tankar:
 
-Kul att få fortsätta med backend då jag verkligen fastnat för den delen. Och som jag skrev tidigare så är detta en bra grund för en site som typ facebook även om denna är mycket mindre såklart. Sen var det både kul och jobbigt att jobba tillsammans i grupp. Projektet är såpass litet att det blir jobbigt då det är ganska få filer som ska skapas och byggas. Jag fattar att det blir såhär på ett företag men det tar lite tid att vänja sig då vi bara jobbat enskilt fram till nu.
+Kul att få fortsätta med backend då jag verkligen fastnat för den delen. Och som jag skrev tidigare så är detta en bra grund för en site som typ facebook även om denna är mycket mindre såklart. Sen var det både kul och jobbigt att jobba tillsammans i grupp. Projektet är såpass litet att det blir jobbigt då det är ganska få filer som ska skapas och byggas. Jag fattar att det blir såhär på ett företag men det tar lite tid att vänja sig då vi bara jobbat enskilt fram till nu. Men kul att testa på!
