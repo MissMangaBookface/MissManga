@@ -102,7 +102,6 @@ const logOutFunc = () => {
 
   return (
     <>
-    <Header />
     <img src={sailormoon} alt="" className='sailors'/>
     <div className='edit-section'>
     <h2 className='header-name'>Hi {username}!</h2>

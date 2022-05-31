@@ -63,7 +63,7 @@
 
 .edit-user-username {
    margin-bottom: 30px;
-    letter-spacing: 2px;
+   letter-spacing: 2px;
 }
 
 .edit-profile-buttons {
@@ -134,14 +134,13 @@
      .sailors {
          width: 290px;
          top: 15%;
-         right: 0;
-        
+         right: 0;   
      }  
 
 }
 
 
-@media screen and (max-width: 1096px) {
+@media (max-width: 1096px) {
     .sailors {
         width: 200px;
         top: 22%;
@@ -150,18 +149,36 @@
 
 }
 
-@media screen and (max-width: 1096px) {
+@media (max-width: 1096px) {
     .sailors {
         visibility: hidden;
     }  
 }
 
-@media screen and (max-width: 1096px) {
+@media (max-width: 1096px) {
     .input-div {
         width: 500px;
     }
 
     .input-text {
         width: 430px;
+    }
+}
+
+@media (max-width: 811px) {
+    .input-div {
+        margin-top: 170px;
+    }
+
+    .edit-section {
+        position: relative;
+        left: 0;
+        top: 5.5%;
+        padding-top: 20px;  
+    }
+
+    .header-name {
+       top: -200%;
+       letter-spacing: 2px;
     }
 }
