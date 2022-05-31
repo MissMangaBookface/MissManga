@@ -105,6 +105,13 @@
     box-shadow: 0px 3px 5px 0px rgba(0,0,0,0.7);
 }
 
+.header-name {
+    color: white;
+   position: absolute;
+   top: -20%;
+   letter-spacing: 2px;
+}
+
 .logout-btn:hover {
     opacity: 0.8;
 }
