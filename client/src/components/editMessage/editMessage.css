@@ -53,5 +53,33 @@
     transform: translateY(2px);
 }
 
+@media (max-width: 811px) {
+    .edit-window {
+        width: 540px;
+        height: 23vh;
+        top: 30%;
+        right: 50%;
+        margin-right: -270px;
+    }
+
+    .done-btn {
+        font-size: 18px;
+        width: 100px;
+        margin-top: 20px;
+    }
+
+    .edit-message-input {
+        width: 450px;
+        height: 110px;
+        font-size: 18px;
+    }
+
+    .edit-text {
+ 
+        font-size: 20px;
+        letter-spacing: 1px;
+    }
+}
+
 
 
