@@ -102,9 +102,10 @@ const logOutFunc = () => {
 
   return (
     <>
-    <Header getOnlineUsers={getOnlineUsers}/>
+    <Header />
     <img src={sailormoon} alt="" className='sailors'/>
     <div className='edit-section'>
+    <h2 className='header-name'>Hi {username}!</h2>
         <h2 className='edit-user-username'>Edit profile:</h2>
         <div className='edit-profile-buttons'>
         <button className='logout-btn' data-testid='btnTextLogOut' onClick={() => logOutFunc()}>Logout</button>
