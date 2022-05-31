@@ -11,19 +11,14 @@
     box-shadow: 0px 5px 10px 0px rgba(0,0,0,0.7);
 }
 
+
+
 @media (max-width: 811px) {
     .header {
         visibility: hidden;
     }
 
-    .menu-icon {
-        visibility: visible;
-        font-size: 40px;
-        top: 2.2%;
-        right: 4%;
-        cursor: pointer; 
-        filter: brightness(0) invert(1);
-    }
+  
 }
 
 

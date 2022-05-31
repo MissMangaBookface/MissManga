@@ -31,6 +31,7 @@ const Main = () => {
       getAllMesages()
       setUsername(localStorage.getItem("username"))
       setUserId(localStorage.getItem("userId"))
+      console.log(username)
     }, [])
 
   
