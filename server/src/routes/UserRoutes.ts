@@ -15,6 +15,7 @@ const UserRoutes = (server: Express) => {
 
 //     server.get('/user/name/:name', UserController.getUserByName)
     server.post('/user/:id', UserController.getUserById)
+    server.post('/user/name/username', UserController.getUserByUsername)
 //
     //Update
     server.put('/user/:id', UserController.updateUserById)

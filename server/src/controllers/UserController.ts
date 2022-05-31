@@ -20,7 +20,10 @@ const createNewUser = async (req: Request, res: Response) => {
     try {
         Logger.info('createNewUser()')
         Logger.http(req.body)
+
         let {username, password, email}: CreateUser = req.body
+
+
         password = await encryptPassword(password)
         if (username && password && email) {
             const newObject: CreateUser = {
@@ -45,7 +48,7 @@ const createNewUser = async (req: Request, res: Response) => {
     } catch (error) {
         Logger.error(error)
         res.status(StatusCode.BAD_REQUEST).send({
-            error: 'Error while creating New User'
+            message: 'Username already taken!'
         })
     }
 }
@@ -170,6 +173,28 @@ const getUserById =  (req: Request, res: Response) => {
     }
 }
 
+const getUserByUsername = (req: Request, res: Response) => {
+    try {
+    console.log("req.body")
+        UserModel.find({username: req.body.username}, (error: ErrorCallback, user: Array<ReadUser>) => {
+            if (error) {
+                console.log(req.body)
+                Logger.error(error)
+                res.status(StatusCode.BAD_REQUEST).send({
+                    error: error
+                })
+            } else {
+                Logger.http(user)
+                res.status(StatusCode.OK).send(user)
+            }
+        })
+    } catch (error) {
+        Logger.error(error)
+        res.status(StatusCode.BAD_REQUEST).send({
+            error: 'Error getting user by name'
+        })
+    }
+}
 
 const deleteUserById = (req: Request, res: Response) => {
     try {
@@ -238,6 +263,7 @@ export default {
     createNewUser,
     verifyUser,
     updateUserById,
+    getUserByUsername,
     getOnlineUsers,
     getUserById,
     deleteUserById,

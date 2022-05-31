@@ -17,7 +17,7 @@ const UserSchema = new Schema<CreateUser>({
     },
     email: {
         type: String,
-        required: true,
+        required: true
     },
     active: {
         type: Boolean,
