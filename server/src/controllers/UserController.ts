@@ -95,32 +95,38 @@ const verifyUser = async (req: Request, res: Response) => {
     }
 }
 
-const updateUserById = (req: Request, res: Response) => {
+const updateUserById = async (req: Request, res: Response) => {
     try {
         Logger.debug(req.params.id)
         Logger.debug(req.body)
-        const updatedUser: CreateUser = {
-            username: req.body.username,
-            password: req.body.password,
-            email: req.body.email,
-            active: req.body.active
-        }
-        Logger.debug(updatedUser)
 
-        UserModel.findByIdAndUpdate(req.params.id, updatedUser, {new: true}, (error, user: ReadUser) => {
-            if (error) {
-                Logger.error(error)
-                res.status(StatusCode.BAD_REQUEST).send({
-                    error: 'Error updating user'
-                })
-            } else {
-                Logger.http(user)
-                res.status(StatusCode.OK).send(user ? user : {
-                    message: `User with id '${req.params.id}' not found`
-                })
+        let {username, password, email}: CreateUser = req.body
+        password = await encryptPassword(password)
+        if (username && password && email) {
+            const updatedUser: CreateUser = {
+                username: req.body.username,
+                password: password,
+                email: req.body.email,
+                active: req.body.active
             }
-        })
-    } catch (error) {
+            Logger.debug(updatedUser)
+
+            UserModel.findByIdAndUpdate(req.params.id, updatedUser, {new: true}, (error, user: ReadUser) => {
+                if (error) {
+                    Logger.error(error)
+                    res.status(StatusCode.BAD_REQUEST).send({
+                        error: 'Error updating user'
+                    })
+                } else {
+                    Logger.http(user)
+                    res.status(StatusCode.OK).send(user ? user : {
+                        message: `User with id '${req.params.id}' not found`
+                    })
+                }
+            })
+        }
+    } catch
+        (error) {
         Logger.error(error)
         res.status(StatusCode.BAD_REQUEST).send({
             error: 'Error updating user'
@@ -128,7 +134,7 @@ const updateUserById = (req: Request, res: Response) => {
     }
 }
 
-const getOnlineUsers = (req: Request, res: Response) => {
+const getOnlineUsers = (_req: Request, res: Response) => {
     try {
 
         UserModel.find({active: true}, '', (error: ErrorCallback, users: Array<ReadUser>) => {
@@ -150,9 +156,9 @@ const getOnlineUsers = (req: Request, res: Response) => {
     }
 }
 
-const getUserById =  (req: Request, res: Response) => {
+const getUserById = (req: Request, res: Response) => {
     try {
-         UserModel.findById(req.params.id, (error: ErrorCallback, user: ReadUser) => {
+        UserModel.findById(req.params.id, (error: ErrorCallback, user: ReadUser) => {
             if (error) {
                 Logger.error(error)
                 res.status(StatusCode.BAD_REQUEST).send({
@@ -175,7 +181,7 @@ const getUserById =  (req: Request, res: Response) => {
 
 const getUserByUsername = (req: Request, res: Response) => {
     try {
-    console.log("req.body")
+        console.log("req.body")
         UserModel.find({username: req.body.username}, (error: ErrorCallback, user: Array<ReadUser>) => {
             if (error) {
                 console.log(req.body)
@@ -220,7 +226,6 @@ const deleteUserById = (req: Request, res: Response) => {
 }
 
 
-
 const changeActiveStatus = (req: Request, res: Response) => {
 
     try {
@@ -249,14 +254,6 @@ const changeActiveStatus = (req: Request, res: Response) => {
         })
     }
 }
-
-
-
-
-
-
-
-
 
 
 export default {
