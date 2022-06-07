@@ -183,3 +183,63 @@
         width: 340px;
     }
 }
+
+@media  (max-width: 424px) {
+    .comment-card {
+        width: 300px;
+    }
+
+    .comment-input {
+        width: 250px;
+    }
+
+    .item-card {
+        width: 270px;
+       
+    }
+
+    .comment-input {
+        width: 250px;
+        margin: 0px;
+    }
+
+    .edit-comment-input {
+        width: 245px;
+        margin-bottom: 5px;
+    }
+
+    .cancel-btn, .post-comment-btn {
+        background-color: lavender;
+        color: black;
+        letter-spacing: 1px;
+        border: none;
+        border-radius: 5px;
+        padding: 3px 5px;
+        cursor: pointer;
+        font-size: 14px;
+    } 
+
+    .edit-comment {
+        position: absolute;
+        top: -5%;
+        right: 20%;
+        cursor: pointer; 
+        font-size: 18px;
+    }
+
+    .delete-comment {
+        top: -5%;
+        right: 7%;
+        font-size: 18px;
+    }
+
+    .item-name {
+        font-size: 20px;
+        font-weight: 800;
+    }
+
+    .item-text {
+        width: 240px;
+    }
+    
+}

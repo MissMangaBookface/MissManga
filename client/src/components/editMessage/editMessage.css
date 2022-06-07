@@ -81,5 +81,54 @@
     }
 }
 
+@media screen and (max-width: 590px) {
+    .edit-window {
+        width: 400px;
+        height: 230px;
+        top: 30%;
+        right: 50%;
+        margin-right: -200px;
+    }
+
+    .edit-message-input {
+        width: 320px;
+        height: 100px;
+        font-size: 18px;
+    }
+
+    .done-btn {
+        font-size: 15px;
+        width: 90px;
+        margin-top: 20px;
+        text-transform: uppercase;
+        font-weight: 700;
+    }
+}
+
+
+@media screen and (max-width: 426px) {
+    .edit-window {
+        width: 300px;
+        height: 230px;
+        top: 30%;
+        right: 50%;
+        margin-right: -150px;
+    }
+
+    .edit-message-input {
+        width: 240px;
+        height: 90px;
+        font-size: 18px;
+    }
+
+    .done-btn {
+        font-size: 15px;
+        width: 80px;
+        margin-top: 20px;
+        text-transform: uppercase;
+        font-weight: 700;
+    }
+}
+
 
 
