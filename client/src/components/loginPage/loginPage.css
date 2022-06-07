@@ -56,6 +56,10 @@
     font-family: 'Adomina'; 
   }
 
+  .password-user-input {
+    width: 266px;
+  }
+
   .login-btn {
       background-color: purple;
       color: white;
@@ -70,8 +74,7 @@
   }
 
   .login-btn {
-      margin-right: 18px;
-      
+      margin-right: 18px;   
   }
 
   .login-btn:hover {
@@ -115,6 +118,57 @@
 
 .register:hover {
     color: var(--primary-color);
+}
+
+@media screen and (max-width: 1565px) {
+    .sailor-pic {
+        width: 350px;
+        margin-left: 180px;
+    }
+
+@media screen and (max-width: 1359px) {
+    .login-div {
+        justify-content: center;
+      
+    }
+    .sailor-pic {
+        width: 0.2px;
+        margin: 0px;
+        visibility: hidden;
+    }
+}
+
+    .login-btn {
+        background-color: purple;
+        color: white;
+        padding: 6px 10px;
+        border: none;
+        font-size: 20px;
+        letter-spacing: 2px;
+        border-radius: 5px;
+        cursor: pointer;
+        width: 100px;
+        font-family: 'Adomina';
+    }
+
+    .login-square {
+        margin-top: 0px;
+        border: 2px solid var(--text-color);
+        width: 400px;
+        height: 300px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        padding-top: 20px;
+        border-radius: 5px;
+        font-family: 'Adomina';
+        margin-right: 0px;
+      }
+
+
+
+
 }
 
 @media screen and (max-width: 424px) {
