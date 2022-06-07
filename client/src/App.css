@@ -21,3 +21,13 @@
   font-size: 60px;
 }
 
+@media (max-width: 426px) {
+  .headline {
+    font-size: 35px;
+  }
+
+  .manga {
+    font-size: 35px;
+  }
+}
+
