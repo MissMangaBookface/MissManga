@@ -40,7 +40,6 @@
 .register-username-input, .register-email-input, .register-password-input {
     width: 220px;
     border-radius: 5px;
-   
     outline: none;
     font-size: 20px;
     padding-left: 5px;
@@ -67,4 +66,57 @@
 
 .register-button:active {
     transform: translateY(2px);
+}
+
+@media screen and (max-width: 424px) {
+    .register-card {
+        width: 370px;
+        margin-top: 50px;
+        padding-top: 30px;
+        align-items: flex-start;
+        padding-right: 0px;
+    }
+
+    .fill-in {
+        font-size: 16px;
+        align-self: center;
+    }
+
+    .register-username, .register-email, .register-password {
+        color: var(--text-color);
+        font-size: 16px;
+        margin-right: 10px;
+        margin-left: 5px;
+        width: 100px;
+        text-align: left; 
+    }
+
+    .register-username-input, .register-email-input, .register-password-input {
+        width: 220px;
+        border-radius: 5px;
+        outline: none;
+        font-size: 16px;
+        padding-left: 5px;
+        letter-spacing: 0.4px;
+    }
+    
+    .register-password-input {
+        width: 230px;
+    }
+
+    .register-button {
+        background-color: var(--primary-color);
+        color: white;
+        padding: 6px 10px;
+        border: none;
+        font-size: 18px;
+        letter-spacing: 2px;
+        border-radius: 5px;
+        cursor: pointer;
+        width: 180px;
+        margin: 35px 0px;
+        margin-left: 100px;
+        
+    }
+  
 }
