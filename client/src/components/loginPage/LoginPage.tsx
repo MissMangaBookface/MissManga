@@ -89,6 +89,6 @@ const LoginPage: FC = (id, active) => {
      
     </>
   )
-}
+} 
 
 export default LoginPage

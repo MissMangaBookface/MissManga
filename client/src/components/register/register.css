@@ -58,7 +58,6 @@
     cursor: pointer;
     width: 180px;
     margin: 35px 50px;
-    
 }
 
 .register-button:hover {
@@ -67,4 +66,85 @@
 
 .register-button:active {
     transform: translateY(2px);
+}
+
+@media screen and (max-width: 630px) {
+    .register-card {
+        width: 400px;
+        margin-top: 50px;
+        padding-top: 30px;
+        padding-left: 0px;
+        align-items: flex-start;
+     
+    }
+    .register-username, .register-email, .register-password {
+        color: var(--text-color);
+        font-size: 22px;
+        margin-right: 10px;
+        width: 100px;
+        text-align: left; 
+    }
+
+
+    .register-username, .register-email, .register-password {
+        color: var(--text-color);
+        font-size: 18px;
+        margin-right: 10px;
+        width: 110px;
+        text-align: left; 
+        margin-left: 10px;
+    }
+
+
+    .register-button {
+        font-size: 18px;
+        width: 180px;
+        margin: 35px 110px;
+    }
+
+    .fill-in {
+        font-size: 17px;
+        margin-top: 10px;
+        font-weight: 500;
+        font-family: 'Adamina';
+        margin-left: 40px;
+    }
+}
+
+
+
+@media screen and (max-width: 440px) {
+    
+    .register-username, .register-email, .register-password {
+        color: var(--text-color);
+        font-size: 15px;
+        margin-right: 10px;
+        width: 80px;
+        text-align: left; 
+        margin-left: 10px;
+    }
+
+    .register-card {
+        width: 350px;
+        margin-top: 50px;
+        padding-top: 30px;
+        padding-left: 0px;
+        align-items: flex-start;
+        border: none;
+     
+    }
+
+    .register-button {
+        font-size: 15px;
+        width: 170px;
+        margin: 35px 90px;
+    }
+
+    .fill-in {
+        font-size: 15px;
+        margin-top: 10px;
+        font-weight: 500;
+        font-family: 'Adamina';
+        margin-left: 40px;
+    }
 }
