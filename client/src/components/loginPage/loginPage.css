@@ -117,4 +117,62 @@
     color: var(--primary-color);
 }
 
+@media screen and (max-width: 424px) {
+    .sailor-pic {
+        width: 0.1px;
+        margin: 0px;
+        visibility: hidden;
+    }
+
+    .login-square {
+        margin-top: 0px;
+        border: 2px solid var(--text-color);
+        width: 350px;
+        height: 300px;
+        padding-top: 20px;
+        border-radius: 5px;
+        font-family: 'Adomina';
+        margin-right: 0px;
+        margin-left: 0px;
+      }
+
+      .login-div {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 20px;
+    }
+
+    .username-login-input, .password-user-input {
+        outline: none;
+        border: 1px solid purple;
+        border-radius: 5px;
+        width: 230px;
+        margin-bottom: 20px;
+        font-size: 18px;
+        letter-spacing: 1px;
+        padding: 7px 5px;
+        color: rgb(85, 85, 85);
+        font-family: 'Adomina'; 
+      }
+
+      .password-user-input {
+          width: 243px;
+      }
+
+      .login-btn {
+        background-color: purple;
+        color: white;
+        padding: 6px 10px;
+        border: none;
+        font-size: 18px;
+        letter-spacing: 2px;
+        border-radius: 5px;
+        cursor: pointer;
+        width: 80px;
+        font-family: 'Adomina';
+    }
+}
+
 
