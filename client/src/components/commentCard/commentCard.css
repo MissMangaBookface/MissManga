@@ -164,3 +164,22 @@
         width: 450px;
     }
 }
+
+
+@media (max-width: 811px) {
+    .comment-card {
+        width: 400px;
+    }
+
+    .comment-input {
+        width: 280px;
+    }
+
+    .item-card {
+        width: 370px;
+    }
+    
+    .edit-comment-input {
+        width: 340px;
+    }
+}
