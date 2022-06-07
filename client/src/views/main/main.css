@@ -199,4 +199,10 @@
     .input-text {
         width: 260px;
     }
+
+    .edit-section {
+        height: 0px;
+        top: 8%;
+        box-shadow: none;
+    }
 }

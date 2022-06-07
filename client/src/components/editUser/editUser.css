@@ -132,3 +132,35 @@
         padding-bottom: 3px;
     }
 }
+
+
+@media screen and (max-width: 426px) {
+    .edit-user-window {
+        width: 350px;
+        height: 250px;
+        position: absolute;
+        padding-left: 25px;
+        border-radius: 5px;
+      
+    }
+
+    .edit-username-input, .edit-email-input, .edit-password-input {
+        font-size: 15px;
+    }
+
+    .edit-user-cancel-btn, .edit-user-save-btn {
+        background-color: var(--primary-color);
+        color: var(--text-color);
+        border: none;
+        border-radius: 5px;
+        padding: 5px 10px;
+        width: 90px;
+        font-family: 'Adamina';
+        font-size: 18px;
+        font-weight: 600;
+        letter-spacing: 1px;
+        margin-bottom: 20px;
+        cursor: pointer;
+        margin-right: 15px;
+    }
+}
