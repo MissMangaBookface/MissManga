@@ -181,4 +181,22 @@
        top: -200%;
        letter-spacing: 2px;
     }
+
+    .input-div {
+        width: 400px;
+    }
+
+    .input-text {
+        width: 340px;
+    }
+}
+
+@media screen and (max-width: 424px) {
+    .input-div {
+        width: 300px;
+    }
+
+    .input-text {
+        width: 260px;
+    }
 }
