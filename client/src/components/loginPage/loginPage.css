@@ -121,10 +121,36 @@
 }
 
 @media screen and (max-width: 1565px) {
-    .sailor-pic {
-        width: 350px;
-        margin-left: 180px;
+
+    .login-div {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 20px;
     }
+    .sailor-pic {
+        width: 400px;
+        margin-left: 0px;
+        margin-right: 50px;
+    }
+
+    .login-square {
+        margin-top: 0px;
+        border: 2px solid var(--text-color);
+        width: 400px;
+        height: 300px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        padding-top: 20px;
+        border-radius: 5px;
+        font-family: 'Adomina';
+        margin-right: 0px;
+        margin-left: 50px;
+      }
+}
 
 @media screen and (max-width: 1359px) {
     .login-div {
@@ -132,11 +158,11 @@
       
     }
     .sailor-pic {
-        width: 0.2px;
-        margin: 0px;
-        visibility: hidden;
+      
+        margin-right: 50px;
+       
     }
-}
+
 
     .login-btn {
         background-color: purple;
