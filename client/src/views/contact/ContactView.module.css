@@ -108,3 +108,32 @@
 .btnContact :hover {
     background-color:rgba(0, 0, 0, 0.1);
 }
+@media screen and (max-width: 1024px) {
+    .heroAbout {
+        width: 80%;
+    }
+}
+@media screen and (max-width: 650px) {
+    .heroAbout {
+        width: 50%;
+
+    }
+    .contactForm {
+        max-width: 860px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        box-shadow: 0px 0px 19px 5px rgba(0, 0, 0, 0.2);
+        margin-bottom: 50px;
+
+    }
+
+    .left{
+        width: 0.2px;
+        margin: 0px;
+        visibility: hidden;
+    }
+    .right{
+        padding: 40px 30px 0px 30px;
+    }
+}
