@@ -1,5 +1,5 @@
 import css from './AboutView.module.css'
-import sailormoon from "../../img/mainSailor.png";
+// import sailormoon from "../../img/mainSailor.png";
 import chris from '../../img/crisProfile.png'
 import carin from '../../img/carinProfile.png'
 import samantha from '../../img/samanthaProfile.png'
