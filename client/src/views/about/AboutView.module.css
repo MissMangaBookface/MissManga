@@ -27,6 +27,7 @@
     justify-content: center;
 
 
+
 }
 .aboutCard{
     max-width: 400px;
@@ -63,6 +64,19 @@
     .heroAbout {
         width: 80%;
     }
+
+    .container{
+        width: 100%;
+        flex-wrap: wrap;
+        align-items: center;
+    }
+
+    .aboutCard {
+        max-width: 250px;
+    }
+    .photo{
+        width: 80px;
+    }
 }
 @media screen and (max-width: 650px) {
     .heroAbout {
@@ -71,11 +85,14 @@
     }
 .container{
     flex-direction: column;
+    width: 80%;
+    align-items: center;
 }
+    .aboutCard {
+        max-width: 150px;
+    }
 .photo{
     width: 60px;
-    /*margin: 0px;*/
-    /*visibility: hidden;*/
-}
+ }
 }
 
