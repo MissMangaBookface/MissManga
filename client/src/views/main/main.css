@@ -44,7 +44,7 @@
 }
 
 .sailors {
-    width: 400px;
+    width: 300px;
     position: fixed;
     top: 20%;
     right: 2%;
@@ -127,15 +127,22 @@
 
      .edit-section {
          height: 0px;
-         top: -1.5%;
+         /*top: 8%;*/
+         top: 200px;
          box-shadow: none;
      }
+     .header-name{
+         padding-bottom: 20px;
+     }
+    .edit-profile-buttons {
+        margin-top: 50px;
+    }
 
      .sailors {
          width: 290px;
          top: 15%;
-         right: 0;   
-     }  
+         right: 0;
+     }
 
 }
 
@@ -158,10 +165,21 @@
 @media (max-width: 1096px) {
     .input-div {
         width: 500px;
+        margin-top: 170px;
     }
 
     .input-text {
         width: 430px;
+    }
+    .edit-section {
+        position: relative;
+        left: 0;
+        top: 5.5%;
+        padding-top: 20px;
+    }
+    .header-name {
+        top: -200%;
+        letter-spacing: 2px;
     }
 }
 
@@ -178,7 +196,8 @@
     }
 
     .header-name {
-       top: -200%;
+        /*margin-top: 30px;*/
+       top: -20%;
        letter-spacing: 2px;
     }
 
@@ -204,5 +223,13 @@
         height: 0px;
         top: 5%;
         box-shadow: none;
+    }
+    .header-name {
+        margin-top: 30px;
+    /*    letter-spacing: 2px;*/
+    }
+    .edit-user-username {
+        margin-top: 100px;
+        /*letter-spacing: 2px;*/
     }
 }
