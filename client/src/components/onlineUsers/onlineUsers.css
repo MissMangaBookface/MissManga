@@ -64,3 +64,10 @@
         visibility: hidden;
     }
 }
+
+@media screen and (max-width: 1262px) {
+    .online-user-heading {
+        margin-top: 150px;
+        margin-left: 20px;
+    }
+}
