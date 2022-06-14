@@ -1,5 +1,4 @@
 import css from './AboutView.module.css'
-// import sailormoon from "../../img/mainSailor.png";
 import chris from '../../img/crisProfile.png'
 import carin from '../../img/carinProfile.png'
 import samantha from '../../img/samanthaProfile.png'
@@ -25,7 +24,7 @@ const AboutView = () => {
                     <h3> Christoffer K.</h3>
                     <img src={chris} alt="christProfile" className={css.photo}/>
                     <div className={css.contactIcon}>
-                        <a className={css.mail} href=""><FaEnvelopeSquare/></a>
+                        <a className={css.mail} href="mailto:knavinglogistic@hotmail.se"><FaEnvelopeSquare/></a>
                         <a className={css.gitHub} href="https://github.com/StillUnknown"><FaGithub/></a>
                         <a className={css.linkedIn} href="https://linkedin.com/in/christoffer-knaving-77366a21a/"><FaLinkedin/></a>
                     </div>
@@ -35,7 +34,7 @@ const AboutView = () => {
                     <h3> Carin W.</h3>
                     <img src={carin} alt="carinProfile" className={css.photo}/>
                     <div className={css.contactIcon}>
-                        <a className={css.mail} href="carin.wood.85@gmail.com"><FaEnvelopeSquare/></a>
+                        <a className={css.mail} href="mailto:carin.wood.85@gmail.com"><FaEnvelopeSquare/></a>
                         <a className={css.gitHub} href="https://github.com/CarinWood"><FaGithub/></a>
                         <a className={css.linkedIn} href="https://www.linkedin.com/in/carin-wood/"><FaLinkedin/></a>
                     </div>
@@ -46,7 +45,7 @@ const AboutView = () => {
                     <h3> Samantha TH.</h3>
                     <img src={samantha} alt="samanthaProfile" className={css.photo}/>
                     <div className={css.contactIcon}>
-                        <a className={css.mail} href="samanthathee0908@gmail.com"><FaEnvelopeSquare/></a>
+                        <a className={css.mail} href="mailto:samanthathee0908@gmail.com"><FaEnvelopeSquare/></a>
                         <a className={css.gitHub} href="https://github.com/samthe0908"><FaGithub/></a>
                         <a className={css.linkedIn} href="https://www.linkedin.com/in/samantha-theerawat-b59438100/"><FaLinkedin/></a>
                     </div>
@@ -57,7 +56,7 @@ const AboutView = () => {
                     <h3> Ursula V.</h3>
                     <img src={ursula} alt="ursulaProfile" className={css.photo}/>
                     <div className={css.contactIcon}>
-                        <a className={css.mail} href="ursulavallejo@gmail.com"><FaEnvelopeSquare/></a>
+                        <a className={css.mail} href="mailto:ursulavallejo@gmail.com"><FaEnvelopeSquare/></a>
                         <a className={css.gitHub} href="https://github.com/Ursulavallejo"><FaGithub/></a>
                         <a className={css.linkedIn} href="https://www.linkedin.com/in/ursula-vallejo-janne-56027977/"><FaLinkedin/></a>
                     </div>
